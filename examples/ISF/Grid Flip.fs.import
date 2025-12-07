@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://dtb3ajgeo7b2l"
+path="res://.godot/imported/Grid Flip.fs-0a89c3ef8ef3a9c45d825c5908f306aa.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Grid Flip.fs"
+dest_files=["res://.godot/imported/Grid Flip.fs-0a89c3ef8ef3a9c45d825c5908f306aa.material"]
+
+[params]
+

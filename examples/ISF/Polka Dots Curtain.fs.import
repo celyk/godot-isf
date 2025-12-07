@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://cuvqm83vqnr7s"
+path="res://.godot/imported/Polka Dots Curtain.fs-b2419a9febf4ba5ac64328390a90df56.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Polka Dots Curtain.fs"
+dest_files=["res://.godot/imported/Polka Dots Curtain.fs-b2419a9febf4ba5ac64328390a90df56.material"]
+
+[params]
+

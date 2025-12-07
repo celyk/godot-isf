@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://ci4po56oaydq5"
+path="res://.godot/imported/Undulating Burn Out.fs-86a696650a82632be77ee06ee84ba2e8.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Undulating Burn Out.fs"
+dest_files=["res://.godot/imported/Undulating Burn Out.fs-86a696650a82632be77ee06ee84ba2e8.material"]
+
+[params]
+

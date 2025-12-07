@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://dr6avln4ordjc"
+path="res://.godot/imported/Doom Screen Transition.fs-fcd2306f3c7d62cde0d59a8ed3c085b2.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Doom Screen Transition.fs"
+dest_files=["res://.godot/imported/Doom Screen Transition.fs-fcd2306f3c7d62cde0d59a8ed3c085b2.material"]
+
+[params]
+

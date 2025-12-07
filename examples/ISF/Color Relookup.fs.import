@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://61v7uqindxxa"
+path="res://.godot/imported/Color Relookup.fs-dc75541107db907d629539c5ccd0dd99.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Color Relookup.fs"
+dest_files=["res://.godot/imported/Color Relookup.fs-dc75541107db907d629539c5ccd0dd99.material"]
+
+[params]
+

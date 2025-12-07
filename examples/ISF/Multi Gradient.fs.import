@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://y5gqpner222q"
+path="res://.godot/imported/Multi Gradient.fs-67961d0590debb5e5aa927561e2e1576.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Multi Gradient.fs"
+dest_files=["res://.godot/imported/Multi Gradient.fs-67961d0590debb5e5aa927561e2e1576.material"]
+
+[params]
+

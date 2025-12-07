@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://bm5mgklkfbxdm"
+path="res://.godot/imported/Triangle.fs-c6fd2723413b9a414433c4bfc7f11ff9.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Triangle.fs"
+dest_files=["res://.godot/imported/Triangle.fs-c6fd2723413b9a414433c4bfc7f11ff9.material"]
+
+[params]
+

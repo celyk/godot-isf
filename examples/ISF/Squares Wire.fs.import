@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://befj3tafrugbl"
+path="res://.godot/imported/Squares Wire.fs-69f34030faf438782adb0728a044d99e.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Squares Wire.fs"
+dest_files=["res://.godot/imported/Squares Wire.fs-69f34030faf438782adb0728a044d99e.material"]
+
+[params]
+

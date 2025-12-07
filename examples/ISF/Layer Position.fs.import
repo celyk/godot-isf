@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://bgwdvpdrnjkgb"
+path="res://.godot/imported/Layer Position.fs-bf5cd2ca8ce0699d8fa25f237a8a5832.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Layer Position.fs"
+dest_files=["res://.godot/imported/Layer Position.fs-bf5cd2ca8ce0699d8fa25f237a8a5832.material"]
+
+[params]
+

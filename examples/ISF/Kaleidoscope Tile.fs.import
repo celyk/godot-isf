@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://cnltfmxwyij6a"
+path="res://.godot/imported/Kaleidoscope Tile.fs-e9636a1e30b0d333b8ed5ff9a0bfff31.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Kaleidoscope Tile.fs"
+dest_files=["res://.godot/imported/Kaleidoscope Tile.fs-e9636a1e30b0d333b8ed5ff9a0bfff31.material"]
+
+[params]
+

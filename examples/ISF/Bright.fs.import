@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://u7margteccx"
+path="res://.godot/imported/Bright.fs-f96f0f873ea6b848cf0d9172e4ea1e5f.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Bright.fs"
+dest_files=["res://.godot/imported/Bright.fs-f96f0f873ea6b848cf0d9172e4ea1e5f.material"]
+
+[params]
+

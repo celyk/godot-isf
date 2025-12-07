@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://oqem7k73l0jv"
+path="res://.godot/imported/Smoke Screen.fs-f4a2a4f112df5d3af760e498dbe381ca.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Smoke Screen.fs"
+dest_files=["res://.godot/imported/Smoke Screen.fs-f4a2a4f112df5d3af760e498dbe381ca.material"]
+
+[params]
+

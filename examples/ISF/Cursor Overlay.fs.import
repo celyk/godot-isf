@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://dv8kc8nx2posn"
+path="res://.godot/imported/Cursor Overlay.fs-575afcd30413bf735278b20e5ad2a1b1.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Cursor Overlay.fs"
+dest_files=["res://.godot/imported/Cursor Overlay.fs-575afcd30413bf735278b20e5ad2a1b1.material"]
+
+[params]
+

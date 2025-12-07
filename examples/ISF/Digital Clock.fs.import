@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://db5e3xxkewe0q"
+path="res://.godot/imported/Digital Clock.fs-2f78022cc34d48a3744aab6fd90ebc7b.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Digital Clock.fs"
+dest_files=["res://.godot/imported/Digital Clock.fs-2f78022cc34d48a3744aab6fd90ebc7b.material"]
+
+[params]
+

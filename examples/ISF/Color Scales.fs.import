@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://c5vx48udm0ghk"
+path="res://.godot/imported/Color Scales.fs-7d509af961523da0076867a2f16daf26.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Color Scales.fs"
+dest_files=["res://.godot/imported/Color Scales.fs-7d509af961523da0076867a2f16daf26.material"]
+
+[params]
+

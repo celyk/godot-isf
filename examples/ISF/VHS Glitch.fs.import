@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://dnu8hum5ond4l"
+path="res://.godot/imported/VHS Glitch.fs-15eab4907021f2f0f9c0ac9b7ac61e9a.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/VHS Glitch.fs"
+dest_files=["res://.godot/imported/VHS Glitch.fs-15eab4907021f2f0f9c0ac9b7ac61e9a.material"]
+
+[params]
+

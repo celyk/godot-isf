@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://b66evv0tuat4w"
+path="res://.godot/imported/Fade.fs-c44a4f54a64ff1ca737799e448bc1d72.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Fade.fs"
+dest_files=["res://.godot/imported/Fade.fs-c44a4f54a64ff1ca737799e448bc1d72.material"]
+
+[params]
+

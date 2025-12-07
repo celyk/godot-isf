@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://d0gd2rm6f2u5v"
+path="res://.godot/imported/Dreamy.fs-7fa5731bd0f1edf59bc2459db523d157.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Dreamy.fs"
+dest_files=["res://.godot/imported/Dreamy.fs-7fa5731bd0f1edf59bc2459db523d157.material"]
+
+[params]
+

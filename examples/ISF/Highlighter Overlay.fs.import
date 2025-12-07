@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://d04jc5n8wbuxh"
+path="res://.godot/imported/Highlighter Overlay.fs-35f9cd3a584f70a872b7bcee152b6901.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Highlighter Overlay.fs"
+dest_files=["res://.godot/imported/Highlighter Overlay.fs-35f9cd3a584f70a872b7bcee152b6901.material"]
+
+[params]
+

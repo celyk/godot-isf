@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://b75ytokjqt05p"
+path="res://.godot/imported/HSVtoRGB.fs-0613fb1ac63dbbd0662f29a6acbc0bea.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/HSVtoRGB.fs"
+dest_files=["res://.godot/imported/HSVtoRGB.fs-0613fb1ac63dbbd0662f29a6acbc0bea.material"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://lyoaitpiwkg8"
+path="res://.godot/imported/LGG.fs-a521ae6145533f4318d0f045aa14435c.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/LGG.fs"
+dest_files=["res://.godot/imported/LGG.fs-a521ae6145533f4318d0f045aa14435c.material"]
+
+[params]
+

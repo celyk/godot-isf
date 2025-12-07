@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://b6hc6n7ttw0rl"
+path="res://.godot/imported/Collage.fs-d183cb701071a23c30bd8d68179b4b82.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Collage.fs"
+dest_files=["res://.godot/imported/Collage.fs-d183cb701071a23c30bd8d68179b4b82.material"]
+
+[params]
+

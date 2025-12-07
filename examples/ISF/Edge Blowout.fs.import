@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://c6nhqj44g6fxj"
+path="res://.godot/imported/Edge Blowout.fs-04b185185b2571dc2f91d297a39df740.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Edge Blowout.fs"
+dest_files=["res://.godot/imported/Edge Blowout.fs-04b185185b2571dc2f91d297a39df740.material"]
+
+[params]
+

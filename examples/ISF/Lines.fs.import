@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://diiryan5r1557"
+path="res://.godot/imported/Lines.fs-f6056e8bee0fc64be7ec83b4643614b6.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Lines.fs"
+dest_files=["res://.godot/imported/Lines.fs-f6056e8bee0fc64be7ec83b4643614b6.material"]
+
+[params]
+

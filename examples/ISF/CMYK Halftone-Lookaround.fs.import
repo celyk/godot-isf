@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://dd6mss1ighmkl"
+path="res://.godot/imported/CMYK Halftone-Lookaround.fs-66bbdd6bd5a30a6cb5d1f0abb86c5a22.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/CMYK Halftone-Lookaround.fs"
+dest_files=["res://.godot/imported/CMYK Halftone-Lookaround.fs-66bbdd6bd5a30a6cb5d1f0abb86c5a22.material"]
+
+[params]
+

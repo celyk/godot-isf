@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://bnt1q27rlqnhj"
+path="res://.godot/imported/Mirror.fs-c67bb3167a1c46f73fc3e6fdb00a585b.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Mirror.fs"
+dest_files=["res://.godot/imported/Mirror.fs-c67bb3167a1c46f73fc3e6fdb00a585b.material"]
+
+[params]
+

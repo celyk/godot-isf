@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://mtu1myg8jyrj"
+path="res://.godot/imported/Checkerboard.fs-26286b4cc3426d01434b68ceb29e8d84.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Checkerboard.fs"
+dest_files=["res://.godot/imported/Checkerboard.fs-26286b4cc3426d01434b68ceb29e8d84.material"]
+
+[params]
+

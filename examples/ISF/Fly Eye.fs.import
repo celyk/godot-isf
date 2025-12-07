@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://beioqq5sl3lvg"
+path="res://.godot/imported/Fly Eye.fs-9f7da4ae1bfe94e1002cc81366b5fc17.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Fly Eye.fs"
+dest_files=["res://.godot/imported/Fly Eye.fs-9f7da4ae1bfe94e1002cc81366b5fc17.material"]
+
+[params]
+

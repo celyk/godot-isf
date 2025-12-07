@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://bt30cu0v8gsl7"
+path="res://.godot/imported/Stereo Viewer.fs-8d00ecb0889fcd79efa3d71c7ac78116.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Stereo Viewer.fs"
+dest_files=["res://.godot/imported/Stereo Viewer.fs-8d00ecb0889fcd79efa3d71c7ac78116.material"]
+
+[params]
+

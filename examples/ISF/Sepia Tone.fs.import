@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://k3f60gvdlvy2"
+path="res://.godot/imported/Sepia Tone.fs-e1b847fe651d2607492875f565ed98ae.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Sepia Tone.fs"
+dest_files=["res://.godot/imported/Sepia Tone.fs-e1b847fe651d2607492875f565ed98ae.material"]
+
+[params]
+

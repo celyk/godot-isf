@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://cp7affcsu4iqj"
+path="res://.godot/imported/Colour Distance.fs-cff2d9ca069b30d3b8085b2896f623eb.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Colour Distance.fs"
+dest_files=["res://.godot/imported/Colour Distance.fs-cff2d9ca069b30d3b8085b2896f623eb.material"]
+
+[params]
+

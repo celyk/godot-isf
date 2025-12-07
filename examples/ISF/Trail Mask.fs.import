@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://bwipw6tjwql0"
+path="res://.godot/imported/Trail Mask.fs-22af81fe03ccfa73456b549350ad2fb2.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Trail Mask.fs"
+dest_files=["res://.godot/imported/Trail Mask.fs-22af81fe03ccfa73456b549350ad2fb2.material"]
+
+[params]
+

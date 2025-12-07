@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://2x317rn7l28m"
+path="res://.godot/imported/Circle Open.fs-8434a8100409e76883eb4e1dbb7d16f7.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Circle Open.fs"
+dest_files=["res://.godot/imported/Circle Open.fs-8434a8100409e76883eb4e1dbb7d16f7.material"]
+
+[params]
+

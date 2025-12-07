@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://cgdrs2voq2jgg"
+path="res://.godot/imported/Quad Mask.fs-85d39797576bc7c2120ea538beeac8de.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Quad Mask.fs"
+dest_files=["res://.godot/imported/Quad Mask.fs-85d39797576bc7c2120ea538beeac8de.material"]
+
+[params]
+

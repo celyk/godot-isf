@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://dnyc5ffavwfq3"
+path="res://.godot/imported/Corner Color Tint.fs-f06b9bf1ed6af988775243a8521e00c3.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Corner Color Tint.fs"
+dest_files=["res://.godot/imported/Corner Color Tint.fs-f06b9bf1ed6af988775243a8521e00c3.material"]
+
+[params]
+

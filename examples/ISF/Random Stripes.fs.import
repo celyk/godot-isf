@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://bs072m5vatvue"
+path="res://.godot/imported/Random Stripes.fs-249dfd81b2ea7c624acf8e306a77fadf.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Random Stripes.fs"
+dest_files=["res://.godot/imported/Random Stripes.fs-249dfd81b2ea7c624acf8e306a77fadf.material"]
+
+[params]
+

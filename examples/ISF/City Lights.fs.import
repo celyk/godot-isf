@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://pwf0ofg8vqoa"
+path="res://.godot/imported/City Lights.fs-355b0d2e7b9a987435f41c74e25f3517.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/City Lights.fs"
+dest_files=["res://.godot/imported/City Lights.fs-355b0d2e7b9a987435f41c74e25f3517.material"]
+
+[params]
+

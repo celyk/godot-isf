@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://dpbips0lfvc45"
+path="res://.godot/imported/Cursor.fs-58ecaa0f0bb019a36e3207aaa4ae1a42.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Cursor.fs"
+dest_files=["res://.godot/imported/Cursor.fs-58ecaa0f0bb019a36e3207aaa4ae1a42.material"]
+
+[params]
+

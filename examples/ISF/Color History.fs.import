@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://c1b0u0cyl1kpq"
+path="res://.godot/imported/Color History.fs-45aadbd637839adbd0f814b47f272e47.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Color History.fs"
+dest_files=["res://.godot/imported/Color History.fs-45aadbd637839adbd0f814b47f272e47.material"]
+
+[params]
+

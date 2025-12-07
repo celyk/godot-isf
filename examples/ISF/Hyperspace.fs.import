@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://oijbyee4d426"
+path="res://.godot/imported/Hyperspace.fs-d58e32c1935868012e51acc8c1a3914b.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Hyperspace.fs"
+dest_files=["res://.godot/imported/Hyperspace.fs-d58e32c1935868012e51acc8c1a3914b.material"]
+
+[params]
+

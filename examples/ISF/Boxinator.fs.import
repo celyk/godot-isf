@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://c2lql7wpoas32"
+path="res://.godot/imported/Boxinator.fs-f828ac9f5e1231f6c99e39fdb89cf192.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Boxinator.fs"
+dest_files=["res://.godot/imported/Boxinator.fs-f828ac9f5e1231f6c99e39fdb89cf192.material"]
+
+[params]
+

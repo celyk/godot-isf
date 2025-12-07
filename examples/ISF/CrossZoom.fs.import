@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://uu140nqv0mxn"
+path="res://.godot/imported/CrossZoom.fs-93f4c8f99c5c7af5ec1ad27adbffe4d9.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/CrossZoom.fs"
+dest_files=["res://.godot/imported/CrossZoom.fs-93f4c8f99c5c7af5ec1ad27adbffe4d9.material"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://bp1pqvkw0pp3b"
+path="res://.godot/imported/Color Organ Polyphonic.fs-f2dbf75263c1f780da76bb6f06006a4c.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Color Organ Polyphonic.fs"
+dest_files=["res://.godot/imported/Color Organ Polyphonic.fs-f2dbf75263c1f780da76bb6f06006a4c.material"]
+
+[params]
+

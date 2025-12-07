@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://dgkxwbvnmago5"
+path="res://.godot/imported/Morph.fs-5333e6eefda7412c05fa0601754d4aef.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Morph.fs"
+dest_files=["res://.godot/imported/Morph.fs-5333e6eefda7412c05fa0601754d4aef.material"]
+
+[params]
+

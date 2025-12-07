@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://cv3f8sk6fj0qu"
+path="res://.godot/imported/Comet Tails.fs-4bd1590a5fd4d22a0655807ea83df5d1.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Comet Tails.fs"
+dest_files=["res://.godot/imported/Comet Tails.fs-4bd1590a5fd4d22a0655807ea83df5d1.material"]
+
+[params]
+

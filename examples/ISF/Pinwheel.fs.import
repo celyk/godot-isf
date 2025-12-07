@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://dytx30f387w8q"
+path="res://.godot/imported/Pinwheel.fs-c0289821e241e7379f5bddfb2323c6c1.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Pinwheel.fs"
+dest_files=["res://.godot/imported/Pinwheel.fs-c0289821e241e7379f5bddfb2323c6c1.material"]
+
+[params]
+

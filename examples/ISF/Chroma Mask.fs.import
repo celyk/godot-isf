@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://dicma81ndiu4o"
+path="res://.godot/imported/Chroma Mask.fs-3ae006a6d18923b14983c343b268e23e.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Chroma Mask.fs"
+dest_files=["res://.godot/imported/Chroma Mask.fs-3ae006a6d18923b14983c343b268e23e.material"]
+
+[params]
+

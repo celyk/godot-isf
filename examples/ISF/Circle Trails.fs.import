@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://da7ko5kfavqei"
+path="res://.godot/imported/Circle Trails.fs-6da944a134c10851a9f8a3f730ed1ae3.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Circle Trails.fs"
+dest_files=["res://.godot/imported/Circle Trails.fs-6da944a134c10851a9f8a3f730ed1ae3.material"]
+
+[params]
+

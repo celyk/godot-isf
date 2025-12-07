@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://bo3kepuyhxtjm"
+path="res://.godot/imported/Radial.fs-dba40665bd343ab8f245704ccf068128.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Radial.fs"
+dest_files=["res://.godot/imported/Radial.fs-dba40665bd343ab8f245704ccf068128.material"]
+
+[params]
+

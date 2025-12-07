@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://3pmla5wc0x68"
+path="res://.godot/imported/Heart.fs-d9a16776e91fa596d33d73f13e0682ba.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Heart.fs"
+dest_files=["res://.godot/imported/Heart.fs-d9a16776e91fa596d33d73f13e0682ba.material"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://hk0x7hkiwpt7"
+path="res://.godot/imported/Sphere Map.fs-5ade417372f363e71bfa1bf3732c5dd6.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Sphere Map.fs"
+dest_files=["res://.godot/imported/Sphere Map.fs-5ade417372f363e71bfa1bf3732c5dd6.material"]
+
+[params]
+

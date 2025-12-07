@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://clxpqu8p4lmdy"
+path="res://.godot/imported/Hexagonalize.fs-1a39e8d7b4b93844853d92ec0c755cb5.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Hexagonalize.fs"
+dest_files=["res://.godot/imported/Hexagonalize.fs-1a39e8d7b4b93844853d92ec0c755cb5.material"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://d2mhjagl0i2mg"
+path="res://.godot/imported/Edge Blur.fs-c2ff91e52d3f3eb6507a83d1ebd0a305.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Edge Blur.fs"
+dest_files=["res://.godot/imported/Edge Blur.fs-c2ff91e52d3f3eb6507a83d1ebd0a305.material"]
+
+[params]
+

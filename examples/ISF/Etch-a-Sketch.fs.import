@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://b06atit8gxxbq"
+path="res://.godot/imported/Etch-a-Sketch.fs-66c04ddc003d79647c5eef0bfa7bda68.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Etch-a-Sketch.fs"
+dest_files=["res://.godot/imported/Etch-a-Sketch.fs-66c04ddc003d79647c5eef0bfa7bda68.material"]
+
+[params]
+

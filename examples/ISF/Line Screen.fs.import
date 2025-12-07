@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://cllr4pponho8x"
+path="res://.godot/imported/Line Screen.fs-9fad26f3ff283f0235a2826200b3570c.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Line Screen.fs"
+dest_files=["res://.godot/imported/Line Screen.fs-9fad26f3ff283f0235a2826200b3570c.material"]
+
+[params]
+

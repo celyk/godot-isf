@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://ba4j700qrq3df"
+path="res://.godot/imported/Swap Transition.fs-d06ba9b08459871b18ec42fc80d022ad.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Swap Transition.fs"
+dest_files=["res://.godot/imported/Swap Transition.fs-d06ba9b08459871b18ec42fc80d022ad.material"]
+
+[params]
+

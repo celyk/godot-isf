@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://dvcfx5hw6yc6o"
+path="res://.godot/imported/FastMosh.fs-78bac069c7a564e9fe3ef057edfbecb7.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/FastMosh.fs"
+dest_files=["res://.godot/imported/FastMosh.fs-78bac069c7a564e9fe3ef057edfbecb7.material"]
+
+[params]
+

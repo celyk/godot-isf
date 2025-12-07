@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://b55jp7cigfx81"
+path="res://.godot/imported/Dual Side Scroller And Flip.fs-379c4a546657f705dca528dd0b941d45.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Dual Side Scroller And Flip.fs"
+dest_files=["res://.godot/imported/Dual Side Scroller And Flip.fs-379c4a546657f705dca528dd0b941d45.material"]
+
+[params]
+

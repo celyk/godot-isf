@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://ctrt72mtvmkad"
+path="res://.godot/imported/Glow-Fast.fs-305d79f59a38a728d780bace5c6a4cf3.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Glow-Fast.fs"
+dest_files=["res://.godot/imported/Glow-Fast.fs-305d79f59a38a728d780bace5c6a4cf3.material"]
+
+[params]
+

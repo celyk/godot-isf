@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://dfj0brv4f1yc6"
+path="res://.godot/imported/Poly Glitch.fs-eda24a12cb1116c32f93111b8e8ae8f3.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Poly Glitch.fs"
+dest_files=["res://.godot/imported/Poly Glitch.fs-eda24a12cb1116c32f93111b8e8ae8f3.material"]
+
+[params]
+

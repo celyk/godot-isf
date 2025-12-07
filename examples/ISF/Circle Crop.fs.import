@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://upeqhijj6d4"
+path="res://.godot/imported/Circle Crop.fs-4d23003f11eb8a0d23e7b4c9d8aa99d4.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Circle Crop.fs"
+dest_files=["res://.godot/imported/Circle Crop.fs-4d23003f11eb8a0d23e7b4c9d8aa99d4.material"]
+
+[params]
+

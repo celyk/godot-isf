@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://bbrwajeq3shlf"
+path="res://.godot/imported/Replicate Random.fs-8eddd652824e8ae2cc14c40869aff38a.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Replicate Random.fs"
+dest_files=["res://.godot/imported/Replicate Random.fs-8eddd652824e8ae2cc14c40869aff38a.material"]
+
+[params]
+

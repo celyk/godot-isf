@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://cc5hqpavn21pb"
+path="res://.godot/imported/Shape Morph Feedback Mask.fs-599bdcd8b291aa8cbe485b0696b364e0.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Shape Morph Feedback Mask.fs"
+dest_files=["res://.godot/imported/Shape Morph Feedback Mask.fs-599bdcd8b291aa8cbe485b0696b364e0.material"]
+
+[params]
+

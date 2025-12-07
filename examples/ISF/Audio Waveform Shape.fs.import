@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://d1r0fulhwhj7u"
+path="res://.godot/imported/Audio Waveform Shape.fs-012906121da7839f10f87b770e8cfb9d.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Audio Waveform Shape.fs"
+dest_files=["res://.godot/imported/Audio Waveform Shape.fs-012906121da7839f10f87b770e8cfb9d.material"]
+
+[params]
+

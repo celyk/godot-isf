@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://bqjq08pifqvf4"
+path="res://.godot/imported/Random Shape Blast.fs-ce9f5dc7990645511241e329e6d4490f.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Random Shape Blast.fs"
+dest_files=["res://.godot/imported/Random Shape Blast.fs-ce9f5dc7990645511241e329e6d4490f.material"]
+
+[params]
+

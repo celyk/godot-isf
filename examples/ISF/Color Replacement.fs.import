@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://csum744diw404"
+path="res://.godot/imported/Color Replacement.fs-780f07c12bcf0d48b3b6d4ebc7deb59f.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Color Replacement.fs"
+dest_files=["res://.godot/imported/Color Replacement.fs-780f07c12bcf0d48b3b6d4ebc7deb59f.material"]
+
+[params]
+

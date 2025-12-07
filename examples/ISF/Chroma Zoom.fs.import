@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://dqio55l0oi2lj"
+path="res://.godot/imported/Chroma Zoom.fs-fd6501761aceeaafe78780166eb842ca.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Chroma Zoom.fs"
+dest_files=["res://.godot/imported/Chroma Zoom.fs-fd6501761aceeaafe78780166eb842ca.material"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://gd2spfdjss1l"
+path="res://.godot/imported/Sketch.fs-7848a4b8248c516ba06abaf057ccb5b2.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Sketch.fs"
+dest_files=["res://.godot/imported/Sketch.fs-7848a4b8248c516ba06abaf057ccb5b2.material"]
+
+[params]
+

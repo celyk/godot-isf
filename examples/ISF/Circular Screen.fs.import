@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://blfvdspq1noes"
+path="res://.godot/imported/Circular Screen.fs-948a332fb4d54c31f37c875cc052c749.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Circular Screen.fs"
+dest_files=["res://.godot/imported/Circular Screen.fs-948a332fb4d54c31f37c875cc052c749.material"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://d4kygfylv8ydr"
+path="res://.godot/imported/Bordered Box.fs-8ad8957578d5fcc635301f6923976ca0.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Bordered Box.fs"
+dest_files=["res://.godot/imported/Bordered Box.fs-8ad8957578d5fcc635301f6923976ca0.material"]
+
+[params]
+

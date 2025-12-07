@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://befxietakofwn"
+path="res://.godot/imported/Kaleidoscope Transition.fs-2878448aa4cdc6bdc539f3b8e33ac4cf.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Kaleidoscope Transition.fs"
+dest_files=["res://.godot/imported/Kaleidoscope Transition.fs-2878448aa4cdc6bdc539f3b8e33ac4cf.material"]
+
+[params]
+

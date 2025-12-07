@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://g62dcjiebs0t"
+path="res://.godot/imported/Luma Transition.fs-873c78e9ffc79d47f41e55234b6741c7.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Luma Transition.fs"
+dest_files=["res://.godot/imported/Luma Transition.fs-873c78e9ffc79d47f41e55234b6741c7.material"]
+
+[params]
+

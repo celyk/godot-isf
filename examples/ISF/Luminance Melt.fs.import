@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://dajjoatvmiode"
+path="res://.godot/imported/Luminance Melt.fs-0a277e94bf7f6a835590250c4b882342.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Luminance Melt.fs"
+dest_files=["res://.godot/imported/Luminance Melt.fs-0a277e94bf7f6a835590250c4b882342.material"]
+
+[params]
+

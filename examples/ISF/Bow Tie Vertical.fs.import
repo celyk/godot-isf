@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://dwpqa225uskng"
+path="res://.godot/imported/Bow Tie Vertical.fs-ad09d28abe85c38fb406521493498a49.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Bow Tie Vertical.fs"
+dest_files=["res://.godot/imported/Bow Tie Vertical.fs-ad09d28abe85c38fb406521493498a49.material"]
+
+[params]
+

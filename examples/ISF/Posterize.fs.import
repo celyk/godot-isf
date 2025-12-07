@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://d1ogljb0wiqsa"
+path="res://.godot/imported/Posterize.fs-1d98283edfb9143c6a5c0f9722676dbd.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Posterize.fs"
+dest_files=["res://.godot/imported/Posterize.fs-1d98283edfb9143c6a5c0f9722676dbd.material"]
+
+[params]
+

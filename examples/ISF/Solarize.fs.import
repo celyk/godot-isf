@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://8hioh2hwpn23"
+path="res://.godot/imported/Solarize.fs-4929000dd39e40d4ccce66a7cba1796c.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Solarize.fs"
+dest_files=["res://.godot/imported/Solarize.fs-4929000dd39e40d4ccce66a7cba1796c.material"]
+
+[params]
+

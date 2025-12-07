@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://bgctjddiisn7w"
+path="res://.godot/imported/v002-CRT-Displacement.fs-5dce01104229bbb2b53c0e14173e0c37.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/v002-CRT-Displacement.fs"
+dest_files=["res://.godot/imported/v002-CRT-Displacement.fs-5dce01104229bbb2b53c0e14173e0c37.material"]
+
+[params]
+

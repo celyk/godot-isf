@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://xorkoccv0rja"
+path="res://.godot/imported/Optical Flow Generator.fs-a61a052b148829fd049fc36f60c73608.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Optical Flow Generator.fs"
+dest_files=["res://.godot/imported/Optical Flow Generator.fs-a61a052b148829fd049fc36f60c73608.material"]
+
+[params]
+

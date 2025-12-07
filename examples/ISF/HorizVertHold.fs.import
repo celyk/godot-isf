@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://btefwiy365gxu"
+path="res://.godot/imported/HorizVertHold.fs-e7b4ffdf2cd68af913b9301204e8e600.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/HorizVertHold.fs"
+dest_files=["res://.godot/imported/HorizVertHold.fs-e7b4ffdf2cd68af913b9301204e8e600.material"]
+
+[params]
+

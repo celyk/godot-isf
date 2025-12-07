@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://bjsl1u5tq8s77"
+path="res://.godot/imported/Spiral.fs-f32fa5601c86d14440cadad471ac42dd.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Spiral.fs"
+dest_files=["res://.godot/imported/Spiral.fs-f32fa5601c86d14440cadad471ac42dd.material"]
+
+[params]
+

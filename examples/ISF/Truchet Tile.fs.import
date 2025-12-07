@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://doqnevyqi0i8w"
+path="res://.godot/imported/Truchet Tile.fs-8d403c8d1e79479515533f4da89ae5fc.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Truchet Tile.fs"
+dest_files=["res://.godot/imported/Truchet Tile.fs-8d403c8d1e79479515533f4da89ae5fc.material"]
+
+[params]
+

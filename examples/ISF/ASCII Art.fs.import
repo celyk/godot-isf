@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://baw5rwcmhblce"
+path="res://.godot/imported/ASCII Art.fs-7af3ba77b816c330f966af86ad589f95.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/ASCII Art.fs"
+dest_files=["res://.godot/imported/ASCII Art.fs-7af3ba77b816c330f966af86ad589f95.material"]
+
+[params]
+

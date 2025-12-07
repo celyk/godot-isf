@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://dnaib2urarjts"
+path="res://.godot/imported/Vertex Manipulator.fs-cca796390a103acaa5f9ec2e84b97ec3.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Vertex Manipulator.fs"
+dest_files=["res://.godot/imported/Vertex Manipulator.fs-cca796390a103acaa5f9ec2e84b97ec3.material"]
+
+[params]
+

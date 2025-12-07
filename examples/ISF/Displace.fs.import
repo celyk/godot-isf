@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://bnld2uuwh2ak7"
+path="res://.godot/imported/Displace.fs-66f7f8a1d996208c321675b5ef70d3ee.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Displace.fs"
+dest_files=["res://.godot/imported/Displace.fs-66f7f8a1d996208c321675b5ef70d3ee.material"]
+
+[params]
+

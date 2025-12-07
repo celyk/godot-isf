@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://bu27n6v0prqpw"
+path="res://.godot/imported/Wipe Right.fs-32bbd9492b8cabc4b5bb0986fe65e26f.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Wipe Right.fs"
+dest_files=["res://.godot/imported/Wipe Right.fs-32bbd9492b8cabc4b5bb0986fe65e26f.material"]
+
+[params]
+

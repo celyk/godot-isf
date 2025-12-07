@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://dhd428b1834u5"
+path="res://.godot/imported/Waveform Displace.fs-69f11dd648d8be1266061299e1d41d0f.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Waveform Displace.fs"
+dest_files=["res://.godot/imported/Waveform Displace.fs-69f11dd648d8be1266061299e1d41d0f.material"]
+
+[params]
+

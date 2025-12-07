@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://cg24tfdq28ubg"
+path="res://.godot/imported/Circle Warp.fs-fd011f527ebb345e49b1fb7208032168.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Circle Warp.fs"
+dest_files=["res://.godot/imported/Circle Warp.fs-fd011f527ebb345e49b1fb7208032168.material"]
+
+[params]
+

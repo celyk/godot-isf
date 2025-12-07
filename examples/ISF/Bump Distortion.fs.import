@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://b4pie2usik1vo"
+path="res://.godot/imported/Bump Distortion.fs-9f18e696ee7e6fda50206c1387cd1dd5.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Bump Distortion.fs"
+dest_files=["res://.godot/imported/Bump Distortion.fs-9f18e696ee7e6fda50206c1387cd1dd5.material"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://b803writn6lm8"
+path="res://.godot/imported/Slit Scan.fs-81ae11dd4da7dd97fdccb995e6215624.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Slit Scan.fs"
+dest_files=["res://.godot/imported/Slit Scan.fs-81ae11dd4da7dd97fdccb995e6215624.material"]
+
+[params]
+

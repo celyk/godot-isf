@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://dktb8hpu30jvh"
+path="res://.godot/imported/Heart Transition.fs-a43337209305a2f7c12f288d178e866a.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Heart Transition.fs"
+dest_files=["res://.godot/imported/Heart Transition.fs-a43337209305a2f7c12f288d178e866a.material"]
+
+[params]
+

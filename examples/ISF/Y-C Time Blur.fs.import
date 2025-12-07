@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://be24d0aitj13a"
+path="res://.godot/imported/Y-C Time Blur.fs-ea825613644c5f7e99d573570bd81bae.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Y-C Time Blur.fs"
+dest_files=["res://.godot/imported/Y-C Time Blur.fs-ea825613644c5f7e99d573570bd81bae.material"]
+
+[params]
+

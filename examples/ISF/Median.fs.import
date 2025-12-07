@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://dt2wrilrvqm4k"
+path="res://.godot/imported/Median.fs-12ec007455a2d3dec7874d8c036d7bdd.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Median.fs"
+dest_files=["res://.godot/imported/Median.fs-12ec007455a2d3dec7874d8c036d7bdd.material"]
+
+[params]
+

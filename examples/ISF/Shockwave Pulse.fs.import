@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://cjy2mexsmgycn"
+path="res://.godot/imported/Shockwave Pulse.fs-ef9ab0ecf32a7a931e84a2e0d6bb7276.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Shockwave Pulse.fs"
+dest_files=["res://.godot/imported/Shockwave Pulse.fs-ef9ab0ecf32a7a931e84a2e0d6bb7276.material"]
+
+[params]
+

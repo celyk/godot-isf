@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://bul4ia3ylf05u"
+path="res://.godot/imported/Dirty Lens.fs-84d4707bb3791aea8f76df068f76053a.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Dirty Lens.fs"
+dest_files=["res://.godot/imported/Dirty Lens.fs-84d4707bb3791aea8f76df068f76053a.material"]
+
+[params]
+

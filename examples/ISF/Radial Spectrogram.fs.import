@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://chi40vdslw1ye"
+path="res://.godot/imported/Radial Spectrogram.fs-befff564258b13c6d9ff847962714efb.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Radial Spectrogram.fs"
+dest_files=["res://.godot/imported/Radial Spectrogram.fs-befff564258b13c6d9ff847962714efb.material"]
+
+[params]
+

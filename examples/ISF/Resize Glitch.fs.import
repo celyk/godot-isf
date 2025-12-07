@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://wv1imjelpos6"
+path="res://.godot/imported/Resize Glitch.fs-6d16e05a9be4b0d1021e6629014f9d43.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Resize Glitch.fs"
+dest_files=["res://.godot/imported/Resize Glitch.fs-6d16e05a9be4b0d1021e6629014f9d43.material"]
+
+[params]
+

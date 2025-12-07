@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://cjqe4dkkac4a4"
+path="res://.godot/imported/Line Group.fs-55f29b179a5bc5c457382f11f089ba43.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Line Group.fs"
+dest_files=["res://.godot/imported/Line Group.fs-55f29b179a5bc5c457382f11f089ba43.material"]
+
+[params]
+

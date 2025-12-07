@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://c7bm1pf3bguwj"
+path="res://.godot/imported/Dot Screen.fs-c670c5107695eccb1d440c28165c3fa2.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Dot Screen.fs"
+dest_files=["res://.godot/imported/Dot Screen.fs-c670c5107695eccb1d440c28165c3fa2.material"]
+
+[params]
+

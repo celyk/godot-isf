@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://cg3h3qyedee8m"
+path="res://.godot/imported/Random Characters.fs-a1bee793cb8c5677eabc11cdc3133bcd.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Random Characters.fs"
+dest_files=["res://.godot/imported/Random Characters.fs-a1bee793cb8c5677eabc11cdc3133bcd.material"]
+
+[params]
+

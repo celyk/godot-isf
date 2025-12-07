@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://42ks7cyjkolx"
+path="res://.godot/imported/Show Alpha.fs-03a1e96f64f81284026cc290085596b8.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Show Alpha.fs"
+dest_files=["res://.godot/imported/Show Alpha.fs-03a1e96f64f81284026cc290085596b8.material"]
+
+[params]
+

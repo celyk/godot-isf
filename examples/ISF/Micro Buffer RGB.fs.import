@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://c2w6s5rkrwtai"
+path="res://.godot/imported/Micro Buffer RGB.fs-0b1972762367f42e173876e4b81bc0ca.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Micro Buffer RGB.fs"
+dest_files=["res://.godot/imported/Micro Buffer RGB.fs-0b1972762367f42e173876e4b81bc0ca.material"]
+
+[params]
+

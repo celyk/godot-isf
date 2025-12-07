@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://brjktohfgop1d"
+path="res://.godot/imported/Triangle Warp.fs-4a353cbcacd7e9dc14b3007fd96906f7.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Triangle Warp.fs"
+dest_files=["res://.godot/imported/Triangle Warp.fs-4a353cbcacd7e9dc14b3007fd96906f7.material"]
+
+[params]
+

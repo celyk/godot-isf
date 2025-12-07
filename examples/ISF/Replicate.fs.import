@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://b024jpeqxu21c"
+path="res://.godot/imported/Replicate.fs-cef92580663fdd47f838a75d913e051a.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Replicate.fs"
+dest_files=["res://.godot/imported/Replicate.fs-cef92580663fdd47f838a75d913e051a.material"]
+
+[params]
+

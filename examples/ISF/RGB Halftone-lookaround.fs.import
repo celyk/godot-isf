@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://cycmyckrj2ujr"
+path="res://.godot/imported/RGB Halftone-lookaround.fs-de7367b1be4e8004c5612178b5097d09.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/RGB Halftone-lookaround.fs"
+dest_files=["res://.godot/imported/RGB Halftone-lookaround.fs-de7367b1be4e8004c5612178b5097d09.material"]
+
+[params]
+

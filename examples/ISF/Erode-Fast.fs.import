@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://do45jaj365wgy"
+path="res://.godot/imported/Erode-Fast.fs-829c08432e67c44883bce8f53dfcb663.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Erode-Fast.fs"
+dest_files=["res://.godot/imported/Erode-Fast.fs-829c08432e67c44883bce8f53dfcb663.material"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://bwxen1n1avf15"
+path="res://.godot/imported/Linear Gradient.fs-9d06d0d249a435fbfa4ff22d79ec4310.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Linear Gradient.fs"
+dest_files=["res://.godot/imported/Linear Gradient.fs-9d06d0d249a435fbfa4ff22d79ec4310.material"]
+
+[params]
+

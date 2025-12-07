@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://q6eqg5jqfsnt"
+path="res://.godot/imported/White Point Adjust.fs-943dab506b454e5fd021ca8778b445b0.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/White Point Adjust.fs"
+dest_files=["res://.godot/imported/White Point Adjust.fs-943dab506b454e5fd021ca8778b445b0.material"]
+
+[params]
+

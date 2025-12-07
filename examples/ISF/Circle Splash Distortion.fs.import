@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://dtrn8krd054w0"
+path="res://.godot/imported/Circle Splash Distortion.fs-6d32f5083a01398e2d3b91446b6b4532.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Circle Splash Distortion.fs"
+dest_files=["res://.godot/imported/Circle Splash Distortion.fs-6d32f5083a01398e2d3b91446b6b4532.material"]
+
+[params]
+

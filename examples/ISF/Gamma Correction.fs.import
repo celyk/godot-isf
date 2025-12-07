@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://c6jjjjx2sgc8t"
+path="res://.godot/imported/Gamma Correction.fs-52644a56b3c1b8b45976f16ef0661789.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Gamma Correction.fs"
+dest_files=["res://.godot/imported/Gamma Correction.fs-52644a56b3c1b8b45976f16ef0661789.material"]
+
+[params]
+

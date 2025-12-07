@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://dxeawb5cn8tr1"
+path="res://.godot/imported/Noise Pixellate.fs-efb8ce91fb9cd14769fc57cf5a085466.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Noise Pixellate.fs"
+dest_files=["res://.godot/imported/Noise Pixellate.fs-efb8ce91fb9cd14769fc57cf5a085466.material"]
+
+[params]
+

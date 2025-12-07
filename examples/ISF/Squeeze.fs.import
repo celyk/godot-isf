@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://n6uxrw0kjp1r"
+path="res://.godot/imported/Squeeze.fs-1a814528aa6c609b9ea955708ae88456.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Squeeze.fs"
+dest_files=["res://.godot/imported/Squeeze.fs-1a814528aa6c609b9ea955708ae88456.material"]
+
+[params]
+

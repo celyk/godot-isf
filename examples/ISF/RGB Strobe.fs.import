@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://wcy1gfrb6m5c"
+path="res://.godot/imported/RGB Strobe.fs-555e8194a1a8e725aea8ae61e470d5ae.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/RGB Strobe.fs"
+dest_files=["res://.godot/imported/RGB Strobe.fs-555e8194a1a8e725aea8ae61e470d5ae.material"]
+
+[params]
+

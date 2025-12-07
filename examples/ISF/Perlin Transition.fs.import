@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://glpp6ts6hmq4"
+path="res://.godot/imported/Perlin Transition.fs-479bd063d32058231c9932f0b4cc6e47.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Perlin Transition.fs"
+dest_files=["res://.godot/imported/Perlin Transition.fs-479bd063d32058231c9932f0b4cc6e47.material"]
+
+[params]
+

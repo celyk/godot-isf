@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://blpctcr4ag717"
+path="res://.godot/imported/Video Snake.fs-c1822a33a38547fa8c91433cdea28176.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Video Snake.fs"
+dest_files=["res://.godot/imported/Video Snake.fs-c1822a33a38547fa8c91433cdea28176.material"]
+
+[params]
+

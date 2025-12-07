@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://dkiqtud4msobf"
+path="res://.godot/imported/Channel Slide.fs-89d844f920abfb07738b964c4c4a45c7.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Channel Slide.fs"
+dest_files=["res://.godot/imported/Channel Slide.fs-89d844f920abfb07738b964c4c4a45c7.material"]
+
+[params]
+

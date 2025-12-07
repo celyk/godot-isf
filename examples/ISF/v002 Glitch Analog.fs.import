@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://bntxfd3f7h0l4"
+path="res://.godot/imported/v002 Glitch Analog.fs-4838029dc62e41e0b997246e8b603887.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/v002 Glitch Analog.fs"
+dest_files=["res://.godot/imported/v002 Glitch Analog.fs-4838029dc62e41e0b997246e8b603887.material"]
+
+[params]
+

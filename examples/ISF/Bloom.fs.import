@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://b1g4ala7aeaqf"
+path="res://.godot/imported/Bloom.fs-a7d0e83ea8b2d1724dbb20861619249a.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Bloom.fs"
+dest_files=["res://.godot/imported/Bloom.fs-a7d0e83ea8b2d1724dbb20861619249a.material"]
+
+[params]
+

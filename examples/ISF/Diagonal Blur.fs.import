@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://cr3afvipg8jct"
+path="res://.godot/imported/Diagonal Blur.fs-863e9bf05085322dc3f138ef0761f60d.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Diagonal Blur.fs"
+dest_files=["res://.godot/imported/Diagonal Blur.fs-863e9bf05085322dc3f138ef0761f60d.material"]
+
+[params]
+

@@ -17,7 +17,7 @@ vec2 imageSize = IMG_SIZE(image imageName);
 #define IMG_THIS
 
 #define RENDERSIZE VIEWPORT_SIZE
-#define TIME TIME
+//#define TIME TIME
 #define isf_FragNormCoord SCREEN_UV
 
 // Magic to redirect the function body to fragment()
@@ -40,5 +40,5 @@ vec2 imageSize = IMG_SIZE(image imageName);
 // GLSL compatibility
 #define gl_FragCoord FRAGCOORD
 #define gl_FragColor COLOR
-
+#define __VERSION__ 100
 #endif /*ISF*/

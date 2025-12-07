@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://dj1ighmgsoc2j"
+path="res://.godot/imported/Auto Color Tone.fs-42c56f8afc319e861f1df2c0f219c3e5.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Auto Color Tone.fs"
+dest_files=["res://.godot/imported/Auto Color Tone.fs-42c56f8afc319e861f1df2c0f219c3e5.material"]
+
+[params]
+

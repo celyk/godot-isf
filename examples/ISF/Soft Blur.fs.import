@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://cktbf0j3bful3"
+path="res://.godot/imported/Soft Blur.fs-9129e3184b8ee05feb38ded00df952c7.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Soft Blur.fs"
+dest_files=["res://.godot/imported/Soft Blur.fs-9129e3184b8ee05feb38ded00df952c7.material"]
+
+[params]
+

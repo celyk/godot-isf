@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://x0habhm3tqpm"
+path="res://.godot/imported/Echo Trace.fs-6c85b81cb35e989b0f079a5bad5f2804.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Echo Trace.fs"
+dest_files=["res://.godot/imported/Echo Trace.fs-6c85b81cb35e989b0f079a5bad5f2804.material"]
+
+[params]
+

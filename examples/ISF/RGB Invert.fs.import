@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://ckd4dwsolhdmu"
+path="res://.godot/imported/RGB Invert.fs-684a0a56c35f96152b1a2ff4786ce80e.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/RGB Invert.fs"
+dest_files=["res://.godot/imported/RGB Invert.fs-684a0a56c35f96152b1a2ff4786ce80e.material"]
+
+[params]
+

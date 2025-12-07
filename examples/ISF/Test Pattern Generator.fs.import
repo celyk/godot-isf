@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://diq7nv7k5huoi"
+path="res://.godot/imported/Test Pattern Generator.fs-2940d8af95dec74d46b7d636d2721325.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Test Pattern Generator.fs"
+dest_files=["res://.godot/imported/Test Pattern Generator.fs-2940d8af95dec74d46b7d636d2721325.material"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://cs78pf8n7sj5r"
+path="res://.godot/imported/Histogram Viewer.fs-608c841d89ab73fa15bbd446a4eb2a4f.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Histogram Viewer.fs"
+dest_files=["res://.godot/imported/Histogram Viewer.fs-608c841d89ab73fa15bbd446a4eb2a4f.material"]
+
+[params]
+

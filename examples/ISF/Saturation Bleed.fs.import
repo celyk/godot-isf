@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://c7uqa7bqtwhed"
+path="res://.godot/imported/Saturation Bleed.fs-842e79b20ad9baff93491eaeaa19b2a9.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Saturation Bleed.fs"
+dest_files=["res://.godot/imported/Saturation Bleed.fs-842e79b20ad9baff93491eaeaa19b2a9.material"]
+
+[params]
+

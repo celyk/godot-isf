@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://d1bfwsvk6jvi3"
+path="res://.godot/imported/Mosaic.fs-74682696d3739a84b68e589efb38fce8.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Mosaic.fs"
+dest_files=["res://.godot/imported/Mosaic.fs-74682696d3739a84b68e589efb38fce8.material"]
+
+[params]
+

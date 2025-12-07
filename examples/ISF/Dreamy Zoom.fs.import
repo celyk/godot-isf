@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://j4wsp2brdru1"
+path="res://.godot/imported/Dreamy Zoom.fs-4db1eda0e46b7a65f2233d6417c5c1a2.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Dreamy Zoom.fs"
+dest_files=["res://.godot/imported/Dreamy Zoom.fs-4db1eda0e46b7a65f2233d6417c5c1a2.material"]
+
+[params]
+

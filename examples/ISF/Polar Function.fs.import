@@ -1,0 +1,14 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://b1jb0ryn78t3c"
+path="res://.godot/imported/Polar Function.fs-1975fcb6dcfe9ad6553f8655189190b0.material"
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF/Polar Function.fs"
+dest_files=["res://.godot/imported/Polar Function.fs-1975fcb6dcfe9ad6553f8655189190b0.material"]
+
+[params]
+
