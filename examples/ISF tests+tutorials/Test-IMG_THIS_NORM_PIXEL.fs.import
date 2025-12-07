@@ -1,0 +1,13 @@
+[remap]
+
+importer="ISFImporter"
+type="Shader"
+uid="uid://m2tfsb2vnsxg"
+valid=false
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF tests+tutorials/Test-IMG_THIS_NORM_PIXEL.fs"
+
+[params]
+

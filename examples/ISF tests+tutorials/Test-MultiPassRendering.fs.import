@@ -1,0 +1,13 @@
+[remap]
+
+importer="ISFImporter"
+type="Shader"
+uid="uid://d1tridgutuagt"
+valid=false
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF tests+tutorials/Test-MultiPassRendering.fs"
+
+[params]
+

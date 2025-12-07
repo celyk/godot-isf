@@ -1,0 +1,13 @@
+[remap]
+
+importer="ISFImporter"
+type="ShaderMaterial"
+uid="uid://dxkgnc8i7t0l5"
+valid=false
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF tests+tutorials/Test-Audio.fs"
+
+[params]
+

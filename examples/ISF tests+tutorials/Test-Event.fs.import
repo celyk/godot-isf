@@ -1,0 +1,13 @@
+[remap]
+
+importer="ISFImporter"
+type="Shader"
+uid="uid://dfkitem4im1si"
+valid=false
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF tests+tutorials/Test-Event.fs"
+
+[params]
+

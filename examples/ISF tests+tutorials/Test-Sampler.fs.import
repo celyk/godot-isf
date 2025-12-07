@@ -1,0 +1,13 @@
+[remap]
+
+importer="ISFImporter"
+type="Shader"
+uid="uid://cq2aohjywfgyb"
+valid=false
+
+[deps]
+
+source_file="res://addons/godot-isf/examples/ISF tests+tutorials/Test-Sampler.fs"
+
+[params]
+
