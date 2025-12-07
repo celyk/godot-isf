@@ -12,6 +12,14 @@ After I get most features working, I hope to add an export button so that Godot 
 
 The generated ShaderMaterial should be directly accessable on the scene node. You can peak at the inner workings by right clicking on it and ticking Editable Children
 
+# Features
+
+- [] Basic ISF support
+- [] Multi-passes
+- [] Persistent buffers
+- [] Audio reactivity (FFT)
+- [] Import from standard ISF directory
+
 # Limitations
 
 I did my best to follow the ISF [specification](https://github.com/mrRay/ISF_Spec), but unfortunately not every GLSL feature can be accounted for in Godot shaders
