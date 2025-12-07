@@ -11,7 +11,9 @@ To use the addon, drag in your .fs files to the project directory. The scene tha
 
 # Support
 
-You can support this addon by reporting bugs and donating on kofi
+You can support this addon by reporting bugs and donating via kofi
+
+https://ko-fi.com/celyk
 
 # Resources
 
