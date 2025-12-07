@@ -2,10 +2,10 @@
 #define ISF
 
 /*
-vec4 pixelColor = IMG_PIXEL(image imageName, vec2 pixelCoord); 
+vec4 pixelColor = IMG_PIXEL(image imageName, vec2 pixelCoord);
 vec4 pixelColor = IMG_NORM_PIXEL(image imageName, vec2 normalizedPixelCoord);
-vec4 pixelColor = IMG_THIS_PIXEL(image imageName); 
-vec4 pixelColor = IMG_NORM_THIS_PIXEL(image imageName); 
+vec4 pixelColor = IMG_THIS_PIXEL(image imageName);
+vec4 pixelColor = IMG_NORM_THIS_PIXEL(image imageName);
 vec2 imageSize = IMG_SIZE(image imageName);
 */
 
@@ -20,7 +20,8 @@ vec2 imageSize = IMG_SIZE(image imageName);
 #define TIME TIME
 #define isf_FragNormCoord SCREEN_UV
 
-#define main fragment
+// Magic to redirect the function body to fragment()
+#define main _dummy(){} void fragment
 
 // Unsupported
 // TODO: proper support
@@ -36,7 +37,7 @@ vec2 imageSize = IMG_SIZE(image imageName);
 #define vv_FragNormCoord isf_FragNormCoord
 #define vv_vertShaderInit isf_vertShaderInit
 
-// GLSL compatibility 
+// GLSL compatibility
 #define gl_FragCoord FRAGCOORD
 #define gl_FragColor COLOR
 
