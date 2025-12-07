@@ -22,7 +22,7 @@ static func create(path:String) -> ISFLoader:
 func compile_shader(shader_type:=0) -> ShaderMaterial:
 	var material := ShaderMaterial.new()
 	
-	var godot_shader_code := '''// Godot Shader converted from ISF (Interactive Shader Format)
+	var godot_shader_code := '''// Godot Shader generated from ISF (Interactive Shader Format)
 
 shader_type canvas_item;
 
