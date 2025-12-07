@@ -1,6 +1,17 @@
 # Godot ISF
 
-Resources:
+[WIP]
+The addon allows importing an ISF file (.fs) to a PackedScene that contains the buffers and shaders required to replicate the effect.
+
+# Usage
+
+To use the addon, drag in your .fs files to the project directory. The scene that is generated can be dragged in.
+
+# Support
+
+You can support this addon by reporting bugs and donating on kofi
+
+# Resources
 
 https://github.com/mrRay/ISF_Spec
 https://docs.isf.video/quickstart.html#using-isf-compositions
