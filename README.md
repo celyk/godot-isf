@@ -14,11 +14,11 @@ The generated ShaderMaterial should be directly accessable on the scene node. Yo
 
 # Features
 
-- [] Basic ISF support
-- [] Multi-passes
-- [] Persistent buffers
-- [] Audio reactivity (FFT)
-- [] Import from standard ISF directory
+- [ ] Basic ISF support
+- [ ] Multi-passes
+- [ ] Persistent buffers
+- [ ] Audio reactivity (FFT)
+- [ ] Import from standard ISF directory
 
 # Limitations
 
