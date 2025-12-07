@@ -10,6 +10,8 @@ After I get most features working, I hope to add an export button so that Godot 
 2. Enable the addon in your project settings
 3. Drag in your .fs files to the project directory. They will be automatically converted to a scene file
 
+The ShaderMaterial should be directly accessable on the scene. You can peak at the inner workings by right clicking on it and ticking Editable Children
+
 # Limitations
 
 I did my best to follow the ISF [specification](https://github.com/mrRay/ISF_Spec), but unfortunately not every GLSL feature can be accounted for in Godot shaders
