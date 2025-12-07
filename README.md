@@ -7,6 +7,8 @@ After I get most features working, I hope to add an export button so that Godot 
 
 # Usage
 
+Clone this repo and move the directory under your projects /addons directory
+
 To use the addon, drag in your .fs files to the project directory. The scene that is generated can be dragged in.
 
 # Support
