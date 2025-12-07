@@ -20,6 +20,10 @@ I did my best to follow the ISF [specification](https://github.com/mrRay/ISF_Spe
 
 If you come across a limitation not listed here, please report it by filing an issue on this repository
 
+# Writing an ISF shader in Godot
+
+TODO
+
 # Support
 
 You can support this addon by reporting bugs and donating via kofi
