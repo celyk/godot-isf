@@ -7,9 +7,16 @@ After I get most features working, I hope to add an export button so that Godot 
 
 # Usage
 
-Clone this repo and move the directory under your projects /addons directory
+1. Clone this repo and move the directory under your projects /addons directory
+2. Enable the addon in your project settings
+3. Drag in your .fs files to the project directory. They will be automatically converted to a scene file
 
-To use the addon, drag in your .fs files to the project directory. The scene that is generated can be dragged in.
+# Limitations
+
+I did my best to follow the ISF specification, but unfortunately not every GLSL feature can be accounted for in Godot shaders
+- Function overloading. You will get an error if the ISF shader overloads a built in function. To fix it you will have to rename the function.
+
+If you come across a limitatoin not listed here, please report it by filing an issue on this repository
 
 # Support
 
