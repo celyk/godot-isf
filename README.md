@@ -1,6 +1,5 @@
-# Godot ISF
+# Godot ISF [WIP]
 
-[WIP]
 The addon allows importing an ISF file (.fs) to a PackedScene that contains the buffers and shaders required to replicate the effect.
 
 After I get most features working, I hope to add an export button so that Godot can be used for developing ISF!
