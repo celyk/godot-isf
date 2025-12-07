@@ -25,6 +25,7 @@ vec2 imageSize = IMG_SIZE(image imageName);
 
 // Unsupported
 // TODO: proper support
+// Should be a uniform? A few of them can be
 #define PASSINDEX 0
 #define FRAMEINDEX (0)
 #define DATE vec4(0)
