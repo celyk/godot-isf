@@ -13,14 +13,33 @@ const isf_type_map := {
 	"audioFFT": "Texture2D",
 }
 
+var json : JSON
+
 func parse(source:String) -> void:
-	var json : JSON = _extract_json_comment(source)
+	json = _extract_json_from_first_comment(source)
+	#print( Array(get_inputs()) )
 
-func get_input(name:String) -> Variant:
-	return 0
+func get_inputs() -> Array:
+	return json.data["INPUTS"]
 
-func _extract_json_comment(source:String) -> JSON:
-	var json_start : int = source.find("/*")+2
+func get_input_names() -> Array:
+	var inputs : Array = get_inputs()
+	
+	return inputs.map(func(a): return a["NAME"])
+
+func _get_input_internal(name:String) -> Variant:
+	var inputs : Array = get_inputs()
+	var index := inputs.find_custom(func(a): return a["NAME"] == name)
+	return json.data["INPUTS"][index]
+
+func get_input_value(name:String) -> Variant:
+	return _get_input_internal(name)["DEFAULT"]
+
+func get_input_type(name:String) -> String:
+	return isf_type_map[_get_input_internal(name)["TYPE"]]
+
+func _extract_json_from_first_comment(source:String) -> JSON:
+	var json_start : int = source.find("/*") + 2
 	var json_end : int = source.find("*/", json_start)
 	
 	var json_substr : String = source.substr(json_start, json_end-json_start)
@@ -31,6 +50,6 @@ func _extract_json_comment(source:String) -> JSON:
 	json.parse(json_substr)
 	
 	#print(json.data)
-	print(json.data["INPUTS"])
+	#print(get_inputs())
 	
 	return json
