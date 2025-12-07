@@ -10,7 +10,7 @@ After I get most features working, I hope to add an export button so that Godot 
 2. Enable the addon in your project settings
 3. Drag in your .fs files to the project directory. They will be automatically converted to a scene file
 
-The generated ShaderMaterial should be directly accessable on the scene. You can peak at the inner workings by right clicking on it and ticking Editable Children
+The generated ShaderMaterial should be directly accessable on the scene node. You can peak at the inner workings by right clicking on it and ticking Editable Children
 
 # Limitations
 
