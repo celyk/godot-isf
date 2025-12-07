@@ -11,7 +11,8 @@ vec2 imageSize = IMG_SIZE(image imageName);
 
 // ISF 2.0 -> Godot shader renames
 #define IMG_NORM_PIXEL(A,B) texture(A,B)
-#define IMG_NORM_THIS_PIXEL(A,B) IMG_PIXEL(A, SCREEN_UV)
+#define IMG_NORM_THIS_PIXEL(A) IMG_NORM_PIXEL(A, SCREEN_UV)
+#define IMG_THIS_NORM_PIXEL(A) IMG_NORM_PIXEL(A, SCREEN_UV)
 #define IMG_SIZE(A) vec2(textureSize(A,0))
 #define IMG_THIS
 
@@ -27,7 +28,7 @@ vec2 imageSize = IMG_SIZE(image imageName);
 #define FRAMEINDEX (0)
 #define DATE vec4(0)
 #define TIMEDELTA (1.0 / 60.0)
-#define IMG_PIXEL(A,B) texelFetch(A,B)
+#define IMG_PIXEL(A,B) texelFetch(A, ivec2(B+0.5), 0)
 #define IMG_THIS_PIXEL(A) texture(A, SCREEN_UV)
 
 
