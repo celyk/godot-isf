@@ -16,7 +16,7 @@ I did my best to follow the ISF [specification](https://github.com/mrRay/ISF_Spe
 - Function overloading. You will get an error if the ISF shader overloads a built in function. To fix it you will have to rename the function.
 - Global variables, similarly.
 
-If you come across a limitatoin not listed here, please report it by filing an issue on this repository
+If you come across a limitation not listed here, please report it by filing an issue on this repository
 
 # Support
 
