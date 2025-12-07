@@ -1,13 +1,14 @@
 [remap]
 
 importer="ISFImporter"
-type="Shader"
+type="ShaderMaterial"
 uid="uid://cq2aohjywfgyb"
-valid=false
+path="res://.godot/imported/Test-Sampler.fs-fae0e9f33603588691f85c7353153bdf.material"
 
 [deps]
 
 source_file="res://addons/godot-isf/examples/ISF tests+tutorials/Test-Sampler.fs"
+dest_files=["res://.godot/imported/Test-Sampler.fs-fae0e9f33603588691f85c7353153bdf.material"]
 
 [params]
 

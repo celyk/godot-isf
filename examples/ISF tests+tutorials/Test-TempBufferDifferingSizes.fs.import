@@ -1,13 +1,14 @@
 [remap]
 
 importer="ISFImporter"
-type="Shader"
+type="ShaderMaterial"
 uid="uid://kaw83ev4fpn2"
-valid=false
+path="res://.godot/imported/Test-TempBufferDifferingSizes.fs-57b0ba0e45cec7aa154a82352085ae1d.material"
 
 [deps]
 
 source_file="res://addons/godot-isf/examples/ISF tests+tutorials/Test-TempBufferDifferingSizes.fs"
+dest_files=["res://.godot/imported/Test-TempBufferDifferingSizes.fs-57b0ba0e45cec7aa154a82352085ae1d.material"]
 
 [params]
 

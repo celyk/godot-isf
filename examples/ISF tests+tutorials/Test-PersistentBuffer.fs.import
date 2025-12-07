@@ -1,13 +1,14 @@
 [remap]
 
 importer="ISFImporter"
-type="Shader"
+type="ShaderMaterial"
 uid="uid://c1wuhfpl25e2l"
-valid=false
+path="res://.godot/imported/Test-PersistentBuffer.fs-32343cfeed243d1c5a862cb041281bde.material"
 
 [deps]
 
 source_file="res://addons/godot-isf/examples/ISF tests+tutorials/Test-PersistentBuffer.fs"
+dest_files=["res://.godot/imported/Test-PersistentBuffer.fs-32343cfeed243d1c5a862cb041281bde.material"]
 
 [params]
 

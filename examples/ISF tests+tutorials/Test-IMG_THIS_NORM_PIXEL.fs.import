@@ -1,13 +1,14 @@
 [remap]
 
 importer="ISFImporter"
-type="Shader"
+type="ShaderMaterial"
 uid="uid://m2tfsb2vnsxg"
-valid=false
+path="res://.godot/imported/Test-IMG_THIS_NORM_PIXEL.fs-6cc901e00317ec9e4ff32ef7f3496157.material"
 
 [deps]
 
 source_file="res://addons/godot-isf/examples/ISF tests+tutorials/Test-IMG_THIS_NORM_PIXEL.fs"
+dest_files=["res://.godot/imported/Test-IMG_THIS_NORM_PIXEL.fs-6cc901e00317ec9e4ff32ef7f3496157.material"]
 
 [params]
 

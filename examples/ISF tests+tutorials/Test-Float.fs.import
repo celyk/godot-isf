@@ -1,13 +1,14 @@
 [remap]
 
 importer="ISFImporter"
-type="Shader"
+type="ShaderMaterial"
 uid="uid://d1n6nfdu5574l"
-valid=false
+path="res://.godot/imported/Test-Float.fs-76fda133d1d06c35de59143308fe0ed1.material"
 
 [deps]
 
 source_file="res://addons/godot-isf/examples/ISF tests+tutorials/Test-Float.fs"
+dest_files=["res://.godot/imported/Test-Float.fs-76fda133d1d06c35de59143308fe0ed1.material"]
 
 [params]
 

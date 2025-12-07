@@ -3,11 +3,12 @@
 importer="ISFImporter"
 type="ShaderMaterial"
 uid="uid://dxkgnc8i7t0l5"
-valid=false
+path="res://.godot/imported/Test-Audio.fs-230f9683230a70dc22cbe6fc9ecf1817.material"
 
 [deps]
 
 source_file="res://addons/godot-isf/examples/ISF tests+tutorials/Test-Audio.fs"
+dest_files=["res://.godot/imported/Test-Audio.fs-230f9683230a70dc22cbe6fc9ecf1817.material"]
 
 [params]
 

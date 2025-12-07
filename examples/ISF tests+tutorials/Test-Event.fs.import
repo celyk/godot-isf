@@ -1,13 +1,14 @@
 [remap]
 
 importer="ISFImporter"
-type="Shader"
+type="ShaderMaterial"
 uid="uid://dfkitem4im1si"
-valid=false
+path="res://.godot/imported/Test-Event.fs-3eaff51b44ac019566d09ea3b18a47be.material"
 
 [deps]
 
 source_file="res://addons/godot-isf/examples/ISF tests+tutorials/Test-Event.fs"
+dest_files=["res://.godot/imported/Test-Event.fs-3eaff51b44ac019566d09ea3b18a47be.material"]
 
 [params]
 
