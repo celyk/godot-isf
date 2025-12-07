@@ -16,7 +16,7 @@ The generated ShaderMaterial should be directly accessable on the scene node. Yo
 
 I did my best to follow the ISF [specification](https://github.com/mrRay/ISF_Spec), but unfortunately not every GLSL feature can be accounted for in Godot shaders
 - Function overloading. You will get an error if the ISF shader overloads a built in function. To fix it you will have to rename the function.
-- Global variables, similarly.
+- Global variables aren't supported at all. Try adding `const` to them instead
 
 If you come across a limitation not listed here, please report it by filing an issue on this repository
 
