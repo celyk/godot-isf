@@ -22,7 +22,7 @@ func _get_import_options(path: String, preset_index: int) -> Array[Dictionary]:
 func _import(source_file: String, save_path: String, options: Dictionary, platform_variants: Array[String], gen_files: Array[String]) -> Error:
 	var path_to_save : String = save_path + '.' + _get_save_extension()
 	
-	var loader := ISFLoader.new()
+	var loader := ISFLoader.create(source_file)
 	
 	var material : ShaderMaterial =  loader.compile_shader()
 	
