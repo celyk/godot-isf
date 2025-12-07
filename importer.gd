@@ -1,29 +1,27 @@
 @tool
-extends EditorImportPlugin
+extends EditorSceneFormatImporter
 
-func _get_importer_name() -> String:
-	return "ISFImporter"
-
-func _get_visible_name() -> String:
-	return "ISF Importer"
-
-func _get_recognized_extensions() -> PackedStringArray:
+func _get_extensions() -> PackedStringArray:
 	return ["fs", "isf"]
 
-func _get_save_extension() -> String:
-	return "material"
+func _get_import_options(path: String) -> void:
+	add_import_option("Test", 0)
 
-func _get_resource_type() -> String:
-	return "ShaderMaterial"
-
-func _get_import_options(path: String, preset_index: int) -> Array[Dictionary]:
-	return []
-
-func _import(source_file: String, save_path: String, options: Dictionary, platform_variants: Array[String], gen_files: Array[String]) -> Error:
-	var path_to_save : String = save_path + '.' + _get_save_extension()
+func _get_option_visibility(path: String, for_animation: bool, option: String) -> Variant:
+	if option == "Test": return null
 	
+	return false
+
+func _import_scene(source_file: String, flags: int, options: Dictionary) -> Object:
+	var control := ColorRect.new()
+	control.set_anchors_preset(Control.PRESET_FULL_RECT)
+	
+	#var path_to_save : String = save_path + '.' + _get_save_extension()
 	var loader := ISFLoader.create(source_file)
-	
 	var material : ShaderMaterial =  loader.compile_shader()
 	
-	return ResourceSaver.save(material, path_to_save)
+	control.material = material
+	
+	material.setup_local_to_scene()
+	
+	return control

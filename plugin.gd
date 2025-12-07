@@ -5,7 +5,7 @@ const Importer = preload("importer.gd")
 var importer_instance := Importer.new()
 
 func _enter_tree() -> void:
-	add_import_plugin(importer_instance)
+	add_scene_format_importer_plugin(importer_instance)
 
 func _exit_tree() -> void:
-	remove_import_plugin(importer_instance)
+	remove_scene_format_importer_plugin(importer_instance)
