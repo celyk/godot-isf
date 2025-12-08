@@ -9,8 +9,10 @@ After I get most features working, I hope to add an export button so that Godot 
 1. Clone this repo and move the directory under your projects /addons directory
 2. Enable the addon in your project settings
 3. Drag in your .fs files to the project directory. They will be automatically converted to a scene file
+4. Drag the effect into your scene
+5. Go to the Material to set the inputs (hint: they're called shader parameters in godot)
 
-The generated ShaderMaterial should be directly accessable on the scene node. You can peak at the inner workings by right clicking on it and ticking Editable Children
+The generated ShaderMaterial is directly accessable on the node. You can peak at the inner workings by right clicking on it and ticking Editable Children
 
 For audio reactive effects, audio input settings have to be enabled in your project
 
@@ -21,6 +23,7 @@ For audio reactive effects, audio input settings have to be enabled in your proj
 - [ ] Persistent buffers
 - [ ] Audio reactivity (FFT)
 - [ ] Import from standard ISF directory
+- [ ] Ability to use the effects in 3D
 
 # Limitations
 
