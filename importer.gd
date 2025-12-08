@@ -30,8 +30,4 @@ func _import_scene(source_file: String, flags: int, options: Dictionary) -> Obje
 	
 	var scene_root := converter.convert_isf_to_scene(isf_file)
 	
-	var loader := ISFLoader.create(source_file)
-	var material : ShaderMaterial =  loader.compile_shader()
-	material.resource_local_to_scene = true
-	
 	return scene_root

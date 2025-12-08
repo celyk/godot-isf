@@ -14,8 +14,10 @@ const isf_type_map := {
 }
 
 var material : ShaderMaterial
-var inputs : Array
-var buffers : Array
+var inputs : Dictionary
+var passes : Array
+#var buffers : Array
+var persistent_buffers : Array
 
 class InputInfo:
 	pass
@@ -24,18 +26,20 @@ class PassInfo:
 	pass
 
 func parse(isf_file:ISFFile) -> void:
-	_parse_inputs()
-	_parse_buffers()
+	_parse_inputs(isf_file)
+	_parse_buffers(isf_file)
 	
 	var material := ShaderMaterial.new()
 	material.shader = Shader.new()
 	material.shader.code = generate_shader_code()
 
-func _parse_inputs() -> void:
-	pass
+func _parse_inputs(isf_file:ISFFile) -> void:
+	for input in isf_file.json.data["INPUTS"]:
+		inputs
 
-func _parse_buffers() -> void:
-	pass
+func _parse_buffers(isf_file:ISFFile) -> void:
+	for input in isf_file.json.data["INPUTS"]:
+		passes
 
 func generate_shader_code() -> String:
 	var godot_shader_code := '''// Godot Shader generated from ISF (Interactive Shader Format)
@@ -61,6 +65,7 @@ shader_type canvas_item;
 	#material.shader.code = godot_shader_code
 	#
 	#return preload("uid://cmagfpnocdt2s")
+	return ""
 
 func get_uniform_declaration_string(type:String, name:String, value:Variant=null) -> String:
 	var declaration_string := ""
@@ -83,39 +88,3 @@ func get_uniform_declaration_string(type:String, name:String, value:Variant=null
 	declaration_string += ";\n"
 	
 	return declaration_string
-
-
-func get_inputs() -> Array:
-	return json.data["INPUTS"]
-
-func get_input_names() -> Array:
-	var inputs : Array = get_inputs()
-	
-	return inputs.map(func(a): return a["NAME"])
-
-func _get_input_internal(name:String) -> Variant:
-	var inputs : Array = get_inputs()
-	var index := inputs.find_custom(func(a): return a["NAME"] == name)
-	return json.data["INPUTS"][index]
-
-func get_input_value(name:String) -> Variant:
-	return _get_input_internal(name)["DEFAULT"]
-
-func get_input_type(name:String) -> String:
-	return isf_type_map[_get_input_internal(name)["TYPE"]]
-
-func _extract_json_from_first_comment(source:String) -> JSON:
-	var json_start : int = source.find("/*") + 2
-	var json_end : int = source.find("*/", json_start)
-	
-	var json_substr : String = source.substr(json_start, json_end-json_start)
-	
-	#print(json_substr)
-	
-	var json := JSON.new()
-	json.parse(json_substr)
-	
-	#print(json.data)
-	#print(get_inputs())
-	
-	return json

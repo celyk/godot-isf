@@ -9,6 +9,12 @@ func convert_isf_to_scene(isf_file:ISFFile, scene_type:int=0) -> Node:
 	var parser := ISFParser.new()
 	parser.parse(isf_file)
 	
+	# Inititalize multi passes
+	for buffer in parser.buffers:
+		var vp := SubViewport.new()
+		scene_root.add_child(vp)
+	
+	
 	var material : ShaderMaterial =  parser.material
 	material.resource_local_to_scene = true
 	
