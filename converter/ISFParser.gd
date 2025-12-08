@@ -17,6 +17,9 @@ var json : JSON
 
 func parse(source:String) -> void:
 	json = _extract_json_from_first_comment(source)
+	
+	print(json.data)
+	
 	#print( Array(get_inputs()) )
 
 func get_inputs() -> Array:
