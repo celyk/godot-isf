@@ -1,4 +1,4 @@
-# Godot ISF [WIP]
+# Godot ISF
 
 The addon allows importing of an ISF file (.fs) into a PackedScene that contains the buffers and shaders required to run the effect.
 
@@ -24,6 +24,7 @@ For audio reactive effects, audio input settings have to be enabled in your proj
 - [ ] Audio reactivity (FFT)
 - [ ] Import from standard ISF directory
 - [ ] Ability to use the effects in 3D
+- [ ] Export
 
 # Limitations
 
