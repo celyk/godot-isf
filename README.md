@@ -25,6 +25,7 @@ For audio reactive effects, audio input settings have to be enabled in your proj
 # Limitations
 
 I did my best to follow the ISF [specification](https://github.com/mrRay/ISF_Spec), but unfortunately not every GLSL feature can be accounted for in Godot shaders
+- Imported images will only work if Godot already supports the file type. So .tiff won't work, but .png/.jpg should work
 - Function overloading. You will get an error if the ISF shader overloads a built in function. To fix it you will have to rename the function.
 - Global variables aren't supported at all. Try adding `const` to them instead
 
