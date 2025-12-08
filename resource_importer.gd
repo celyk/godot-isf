@@ -32,16 +32,23 @@ func _import(source_file: String, save_path: String, options: Dictionary, platfo
 	
 	var scene_root := converter.convert_isf_to_scene(isf_file)
 	
-	var scene := PackedScene.new()
-	scene.pack(scene_root)
-	
 	
 	var additional := _import_additional(source_file, save_path)
 	
 	var include : ShaderInclude = additional["shaderinclude"]
-	include.code = "#define EPIC"
+	
+	var shader_code := "shader_type canvas_item;\n"
+	shader_code += "#define EPIC\n"
+	shader_code += "uniform float a;"
+	
+	include.code = shader_code
 	
 	_save_additional(source_file, save_path, additional)
+	
+	#scene_root.material.shader.code = scene_root.material.shader.code
+	
+	var scene := PackedScene.new()
+	scene.pack(scene_root)
 	
 	#return OK
 	return ResourceSaver.save(scene, path_to_save)
