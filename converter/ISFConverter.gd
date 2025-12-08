@@ -77,9 +77,15 @@ func convert_scene_to_isf(scene_root:Node) -> ISFFile:
 	
 	var shader : Shader = _get_shader_from_scene_root(scene_root)
 	
+	print(shader.get_shader_uniform_list())
 	for uniform in shader.get_shader_uniform_list():
-		var buffer_info := ISFParser.BufferInfo.new()
-		parser.passes.append(buffer_info)
+		match uniform.type:
+			TYPE_OBJECT:
+				var buffer_info := ISFParser.BufferInfo.new()
+				parser.passes.append(buffer_info)
+			_:
+				var input_info := ISFParser.InputInfo.new()
+				parser.inputs.append(input_info)
 	
 	isf_file.json = parser.generate_json()
 	isf_file.shader_source = shader.code
