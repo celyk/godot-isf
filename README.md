@@ -43,13 +43,13 @@ If you come across a limitation not listed here, please report it by filing an i
 
 TODO
 
-# Why no CompositorEffect?
+# Why not use CompositorEffect?
 
 While CompositorEffect would bypass many limitations, it comes with some limitations of it's own
 - Theres no 2D rendering support
 - It's not available on the Compatibility renderer
 
-This could changed in the future.
+This could change in the future.
 
 # Support
 
