@@ -119,8 +119,6 @@ func _parse_imported(isf_file:ISFFile) -> void:
 				info.texture = tex
 		
 		imported_images.append(info)
-	
-	print(imported_images)
 
 
 func generate_shader_code() -> String:
