@@ -12,6 +12,8 @@ After I get most features working, I hope to add an export button so that Godot 
 
 The generated ShaderMaterial should be directly accessable on the scene node. You can peak at the inner workings by right clicking on it and ticking Editable Children
 
+For audio reactive effects, audio input settings have to be enabled in your project
+
 # Features
 
 - [ ] Basic ISF support
