@@ -8,7 +8,7 @@ var categories : Array #[String]
 var material : ShaderMaterial
 var inputs : Array[InputInfo]
 var passes : Array[BufferInfo]
-var persistent_buffers : Array
+#var persistent_buffers : Array
 var imported_images : Array[ImportedImageInfo]
 
 var _isf_file : ISFFile
@@ -100,10 +100,7 @@ func _parse_buffers(isf_file:ISFFile) -> void:
 		# Buffer is not valid
 		if info.target == "": continue
 		
-		if info.persistent:
-			persistent_buffers.append(info)
-		else:
-			passes.append(info)
+		passes.append(info)
 
 func _parse_imported(isf_file:ISFFile) -> void:
 	if not isf_file.json.data.has("IMPORTED"): return
@@ -154,10 +151,10 @@ shader_type canvas_item;
 	
 	godot_shader_code += "\n\n"
 	
-	for buffer_info in persistent_buffers:
-		godot_shader_code += get_uniform_declaration_string("Texture2D", buffer_info.target)
+	#for buffer_info in persistent_buffers:
+		#godot_shader_code += get_uniform_declaration_string("Texture2D", buffer_info.target)
 	
-	godot_shader_code += "\n\n"
+	#godot_shader_code += "\n\n"
 	
 	godot_shader_code += _isf_file.shader_source
 	

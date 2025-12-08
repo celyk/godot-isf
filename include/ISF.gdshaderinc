@@ -30,13 +30,13 @@ vec2 imageSize = IMG_SIZE(image imageName);
 // Handle weird main (void) edge case?
 //#define main(a) _dummy(){} void fragment()
 
+instance uniform int PASSINDEX = 0; //#define PASSINDEX int(0)
+instance uniform int FRAMEINDEX = 0; //#define FRAMEINDEX int(0)
+instance uniform vec4 DATE = vec4(0); //#define DATE vec4(0)
+instance uniform float TIMEDELTA = 0.016666; //#define TIMEDELTA float(1.0 / 60.0)
+
 // Unsupported
 // TODO: proper support
-// Should be a uniform? A few of them can be
-#define PASSINDEX int(0)
-#define FRAMEINDEX int(0)
-#define DATE vec4(0)
-#define TIMEDELTA float(1.0 / 60.0)
 #define IMG_PIXEL(A,B) texelFetch(A, ivec2(B+0.5), 0)
 #define IMG_THIS_PIXEL(A) texture(A, SCREEN_UV)
 
