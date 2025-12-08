@@ -10,7 +10,12 @@ func convert_isf_to_scene(isf_file:ISFFile, scene_type:int=0) -> Node:
 	parser.parse(isf_file)
 	
 	# Inititalize multi passes
-	for buffer in parser.buffers:
+	for buffer in parser.passes:
+		var vp := SubViewport.new()
+		scene_root.add_child(vp)
+	
+	# Inititalize persistent buffers
+	for buffer in parser.persistent_buffers:
 		var vp := SubViewport.new()
 		scene_root.add_child(vp)
 	
