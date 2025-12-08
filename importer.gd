@@ -35,16 +35,18 @@ func _import_scene(source_file: String, flags: int, options: Dictionary) -> Obje
 	
 	var mesh := QuadMesh.new()
 	
+	print("scene_type ", scene_type)
 	match scene_type:
-		"Control":
+		SceneType.CONTROL:
 			scene_root = ColorRect.new()
 			scene_root.set_anchors_preset(Control.PRESET_FULL_RECT)
 			scene_root.material = material
-		"Node2D":
+		SceneType.NODE_2D:
 			scene_root = MeshInstance2D.new()
 			scene_root.mesh = mesh
 			scene_root.material = material
-		"Node3D":
+			mesh.size = Vector2(1280, 720)
+		SceneType.NODE_3D:
 			scene_root = MeshInstance3D.new()
 			scene_root.mesh = mesh
 			scene_root.material_override = material
