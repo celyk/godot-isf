@@ -34,6 +34,7 @@ func convert_isf_to_scene(isf_file:ISFFile, scene_type:int=0) -> Node:
 		vp.persistent = buffer_info.persistent
 		vp.target = buffer_info.target
 		vp.pass_index = parser.passes.size()-1 - i
+		vp.size = Vector2i(buffer_info.width, buffer_info.height)
 		pass_parent.add_child(vp, true)
 		vp.owner = scene_root
 		
@@ -60,8 +61,9 @@ func convert_isf_to_scene(isf_file:ISFFile, scene_type:int=0) -> Node:
 			scene_root.mesh = mesh
 			scene_root.material_override = material
 	
-	material.set_shader_parameter(scene_root.get_child(0).target, scene_root.get_child(0).get_texture())
-	scene_root.set_instance_shader_parameter("PASSINDEX", parser.passes.size())
+	if not scene_root.get_children().is_empty():
+		material.set_shader_parameter(scene_root.get_child(0).target, scene_root.get_child(0).get_texture())
+		scene_root.set_instance_shader_parameter("PASSINDEX", parser.passes.size())
 	
 	return scene_root
 
