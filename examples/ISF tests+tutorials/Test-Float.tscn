@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=3 uid="uid://do0mwgas0b2u1"]
+
+[sub_resource type="Shader" id="Shader_c2xi0"]
+code = "// Godot Shader generated from ISF (Interactive Shader Format)
+
+shader_type canvas_item;
+
+#include \"res://addons/godot-isf/include/ISF.gdshaderinc\"
+
+
+// INPUTS 
+uniform sampler2D inputImage : source_color;
+uniform float level;
+
+
+// IMPORTED 
+
+
+// PASSES 
+
+
+/*{
+	\"DESCRIPTION\": \"demonstrates the use of float-type inputs\",
+	\"CREDIT\": \"by zoidberg\",
+	\"ISFVSN\": \"2.0\",
+	\"CATEGORIES\": [
+		\"TEST-GLSL FX\"
+	],
+	\"INPUTS\": [
+		{
+			\"NAME\": \"inputImage\",
+			\"TYPE\": \"image\"
+		},
+		{
+			\"NAME\": \"level\",
+			\"TYPE\": \"float\",
+			\"DEFAULT\": 0.5,
+			\"MIN\": 0.0,
+			\"MAX\": 1.0
+		}
+	]
+}*/
+
+void main()
+{
+	vec4		srcPixel = IMG_THIS_PIXEL(inputImage);
+	float		luma = (srcPixel.r+srcPixel.g+srcPixel.b)/3.0;
+	vec4		dstPixel = (luma>level) ? srcPixel : vec4(0,0,0,1);
+	gl_FragColor = dstPixel;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nuudp"]
+resource_local_to_scene = true
+shader = SubResource("Shader_c2xi0")
+shader_parameter/level = 0.5
+
+[node name="" type="ColorRect"]
+material = SubResource("ShaderMaterial_nuudp")
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 720.0

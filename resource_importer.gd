@@ -29,14 +29,13 @@ func _import(source_file: String, save_path: String, options: Dictionary, platfo
 	
 	
 	var shader_include := ShaderInclude.new()
-	shader_include.code = '#include "res://addons/godot-isf/include/ISF.gdshaderinc"\n\n' + source
+	shader_include.code = '#include "res://addons/godot-isf/include/ISF.gdshaderinc"\n\n'# + source
 	#shader_include.code += source
 	
 	
 	
-	return ResourceSaver.save(shader_include, path_to_save)
+	ResourceSaver.save(shader_include, path_to_save)
 	
-	#var scene_type : ISFConverter.SceneType = options["scene_type"]
 	
 	var converter := ISFConverter.new()
 	var isf_file := ISFFile.open(source_file)
@@ -47,5 +46,7 @@ func _import(source_file: String, save_path: String, options: Dictionary, platfo
 	var scene := PackedScene.new()
 	scene.pack(scene_root)
 	
+	var scene_path := source_file.get_basename() + ".tscn"
+	
 	#return OK
-	return ResourceSaver.save(scene, path_to_save)
+	return ResourceSaver.save(scene, scene_path)

@@ -1,0 +1,83 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgm7ilhjdyjk2"]
+
+[ext_resource type="Script" uid="uid://dxbaw52rtcbft" path="res://addons/godot-isf/render/ISFRenderPass.gd" id="1_fcsh4"]
+
+[sub_resource type="Shader" id="Shader_sjt75"]
+code = "// Godot Shader generated from ISF (Interactive Shader Format)
+
+shader_type canvas_item;
+
+#include \"res://addons/godot-isf/include/ISF.gdshaderinc\"
+
+
+// INPUTS 
+uniform sampler2D inputImage : source_color;
+
+
+// IMPORTED 
+
+
+// PASSES 
+uniform sampler2D bufferVariableNameA : source_color;
+
+
+/*{
+	\"DESCRIPTION\": \"same as TestPersistentBufferDifferingSizes, but uses a temp buffer instead of a persistent buffer\",
+	\"CREDIT\": \"by zoidberg\",
+	\"ISFVSN\": \"2.0\",
+	\"CATEGORIES\": [
+		\"TEST-GLSL FX\"
+	],
+	\"INPUTS\": [
+		{
+			\"NAME\": \"inputImage\",
+			\"TYPE\": \"image\"
+		}
+	],
+	\"PASSES\": [
+		{
+			\"TARGET\":\"bufferVariableNameA\",
+			\"WIDTH\": \"$WIDTH/16.0\",
+			\"HEIGHT\": \"$HEIGHT/16.0\"
+		},
+		{
+			\"DESCRIPTION\": \"this empty pass is rendered at the same rez as whatever you are running the ISF filter at- the previous step rendered an image at one-sixteenth the res, so this step ensures that the output is full-size\"
+		}
+	]
+	
+}*/
+
+void main()
+{
+	//	first pass: read the \"inputImage\"- remember, we're drawing to the persistent buffer \"bufferVariableNameA\" on the first pass
+	if (PASSINDEX == 0)	{
+		gl_FragColor = IMG_THIS_NORM_PIXEL(inputImage);
+	}
+	//	second pass: read from \"bufferVariableNameA\".  output looks chunky and low-res.
+	else if (PASSINDEX == 1)	{
+		gl_FragColor = IMG_THIS_NORM_PIXEL(bufferVariableNameA);
+	}
+}
+"
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_m4a2b"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ua8a"]
+resource_local_to_scene = true
+shader = SubResource("Shader_sjt75")
+shader_parameter/bufferVariableNameA = SubResource("ViewportTexture_m4a2b")
+
+[node name="" type="ColorRect"]
+material = SubResource("ShaderMaterial_7ua8a")
+instance_shader_parameters/PASSINDEX = 1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="BufferVariableNameA" type="SubViewport" parent="."]
+size = Vector2i(16, 16)
+render_target_update_mode = 4
+script = ExtResource("1_fcsh4")
+material = SubResource("ShaderMaterial_7ua8a")
+target = "bufferVariableNameA"

@@ -1,0 +1,86 @@
+[gd_scene load_steps=5 format=3 uid="uid://bml0vdp1tfbik"]
+
+[ext_resource type="Script" uid="uid://dxbaw52rtcbft" path="res://addons/godot-isf/render/ISFRenderPass.gd" id="1_sw6h4"]
+
+[sub_resource type="Shader" id="Shader_0kne0"]
+code = "// Godot Shader generated from ISF (Interactive Shader Format)
+
+shader_type canvas_item;
+
+#include \"res://addons/godot-isf/include/ISF.gdshaderinc\"
+
+
+// INPUTS 
+uniform sampler2D inputImage : source_color;
+
+
+// IMPORTED 
+
+
+// PASSES 
+uniform sampler2D bufferVariableNameA : source_color;
+
+
+/*{
+	\"DESCRIPTION\": \"demonstrates the use of two-pass rendering- the first pass renders to a persistent buffer which is substantially smaller than the res of the image being drawn.  the second pass renders at the default requested size and scales up the image from the first pass\",
+	\"CREDIT\": \"by zoidberg\",
+	\"ISFVSN\": \"2.0\",
+	\"CATEGORIES\": [
+		\"TEST-GLSL FX\"
+	],
+	\"INPUTS\": [
+		{
+			\"NAME\": \"inputImage\",
+			\"TYPE\": \"image\"
+		}
+	],
+	\"PASSES\": [
+		{
+			\"TARGET\":\"bufferVariableNameA\",
+			\"PERSISTENT\": true,
+			\"FLOAT\": true,
+			\"WIDTH\": \"$WIDTH/16.0\",
+			\"HEIGHT\": \"$HEIGHT/16.0\"
+		},
+		{
+		
+		}
+	]
+	
+}*/
+
+void main()
+{
+	//	first pass: read the \"inputImage\"- remember, we're drawing to the persistent buffer \"bufferVariableNameA\" on the first pass
+	if (PASSINDEX == 0)	{
+		gl_FragColor = IMG_THIS_NORM_PIXEL(inputImage);
+	}
+	//	second pass: read from \"bufferVariableNameA\".  output looks chunky and low-res.
+	else if (PASSINDEX == 1)	{
+		gl_FragColor = IMG_THIS_NORM_PIXEL(bufferVariableNameA);
+	}
+}
+"
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_1saeg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hn8ap"]
+resource_local_to_scene = true
+shader = SubResource("Shader_0kne0")
+shader_parameter/bufferVariableNameA = SubResource("ViewportTexture_1saeg")
+
+[node name="" type="ColorRect"]
+material = SubResource("ShaderMaterial_hn8ap")
+instance_shader_parameters/PASSINDEX = 1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="BufferVariableNameA" type="SubViewport" parent="."]
+size = Vector2i(16, 16)
+render_target_update_mode = 4
+script = ExtResource("1_sw6h4")
+material = SubResource("ShaderMaterial_hn8ap")
+persistent = true
+target = "bufferVariableNameA"

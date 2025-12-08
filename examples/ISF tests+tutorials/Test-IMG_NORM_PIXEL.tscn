@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5ernfg0mnbcf"]
+
+[sub_resource type="Shader" id="Shader_0yc5f"]
+code = "// Godot Shader generated from ISF (Interactive Shader Format)
+
+shader_type canvas_item;
+
+#include \"res://addons/godot-isf/include/ISF.gdshaderinc\"
+
+
+// INPUTS 
+uniform sampler2D inputImage : source_color;
+
+
+// IMPORTED 
+
+
+// PASSES 
+
+
+/*{
+	\"DESCRIPTION\": \"demonstrates the use of IMG_NORM_PIXEL to fetch a pixel color from an input\",
+	\"CREDIT\": \"by zoidberg\",
+	\"ISFVSN\": \"2.0\",
+	\"CATEGORIES\": [
+		\"TEST-GLSL FX\"
+	],
+	\"INPUTS\": [
+		{
+			\"NAME\": \"inputImage\",
+			\"TYPE\": \"image\"
+		}
+	]
+}*/
+
+void main()
+{
+	vec4		test = IMG_NORM_PIXEL(inputImage, isf_FragNormCoord);
+	gl_FragColor = test;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_haxgv"]
+resource_local_to_scene = true
+shader = SubResource("Shader_0yc5f")
+
+[node name="" type="ColorRect"]
+material = SubResource("ShaderMaterial_haxgv")
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 720.0

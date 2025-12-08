@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqrjlpj3xnpd5"]
+
+[sub_resource type="Shader" id="Shader_ba4n1"]
+code = "// Godot Shader generated from ISF (Interactive Shader Format)
+
+shader_type canvas_item;
+
+#include \"res://addons/godot-isf/include/ISF.gdshaderinc\"
+
+
+// INPUTS 
+uniform sampler2D inputImage : source_color;
+
+
+// IMPORTED 
+
+
+// PASSES 
+
+
+/*{
+	\"DESCRIPTION\": \"demonstrates the use of IMG_THIS_PIXEL to fetch a pixel color from an input\",
+	\"CREDIT\": \"by zoidberg\",
+	\"ISFVSN\": \"2.0\",
+	\"CATEGORIES\": [
+		\"TEST-GLSL FX\"
+	],
+	\"INPUTS\": [
+		{
+			\"NAME\": \"inputImage\",
+			\"TYPE\": \"image\"
+		}
+	]
+}*/
+
+void main()
+{
+	vec4		test = IMG_THIS_PIXEL(inputImage);
+	gl_FragColor = test;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j7bsy"]
+resource_local_to_scene = true
+shader = SubResource("Shader_ba4n1")
+
+[node name="" type="ColorRect"]
+material = SubResource("ShaderMaterial_j7bsy")
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 720.0

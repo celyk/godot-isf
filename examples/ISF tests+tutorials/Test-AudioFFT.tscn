@@ -1,0 +1,140 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnj02ic3asi26"]
+
+[sub_resource type="Shader" id="Shader_sajyy"]
+code = "// Godot Shader generated from ISF (Interactive Shader Format)
+
+shader_type canvas_item;
+
+#include \"res://addons/godot-isf/include/ISF.gdshaderinc\"
+
+
+// INPUTS 
+uniform sampler2D fftImage : source_color;
+uniform float strokeSize;
+uniform float gain;
+uniform float minRange;
+uniform float maxRange;
+uniform vec4 topColor : source_color;
+uniform vec4 bottomColor : source_color;
+uniform vec4 strokeColor : source_color;
+
+
+// IMPORTED 
+
+
+// PASSES 
+
+
+/*{
+	\"DESCRIPTION\": \"Visualizes an FFT analysis image with custom set colors for frequency domain\",
+	\"CREDIT\": \"by VIDVOX\",
+	\"ISFVSN\": \"2\",
+	\"CATEGORIES\": [
+		\"Generator\"
+	],
+	\"INPUTS\": [
+		{
+			\"NAME\": \"fftImage\",
+			\"TYPE\": \"audioFFT\"
+		},
+		{
+			\"NAME\": \"strokeSize\",
+			\"TYPE\": \"float\",
+			\"MIN\": 0.0,
+			\"MAX\": 0.25,
+			\"DEFAULT\": 0.01
+		},
+		{
+			\"NAME\": \"gain\",
+			\"TYPE\": \"float\",
+			\"MIN\": 1.0,
+			\"MAX\": 5.0,
+			\"DEFAULT\": 1.0
+		},
+		{
+			\"NAME\": \"minRange\",
+			\"TYPE\": \"float\",
+			\"MIN\": 0.0,
+			\"MAX\": 1.0,
+			\"DEFAULT\": 0.0
+		},
+		{
+			\"NAME\": \"maxRange\",
+			\"TYPE\": \"float\",
+			\"MIN\": 0.0,
+			\"MAX\": 1.0,
+			\"DEFAULT\": 0.9
+		},
+		{
+			\"NAME\": \"topColor\",
+			\"TYPE\": \"color\",
+			\"DEFAULT\": [
+				0.0,
+				0.0,
+				0.0,
+				0.0
+			]
+		},
+		{
+			\"NAME\": \"bottomColor\",
+			\"TYPE\": \"color\",
+			\"DEFAULT\": [
+				0.0,
+				0.5,
+				0.9,
+				1.0
+			]
+		},
+		{
+			\"NAME\": \"strokeColor\",
+			\"TYPE\": \"color\",
+			\"DEFAULT\": [
+				0.25,
+				0.25,
+				0.25,
+				1.0
+			]
+		}
+	]
+}*/
+
+
+
+void main() {
+	
+	vec2 loc = isf_FragNormCoord;
+	
+	//	the fftImage is 256 steps
+	loc.x = loc.x * abs(maxRange - minRange) + minRange;
+	
+	vec4 fft = IMG_NORM_PIXEL(fftImage, vec2(loc.x,0.5));
+	float fftVal = gain * (fft.r + fft.g + fft.b) / 3.0;
+	if (loc.y > fftVal)
+		fft = topColor;
+	else
+		fft = bottomColor;
+	if ((strokeSize > 0.0) && (abs(fftVal - loc.y) < strokeSize))	{
+		fft = mix(strokeColor, fft, abs(fftVal - loc.y) / strokeSize);
+	}
+	
+	//(smoothstep(0.0, stroke, abs(fftVal - loc.y))) * strokeColor);
+	gl_FragColor = fft;
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2j8tb"]
+resource_local_to_scene = true
+shader = SubResource("Shader_sajyy")
+shader_parameter/strokeSize = 0.01
+shader_parameter/gain = 1.0
+shader_parameter/minRange = 0.0
+shader_parameter/maxRange = 0.9
+shader_parameter/topColor = Color(0, 0, 0, 0)
+shader_parameter/bottomColor = Color(0, 0.5, 0.9, 1)
+shader_parameter/strokeColor = Color(0.25, 0.25, 0.25, 1)
+
+[node name="" type="ColorRect"]
+material = SubResource("ShaderMaterial_2j8tb")
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 720.0

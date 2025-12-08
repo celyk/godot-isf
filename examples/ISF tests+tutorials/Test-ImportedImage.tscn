@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3 uid="uid://8v7tx7mearrc"]
+
+[sub_resource type="Shader" id="Shader_67jbw"]
+code = "// Godot Shader generated from ISF (Interactive Shader Format)
+
+shader_type canvas_item;
+
+#include \"res://addons/godot-isf/include/ISF.gdshaderinc\"
+
+
+// INPUTS 
+uniform sampler2D inputImage : source_color;
+
+
+// IMPORTED 
+uniform sampler2D blendImage : source_color;
+
+
+// PASSES 
+
+
+/*{
+	\"DESCRIPTION\": \"demonstrates the use of multiple image-type inputs\",
+	\"CREDIT\": \"by zoidberg\",
+	\"ISFVSN\": \"2.0\",
+	\"CATEGORIES\": [
+		\"TEST-GLSL FX\"
+	],
+	\"INPUTS\": [
+		{
+			\"NAME\": \"inputImage\",
+			\"TYPE\": \"image\"
+		}
+	],
+	\"IMPORTED\": {
+		\"blendImage\": {
+			\"PATH\": \"Hexagon.tiff\"
+		}
+	}
+}*/
+
+void main()
+{
+	vec4		srcPixel = IMG_NORM_PIXEL(inputImage, isf_FragNormCoord);
+	vec4		blendPixel = IMG_NORM_PIXEL(blendImage, isf_FragNormCoord);
+	
+	gl_FragColor = (srcPixel + blendPixel)/2.0;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d6vqj"]
+resource_local_to_scene = true
+shader = SubResource("Shader_67jbw")
+
+[node name="" type="ColorRect"]
+material = SubResource("ShaderMaterial_d6vqj")
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 720.0
