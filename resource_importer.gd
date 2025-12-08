@@ -22,6 +22,7 @@ func _get_import_options(path: String, preset_index: int) -> Array[Dictionary]:
 func _import(source_file: String, save_path: String, options: Dictionary, platform_variants: Array[String], gen_files: Array[String]) -> Error:
 	print("_import time")
 	
+	
 	var path_to_save : String = save_path + '.' + _get_save_extension()
 	
 	#var scene_type : ISFConverter.SceneType = options["scene_type"]
@@ -34,5 +35,38 @@ func _import(source_file: String, save_path: String, options: Dictionary, platfo
 	var scene := PackedScene.new()
 	scene.pack(scene_root)
 	
+	
+	var additional := _import_additional(source_file, save_path)
+	
+	var include : ShaderInclude = additional["shaderinclude"]
+	include.code = "#define EPIC"
+	
+	_save_additional(source_file, save_path, additional)
+	
 	#return OK
 	return ResourceSaver.save(scene, path_to_save)
+
+func _import_additional(source_file:String, save_path:String) -> Dictionary:
+	var dict : Dictionary
+	
+	var include := ShaderInclude.new()
+	var additional_save_path := save_path.get_basename().path_join("generated_inputs.gdshaderinc")
+	
+	var dir := DirAccess.open("res://")
+	if dir.file_exists(additional_save_path):
+		include = load(additional_save_path)
+	
+	dict["shaderinclude"] = include
+	
+	return dict
+
+func _save_additional(source_file:String, save_path:String, dict:Dictionary) -> void:
+	var include : ShaderInclude = dict["shaderinclude"]
+	
+	var additional_save_path := save_path.get_basename().path_join("generated_inputs.gdshaderinc")
+	#append_import_external_resource(additional_save_path)
+	
+	var dir := DirAccess.open("res://")
+	dir.make_dir(additional_save_path.get_base_dir())
+	
+	ResourceSaver.save(include, additional_save_path)
