@@ -28,3 +28,15 @@ static func _extract_json_from_first_comment(source:String) -> JSON:
 	json.parse(json_substr)
 
 	return json
+
+func save(path:String) -> Error:
+	var file := FileAccess.open(path, FileAccess.ModeFlags.WRITE)
+	
+	var source : String = "/*\n" + JSON.stringify(json.data, "\t") + "\n*/\n" + shader_source
+	print(source)
+	if not file.store_string(source):
+		return ERR_CANT_OPEN
+	
+	#file.close()
+	
+	return OK

@@ -3,7 +3,7 @@ class_name ISFParser extends RefCounted
 
 var version : String
 var credit : String
-var categories : Array #[String]
+var categories : Array#[String]
 
 var material : ShaderMaterial
 var inputs : Array[InputInfo]
@@ -158,6 +158,34 @@ shader_type canvas_item;
 	
 	return godot_shader_code
 
+func generate_json() -> JSON:
+	var json := JSON.new()
+	
+	json.data = {}
+	
+	if version:
+		json.data["VERSION"] = version
+		
+	if credit:
+		json.data["CREDIT"] = credit
+	
+	if categories:
+		json.data["CATEGORIES"] = categories
+	
+	if inputs:
+		json.data["INPUTS"] = []
+	
+	for input_info in inputs:
+		json.data["INPUTS"].append({})
+	
+	if passes:
+		json.data["PASSES"] = []
+	
+	for buffer_info in passes:
+		json.data["PASSES"].append({})
+	
+	return json
+
 func get_uniform_declaration_string(type:String, name:String, value:Variant=null) -> String:
 	var declaration_string := ""
 	
@@ -179,3 +207,8 @@ func get_uniform_declaration_string(type:String, name:String, value:Variant=null
 	declaration_string += "\n"
 	
 	return declaration_string
+
+static func find_function(source:String, name:String) -> int:
+	var name_start := source.find(name+"()")
+	var line_start := source.rfind("\n", name_start)
+	return line_start

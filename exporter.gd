@@ -23,3 +23,4 @@ func _on_file_selected(path: String) -> void:
 func _export_scene(target_file: String, scene_root:Node) -> void:
 	var converter := ISFConverter.new()
 	var isf_file := converter.convert_scene_to_isf(scene_root)
+	isf_file.save(target_file)

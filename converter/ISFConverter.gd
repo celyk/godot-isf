@@ -4,7 +4,7 @@ class_name ISFConverter extends RefCounted
 enum SceneType {CONTROL, NODE_2D, NODE_3D}
 
 ## Convert and generates the scene structure
-func convert_isf_to_scene(isf_file:ISFFile, scene_type:int=0) -> Node:
+func convert_isf_to_scene(isf_file:ISFFile, scene_type:SceneType=0) -> Node:
 	var scene_root := Node.new()
 	
 	match scene_type:
@@ -53,6 +53,7 @@ func convert_isf_to_scene(isf_file:ISFFile, scene_type:int=0) -> Node:
 		SceneType.CONTROL:
 			scene_root.set_anchors_preset(Control.PRESET_FULL_RECT)
 			scene_root.material = material
+			scene_root.size = Vector2(1280, 720)
 		SceneType.NODE_2D:
 			scene_root.mesh = mesh
 			scene_root.material = material
@@ -71,6 +72,34 @@ func convert_scene_to_isf(scene_root:Node) -> ISFFile:
 	var isf_file := ISFFile.new()
 	
 	var parser := ISFParser.new()
-	#parser.parse(isf_file)
+	parser.version = "2.0"
+	parser.credit = "John Godot"
 	
-	return ISFFile.new()
+	var shader : Shader = _get_shader_from_scene_root(scene_root)
+	
+	for uniform in shader.get_shader_uniform_list():
+		var buffer_info := ISFParser.BufferInfo.new()
+		parser.passes.append(buffer_info)
+	
+	isf_file.json = parser.generate_json()
+	isf_file.shader_source = shader.code
+	
+	var fstart : int = parser.find_function(isf_file.shader_source, "main")
+	isf_file.shader_source = isf_file.shader_source.substr(fstart)
+	
+	return isf_file
+
+func _get_material_from_scene_root(scene_root:Node) -> ShaderMaterial:
+	if scene_root is Control:
+		return scene_root.material
+	if scene_root is Node2D:
+		return scene_root.material
+	if scene_root is Node3D:
+		return scene_root.material_override
+	
+	return null
+	
+func _get_shader_from_scene_root(scene_root:Node) -> Shader:
+	var material := _get_material_from_scene_root(scene_root)
+	if not (material and material.shader): return null
+	return material.shader
