@@ -21,7 +21,7 @@ func _enter_tree() -> void:
 func _exit_tree() -> void:
 	remove_scene_format_importer_plugin(importer_instance)
 
-	# Remove the option to the export menu
+	# Remove the option from the export menu
 	var export_menu : PopupMenu = get_export_as_menu()
 	export_menu.remove_item(export_item_index)
 

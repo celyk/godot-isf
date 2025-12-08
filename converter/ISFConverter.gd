@@ -61,7 +61,7 @@ func convert_isf_to_scene(isf_file:ISFFile, scene_type:int=0) -> Node:
 	
 	return scene_root
 
-func convert_scene_to_isf() -> ISFFile:
+func convert_scene_to_isf(scene_root:Node) -> ISFFile:
 	var isf_file := ISFFile.new()
 	
 	var parser := ISFParser.new()
