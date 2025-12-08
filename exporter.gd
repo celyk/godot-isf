@@ -21,7 +21,5 @@ func _on_file_selected(path: String) -> void:
 		_export_scene(path, edited_scene_root)
 
 func _export_scene(target_file: String, scene_root:Node) -> void:
-	#var scene_type : ISFConverter.SceneType = options["scene_type"]
-	
 	var converter := ISFConverter.new()
 	var isf_file := converter.convert_scene_to_isf(scene_root)
