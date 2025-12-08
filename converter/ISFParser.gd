@@ -9,6 +9,7 @@ var material : ShaderMaterial
 var inputs : Array[InputInfo]
 var passes : Array[BufferInfo]
 var persistent_buffers : Array
+var imported_images : Array[ImportedImageInfo]
 
 var _isf_file : ISFFile
 
@@ -18,13 +19,13 @@ class InputInfo extends RefCounted:
 	var name : String
 	var label : String
 	var type : InputType
-	var default : float
+	var default_value : Variant
 	var min : float
 	var max : float
 	var identity : float
 	
 	func get_godot_type() -> String:
-		var map := {
+		const map := {
 			InputType.EVENT: "bool",
 			InputType.BOOL: "bool",
 			InputType.LONG: "int", 
@@ -37,20 +38,27 @@ class InputInfo extends RefCounted:
 		}
 		return map[type]
 
+class ImportedImageInfo extends RefCounted:
+	var target : String
+	var path : String
+	var texture : Texture
+
 class BufferInfo extends RefCounted:
 	var target : String
 	var persistent : bool = false
 	var width : int = 512
 	var height : int = 512
 
+
 func parse(isf_file:ISFFile) -> void:
 	_isf_file = isf_file
 	
-	version = isf_file.json.data["ISFVSN"]
-	credit = isf_file.json.data["CREDIT"]
-	categories = isf_file.json.data["CATEGORIES"]
+	version = isf_file.json.data.get("ISFVSN", "2.0")
+	credit = isf_file.json.data.get("CREDIT", "")
+	categories = isf_file.json.data.get("CATEGORIES", [])
 	
 	_parse_inputs(isf_file)
+	_parse_imported(isf_file)
 	_parse_buffers(isf_file)
 	
 	material = ShaderMaterial.new()
@@ -58,20 +66,65 @@ func parse(isf_file:ISFFile) -> void:
 	material.shader.code = generate_shader_code()
 
 func _parse_inputs(isf_file:ISFFile) -> void:
-	for dict in isf_file.json.data["INPUTS"]:
+	for dict in isf_file.json.data.get("INPUTS", []):
 		var info := InputInfo.new()
 		info.name = dict["NAME"]
 		info.type = InputInfo.InputType[ dict["TYPE"].to_upper() ]
+		
+		if dict.has("DEFAULT"):
+			var value : Variant = dict.get("DEFAULT")
+			if value is Array:
+				match value.size():
+					2:
+						value = Vector2(value[0], value[1])
+					3:
+						value = Vector3(value[0], value[1], value[2])
+					4:
+						value = Vector4(value[0], value[1], value[2], value[3])
+			
+			if info.type == InputInfo.InputType.COLOR:
+				value = Color(value.x, value.y, value.z, value.w)
+			
+			info.default_value = value
+		
 		inputs.append(info)
 
 func _parse_buffers(isf_file:ISFFile) -> void:
-	for dict in isf_file.json.data["INPUTS"]:
+	for dict in isf_file.json.data.get("PASSES", []):
 		var info := BufferInfo.new()
 		info.target = dict.get("TARGET", "")
 		info.width = dict.get("WIDTH", 0)
 		info.height = dict.get("HEIGHT", 0)
 		info.persistent = dict.get("PERSISTENT", false)
-		passes.append(info)
+		
+		# Buffer is not valid
+		if info.target == "": continue
+		
+		if info.persistent:
+			persistent_buffers.append(info)
+		else:
+			passes.append(info)
+
+func _parse_imported(isf_file:ISFFile) -> void:
+	if not isf_file.json.data.has("IMPORTED"): return
+	
+	var keys : Array = isf_file.json.data.get("IMPORTED").keys()
+	for key in keys:
+		var dict : Dictionary = isf_file.json.data.get("IMPORTED").get(key)
+		
+		var info := ImportedImageInfo.new()
+		info.target = key
+		info.path = dict.get("PATH", "")
+		
+		if isf_file.path:
+			var tex : Texture = load(isf_file.path.get_base_dir().path_join(info.path))
+			if tex:
+				info.texture = tex
+		
+		imported_images.append(info)
+	
+	print(imported_images)
+
 
 func generate_shader_code() -> String:
 	var godot_shader_code := '''// Godot Shader generated from ISF (Interactive Shader Format)
@@ -83,8 +136,26 @@ shader_type canvas_item;
 
 '''
 	
+	godot_shader_code += "// INPUTS \n"
 	for input_info in inputs:
 		godot_shader_code += get_uniform_declaration_string(input_info.get_godot_type(), input_info.name)
+	
+	godot_shader_code += "\n\n"
+	
+	godot_shader_code += "// IMPORTED \n"
+	for imported_info in imported_images:
+		godot_shader_code += get_uniform_declaration_string("Texture2D", imported_info.target)
+	
+	godot_shader_code += "\n\n"
+	
+	godot_shader_code += "// PASSES \n"
+	for buffer_info in passes:
+		godot_shader_code += get_uniform_declaration_string("Texture2D", buffer_info.target)
+	
+	godot_shader_code += "\n\n"
+	
+	for buffer_info in persistent_buffers:
+		godot_shader_code += get_uniform_declaration_string("Texture2D", buffer_info.target)
 	
 	godot_shader_code += "\n\n"
 	
@@ -97,32 +168,19 @@ func get_uniform_declaration_string(type:String, name:String, value:Variant=null
 	
 	match type:
 		"bool":
-			declaration_string = "uniform bool %s" % [name]
+			declaration_string = "uniform bool %s;" % [name]
 		"int":
-			declaration_string = "uniform int %s" % [name]
+			declaration_string = "uniform int %s;" % [name]
 		"float":
-			declaration_string = "uniform float %s" % [name]
+			declaration_string = "uniform float %s;" % [name]
 		"Vector2":
-			declaration_string = "uniform vec2 %s" % [name]
+			declaration_string = "uniform vec2 %s;" % [name]
 		"Color":
-			declaration_string = "uniform vec4 %s" % [name]
+			declaration_string = "uniform vec4 %s : source_color;" % [name]
 		"Texture2D":
-			declaration_string = "uniform sampler2D %s" % [name]
+			declaration_string = "uniform sampler2D %s : source_color;" % [name]
 	
 	
-	declaration_string += ";\n"
+	declaration_string += "\n"
 	
 	return declaration_string
-
-
-const isf_type_map := {
-	"event": "bool",
-	"bool": "bool",
-	"long": "int", 
-	"float": "float", 
-	"point2D": "Vector2", 
-	"color": "Color", 
-	"image": "Texture2D", 
-	"audio": "Texture2D", 
-	"audioFFT": "Texture2D",
-}

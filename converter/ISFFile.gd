@@ -1,17 +1,21 @@
 @tool
 class_name ISFFile extends RefCounted
 
+var path : String
 var json : JSON
 var shader_source : String
 var shader_type := VisualShader.Type.TYPE_FRAGMENT
 
 static func open(path:String, flags:=FileAccess.ModeFlags.READ) -> ISFFile:
 	var file := FileAccess.open(path, flags) 
-	return from_string(file.get_as_text())
+	var isf_file := from_string(file.get_as_text())
+	isf_file.path = path
+	return isf_file
 
 static func from_string(source:String) -> ISFFile:
 	var isf_file := ISFFile.new()
 	isf_file.json = _extract_json_from_first_comment(source)
+	isf_file.shader_source = source
 	return isf_file
 
 static func _extract_json_from_first_comment(source:String) -> JSON:

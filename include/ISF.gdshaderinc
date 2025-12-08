@@ -16,20 +16,24 @@ vec2 imageSize = IMG_SIZE(image imageName);
 #define IMG_SIZE(A) vec2(textureSize(A,0))
 #define IMG_THIS
 
-#define RENDERSIZE VIEWPORT_SIZE
+//#define RENDERSIZE VIEWPORT_SIZE
+#define RENDERSIZE vec2(1.0 / SCREEN_PIXEL_SIZE)
 //#define TIME TIME
 #define isf_FragNormCoord SCREEN_UV
 
 // Magic to redirect the function body to fragment()
 #define main _dummy(){} void fragment
 
+// Handle weird main (void) edge case?
+//#define main(a) _dummy(){} void fragment()
+
 // Unsupported
 // TODO: proper support
 // Should be a uniform? A few of them can be
-#define PASSINDEX 0
-#define FRAMEINDEX (0)
+#define PASSINDEX int(0)
+#define FRAMEINDEX int(0)
 #define DATE vec4(0)
-#define TIMEDELTA (1.0 / 60.0)
+#define TIMEDELTA float(1.0 / 60.0)
 #define IMG_PIXEL(A,B) texelFetch(A, ivec2(B+0.5), 0)
 #define IMG_THIS_PIXEL(A) texture(A, SCREEN_UV)
 
@@ -42,4 +46,5 @@ vec2 imageSize = IMG_SIZE(image imageName);
 #define gl_FragCoord FRAGCOORD
 #define gl_FragColor COLOR
 #define __VERSION__ 100
+
 #endif /*ISF*/
