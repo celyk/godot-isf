@@ -4,13 +4,17 @@ The addon allows importing of an ISF file (.fs) into a PackedScene that contains
 
 After I get most features working, I hope to add an export button so that Godot can be used for developing ISF!
 
-# Usage
+# Installation
 
 1. Clone this repo and move the directory under your projects /addons directory
-2. Enable the addon in your project settings
-3. Drag in your .fs files to the project directory. They will be automatically converted to a scene file
-4. Drag the effect into your scene
-5. Go to the Material to set the inputs (hint: they're called shader parameters in godot)
+2. Ensure that the addon path is /addons/godot-isf. Rename it if necessary
+3. Enable the addon in your project settings
+   
+# Usage
+
+1. Drag in your .fs files to the project directory. They will be automatically converted to a scene file
+2. Drag the effect into your scene
+3. Go to the Material to set the input uniforms (hint: they're called Shader Parameters in Godot)
 
 The generated ShaderMaterial is directly accessable on the node. You can peak at the inner workings by right clicking on it and ticking Editable Children
 
