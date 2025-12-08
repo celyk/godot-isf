@@ -13,14 +13,77 @@ const isf_type_map := {
 	"audioFFT": "Texture2D",
 }
 
-var json : JSON
+var material : ShaderMaterial
+var inputs : Array
+var buffers : Array
 
-func parse(source:String) -> void:
-	json = _extract_json_from_first_comment(source)
+class InputInfo:
+	pass
+
+class PassInfo:
+	pass
+
+func parse(isf_file:ISFFile) -> void:
+	_parse_inputs()
+	_parse_buffers()
 	
-	print(json.data)
+	var material := ShaderMaterial.new()
+	material.shader = Shader.new()
+	material.shader.code = generate_shader_code()
+
+func _parse_inputs() -> void:
+	pass
+
+func _parse_buffers() -> void:
+	pass
+
+func generate_shader_code() -> String:
+	var godot_shader_code := '''// Godot Shader generated from ISF (Interactive Shader Format)
+
+shader_type canvas_item;
+
+#include "res://addons/godot-isf/include/ISF.gdshaderinc"
+
+
+'''
+	#
+	#for input_name in parser.get_input_names():
+		##var value : Variant = parser.get_input_value(input_name)
+		#var type : String = parser.get_input_type(input_name)
+		#
+		#godot_shader_code += get_uniform_declaration_string(type, input_name)
+	#
+	#godot_shader_code += "\n\n"
+	#
+	#godot_shader_code += fragment_shader_source
+	#
+	#material.shader = Shader.new()
+	#material.shader.code = godot_shader_code
+	#
+	#return preload("uid://cmagfpnocdt2s")
+
+func get_uniform_declaration_string(type:String, name:String, value:Variant=null) -> String:
+	var declaration_string := ""
 	
-	#print( Array(get_inputs()) )
+	match type:
+		"bool":
+			declaration_string = "uniform bool %s" % [name]
+		"int":
+			declaration_string = "uniform int %s" % [name]
+		"float":
+			declaration_string = "uniform float %s" % [name]
+		"Vector2":
+			declaration_string = "uniform vec2 %s" % [name]
+		"Color":
+			declaration_string = "uniform vec4 %s" % [name]
+		"Texture2D":
+			declaration_string = "uniform sampler2D %s" % [name]
+	
+	
+	declaration_string += ";\n"
+	
+	return declaration_string
+
 
 func get_inputs() -> Array:
 	return json.data["INPUTS"]

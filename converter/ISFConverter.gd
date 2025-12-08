@@ -1,11 +1,15 @@
 @tool
 class_name ISFConverter extends RefCounted
 
-func convert_isf_to_scene(file:ISFFile, type:int=0) -> Node:
+enum SceneType {CONTROL, NODE_2D, NODE_3D}
+
+func convert_isf_to_scene(isf_file:ISFFile, scene_type:int=0) -> Node:
 	var scene_root := Node.new()
 	
-	var loader := ISFLoader.create(source_file)
-	var material : ShaderMaterial =  loader.compile_shader()
+	var parser := ISFParser.new()
+	parser.parse(isf_file)
+	
+	var material : ShaderMaterial =  parser.material
 	material.resource_local_to_scene = true
 	
 	var mesh := QuadMesh.new()
@@ -24,8 +28,13 @@ func convert_isf_to_scene(file:ISFFile, type:int=0) -> Node:
 			scene_root = MeshInstance3D.new()
 			scene_root.mesh = mesh
 			scene_root.material_override = material
-	
-	return Node.new()
+	#
+	return scene_root
 
 func convert_scene_to_isf() -> ISFFile:
+	var isf_file := ISFFile.new()
+	
+	var parser := ISFParser.new()
+	#parser.parse(isf_file)
+	
 	return ISFFile.new()

@@ -1,8 +1,6 @@
 @tool
 extends EditorSceneFormatImporter
 
-enum SceneType {CONTROL, NODE_2D, NODE_3D}
-
 func _get_extensions() -> PackedStringArray:
 	return ["fs", "isf"]
 
@@ -16,8 +14,8 @@ func _add_import_option_helper(name: String, value: Variant, type:Variant.Type=T
 		add_import_option_advanced(type, name, value, hint, hint_string, usage_flags)
 
 func _get_import_options(path: String) -> void:
-	_add_import_option_helper("scene_type", SceneType.CONTROL, TYPE_INT, PROPERTY_HINT_ENUM, "Control,Node2D,Node3D", PROPERTY_USAGE_DEFAULT | PROPERTY_USAGE_UPDATE_ALL_IF_MODIFIED)
-	_add_import_option_helper("test", 0)
+	_add_import_option_helper("scene_type", ISFConverter.SceneType.CONTROL, TYPE_INT, PROPERTY_HINT_ENUM, "Control,Node2D,Node3D", PROPERTY_USAGE_DEFAULT | PROPERTY_USAGE_UPDATE_ALL_IF_MODIFIED)
+	#_add_import_option_helper("test", 0)
 
 # Remove all the built in options that we can
 func _get_option_visibility(path: String, for_animation: bool, option: String) -> Variant:
@@ -25,28 +23,15 @@ func _get_option_visibility(path: String, for_animation: bool, option: String) -
 	return false
 
 func _import_scene(source_file: String, flags: int, options: Dictionary) -> Object:
-	var scene_type : SceneType = options["scene_type"]
-	var scene_root := Node.new()
+	var scene_type : ISFConverter.SceneType = options["scene_type"]
+	
+	var converter := ISFConverter.new()
+	var isf_file := ISFFile.open(source_file)
+	
+	var scene_root := converter.convert_isf_to_scene(isf_file)
 	
 	var loader := ISFLoader.create(source_file)
 	var material : ShaderMaterial =  loader.compile_shader()
 	material.resource_local_to_scene = true
-	
-	var mesh := QuadMesh.new()
-	
-	match scene_type:
-		SceneType.CONTROL:
-			scene_root = ColorRect.new()
-			scene_root.set_anchors_preset(Control.PRESET_FULL_RECT)
-			scene_root.material = material
-		SceneType.NODE_2D:
-			scene_root = MeshInstance2D.new()
-			scene_root.mesh = mesh
-			scene_root.material = material
-			mesh.size = Vector2(1280, 720)
-		SceneType.NODE_3D:
-			scene_root = MeshInstance3D.new()
-			scene_root.mesh = mesh
-			scene_root.material_override = material
 	
 	return scene_root
