@@ -14,15 +14,18 @@ vec2 imageSize = IMG_SIZE(image imageName);
 #define IMG_NORM_THIS_PIXEL(A) IMG_NORM_PIXEL(A, SCREEN_UV)
 #define IMG_THIS_NORM_PIXEL(A) IMG_NORM_PIXEL(A, SCREEN_UV)
 #define IMG_SIZE(A) vec2(textureSize(A,0))
-#define IMG_THIS
 
 //#define RENDERSIZE VIEWPORT_SIZE
 #define RENDERSIZE vec2(1.0 / SCREEN_PIXEL_SIZE)
+//varying vec2 RENDERSIZE;
+//uniform vec2 RENDERSIZE;
+
 //#define TIME TIME
-#define isf_FragNormCoord SCREEN_UV
+#define isf_FragNormCoord vec2(SCREEN_UV)
+//#define PI
 
 // Magic to redirect the function body to fragment()
-#define main _dummy(){} void fragment
+#define main __dummy(){} void fragment
 
 // Handle weird main (void) edge case?
 //#define main(a) _dummy(){} void fragment()
@@ -43,7 +46,7 @@ vec2 imageSize = IMG_SIZE(image imageName);
 #define vv_vertShaderInit isf_vertShaderInit
 
 // GLSL compatibility
-#define gl_FragCoord FRAGCOORD
+#define gl_FragCoord vec4(FRAGCOORD)
 #define gl_FragColor COLOR
 #define __VERSION__ 100
 
