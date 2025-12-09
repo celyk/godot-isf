@@ -57,14 +57,16 @@ func convert_isf_to_scene(isf_file:ISFFile, scene_type:SceneType=0) -> Node:
 		vp.owner = scene_root
 		
 		var vp_texture := ViewportTexture.new()
-		vp_texture.viewport_path = scene_root.get_path_to(vp)
-		print(vp_texture.viewport_path)
-		pass_parent.material.set_shader_parameter(vp.target, vp_texture)
+		#vp_texture.viewport_path = scene_root.get_path_to(vp)
+		#print(vp_texture.viewport_path)
+		#break
+		#pass_parent.material.set_shader_parameter(vp.target, vp_texture)
+		#print(vp_texture.viewport_path, " AAA")
 		
 		pass_parent = vp
 	
 	scene_root.set_instance_shader_parameter("PASSINDEX", parser.passes.size())
-	
+	print("aaa")
 	var mesh := QuadMesh.new()
 	
 	match scene_type:

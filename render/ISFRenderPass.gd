@@ -27,6 +27,8 @@ func _ready() -> void:
 	_validate_state()
 
 func _process(delta: float) -> void:
+	# Shouldn't have to do this
+	_set_parent_viewport_texture()
 	pass
 
 func _validate_state():
@@ -37,8 +39,19 @@ func _validate_state():
 	_rect.material = material
 	#_rect.size = Vector2(1e9,1e9)
 	
+	_set_parent_viewport_texture.call()
+	
 	if persistent:
 		_setup_gpu_ping_pong()
+
+func _set_parent_viewport_texture():
+	if is_inside_tree() and (get_parent().has_method("get_material") or get_parent() is ISFRenderPass):
+		#var vp_texture := ViewportTexture.new()
+		#var scene_root := self.owner
+		print(get_parent().material, " setting vp " , target, " to ", get_parent().name)
+		get_parent().material.set_shader_parameter(target, get_texture())
+		#vp_texture.viewport_path = get_parent().material.get_local_scene().get_path_to(self)
+		#print(vp_texture.viewport_path)
 
 func _setup_gpu_ping_pong() -> void:
 	pass
