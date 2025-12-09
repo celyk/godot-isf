@@ -29,6 +29,8 @@ func _import(source_file: String, save_path: String, options: Dictionary, platfo
 	
 	var converter := ISFConverter.new()
 	var isf_file := ISFFile.open(source_file)
+	var parser := ISFParser.new()
+	parser.parse(isf_file)
 	
 	var scene_root := converter.convert_isf_to_scene(isf_file)
 	
@@ -40,16 +42,20 @@ func _import(source_file: String, save_path: String, options: Dictionary, platfo
 	
 	var include_code := ""
 	#shader_code += "shader_type canvas_item;\n"
-	include_code += "#define EPIC\n"
-	include_code += "uniform float a;\n"
+	#include_code += "#define EPIC\n"
+	#include_code += "uniform float a;\n"
+	include_code += parser.generate_shader_uniform_declarations() + "\n\n"
 	include_code += '#include "res://addons/godot-isf/include/ISF.gdshaderinc"\n'
 	
 	include.code = include_code
 	
 	
-	var shader_code := ""
+	var shader_code : String = "/*\n" + JSON.stringify(isf_file.json.data, "\t") + "\n*/\n\n"
 	shader_code += "shader_type canvas_item;\n"
-	shader_code += '#include "generated_inputs.gdshaderinc"\n'
+	shader_code += '#include "generated_inputs.gdshaderinc"\n\n'
+	shader_code += isf_file.shader_source
+	
+	
 	
 	shader.code = shader_code
 	

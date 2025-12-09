@@ -120,7 +120,6 @@ func _parse_imported(isf_file:ISFFile) -> void:
 		
 		imported_images.append(info)
 
-
 func generate_shader_code() -> String:
 	var godot_shader_code := '''// Godot Shader generated from ISF (Interactive Shader Format)
 
@@ -131,28 +130,8 @@ shader_type canvas_item;
 
 '''
 	
-	godot_shader_code += "// INPUTS \n"
-	for input_info in inputs:
-		godot_shader_code += get_uniform_declaration_string(input_info.get_godot_type(), input_info.name)
-	
+	godot_shader_code += generate_shader_uniform_declarations()
 	godot_shader_code += "\n\n"
-	
-	godot_shader_code += "// IMPORTED \n"
-	for imported_info in imported_images:
-		godot_shader_code += get_uniform_declaration_string("Texture2D", imported_info.target)
-	
-	godot_shader_code += "\n\n"
-	
-	godot_shader_code += "// PASSES \n"
-	for buffer_info in passes:
-		godot_shader_code += get_uniform_declaration_string("Texture2D", buffer_info.target)
-	
-	godot_shader_code += "\n\n"
-	
-	#for buffer_info in persistent_buffers:
-		#godot_shader_code += get_uniform_declaration_string("Texture2D", buffer_info.target)
-	
-	#godot_shader_code += "\n\n"
 	
 	godot_shader_code += _isf_file.shader_source
 	
@@ -185,6 +164,28 @@ func generate_json() -> JSON:
 		json.data["PASSES"].append({})
 	
 	return json
+
+func generate_shader_uniform_declarations() -> String:
+	var godot_shader_code := ""
+	
+	godot_shader_code += "// INPUTS \n"
+	for input_info in inputs:
+		godot_shader_code += get_uniform_declaration_string(input_info.get_godot_type(), input_info.name)
+	
+	godot_shader_code += "\n\n"
+	
+	godot_shader_code += "// IMPORTED \n"
+	for imported_info in imported_images:
+		godot_shader_code += get_uniform_declaration_string("Texture2D", imported_info.target)
+	
+	godot_shader_code += "\n\n"
+	
+	godot_shader_code += "// PASSES \n"
+	for buffer_info in passes:
+		godot_shader_code += get_uniform_declaration_string("Texture2D", buffer_info.target)
+	
+	
+	return godot_shader_code
 
 func get_uniform_declaration_string(type:String, name:String, value:Variant=null) -> String:
 	var declaration_string := ""
