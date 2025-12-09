@@ -7,6 +7,9 @@ enum SceneType {CONTROL, NODE_2D, NODE_3D}
 func convert_isf_to_scene(isf_file:ISFFile, scene_type:SceneType=0) -> Node:
 	var scene_root := Node.new()
 	
+	var parser := ISFParser.new()
+	parser.parse(isf_file)
+	
 	match scene_type:
 		SceneType.CONTROL:
 			scene_root = ColorRect.new()
@@ -17,15 +20,18 @@ func convert_isf_to_scene(isf_file:ISFFile, scene_type:SceneType=0) -> Node:
 		_:
 			return scene_root
 	
+	var material : ShaderMaterial =  parser.material
+	material.resource_local_to_scene = true
+	
+	scene_root.material = material
+	
+	
+	
+	print(scene_root,  scene_root.material)
+	
 	var processor_script := ISFProcessorScript.new()
 	scene_root.add_child(processor_script, true)
 	processor_script.owner = scene_root
-	
-	var parser := ISFParser.new()
-	parser.parse(isf_file)
-	
-	var material : ShaderMaterial =  parser.material
-	material.resource_local_to_scene = true
 	
 	# Initialize shader parameters
 	for info in parser.inputs:
@@ -50,12 +56,11 @@ func convert_isf_to_scene(isf_file:ISFFile, scene_type:SceneType=0) -> Node:
 		pass_parent.add_child(vp, true)
 		vp.owner = scene_root
 		
-		
 		var vp_texture := ViewportTexture.new()
 		vp_texture.viewport_path = scene_root.get_path_to(vp)
 		pass_parent.material.set_shader_parameter(vp.target, vp_texture)
 		
-		
+		break
 		pass_parent = vp
 	
 	scene_root.set_instance_shader_parameter("PASSINDEX", parser.passes.size())
