@@ -28,7 +28,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	# Shouldn't have to do this
-	_set_parent_viewport_texture()
+	_set_parent_viewport_textures()
 	pass
 
 func _validate_state():
@@ -39,19 +39,25 @@ func _validate_state():
 	_rect.material = material
 	#_rect.size = Vector2(1e9,1e9)
 	
-	_set_parent_viewport_texture.call()
+	_set_parent_viewport_textures.call()
 	
 	if persistent:
 		_setup_gpu_ping_pong()
 
-func _set_parent_viewport_texture():
+func _set_parent_viewport_textures():
 	if is_inside_tree() and (get_parent().has_method("get_material") or get_parent() is ISFRenderPass):
-		#var vp_texture := ViewportTexture.new()
-		#var scene_root := self.owner
 		print(get_parent().material, " setting vp " , target, " to ", get_parent().name)
 		get_parent().material.set_shader_parameter(target, get_texture())
-		#vp_texture.viewport_path = get_parent().material.get_local_scene().get_path_to(self)
-		#print(vp_texture.viewport_path)
+		
+		_copy_viewport_textures(material, get_parent().material)
+
+func _copy_viewport_textures(material_a:ShaderMaterial, material_b:ShaderMaterial) -> void:
+	var parameters := material_a.shader.get_shader_uniform_list()
+	
+	for parameter in parameters:
+		var value : Variant = material_a.get_shader_parameter(parameter.name)
+		if not (value is ViewportTexture): continue
+		material_b.set_shader_parameter(parameter.name, value)
 
 func _setup_gpu_ping_pong() -> void:
 	pass
