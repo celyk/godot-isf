@@ -96,7 +96,8 @@ func _generate_shader_code(isf_file:ISFFile) -> String:
 func _load_or_create_resource(path:String, instance:Resource) -> Resource:
 	DirAccess.make_dir_absolute(path.get_base_dir())
 	EditorInterface.get_resource_filesystem().update_file(path.get_base_dir())
-	instance.resource_path = path
+	#instance.resource_path = path
+	instance.take_over_path(path)
 	return instance
 	
 	#EditorInterface.get_resource_filesystem().scan()
