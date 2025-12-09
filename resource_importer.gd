@@ -36,16 +36,26 @@ func _import(source_file: String, save_path: String, options: Dictionary, platfo
 	var additional := _import_additional(source_file, save_path)
 	
 	var include : ShaderInclude = additional["shaderinclude"]
+	var shader : Shader = additional["shader"]
 	
-	var shader_code := "shader_type canvas_item;\n"
-	shader_code += "#define EPIC\n"
-	shader_code += "uniform float a;"
+	var include_code := ""
+	#shader_code += "shader_type canvas_item;\n"
+	include_code += "#define EPIC\n"
+	include_code += "uniform float a;\n"
+	include_code += '#include "res://addons/godot-isf/include/ISF.gdshaderinc"\n'
 	
-	include.code = shader_code
+	include.code = include_code
+	
+	
+	var shader_code := ""
+	shader_code += "shader_type canvas_item;\n"
+	shader_code += '#include "generated_inputs.gdshaderinc"\n'
+	
+	shader.code = shader_code
 	
 	_save_additional(source_file, save_path, additional)
 	
-	#scene_root.material.shader.code = scene_root.material.shader.code
+	scene_root.material.shader = shader
 	
 	var scene := PackedScene.new()
 	scene.pack(scene_root)
@@ -56,24 +66,39 @@ func _import(source_file: String, save_path: String, options: Dictionary, platfo
 func _import_additional(source_file:String, save_path:String) -> Dictionary:
 	var dict : Dictionary
 	
+	var dir := DirAccess.open("res://")
+	
 	var include := ShaderInclude.new()
 	var additional_save_path := save_path.get_basename().path_join("generated_inputs.gdshaderinc")
 	
-	var dir := DirAccess.open("res://")
+	
 	if dir.file_exists(additional_save_path):
 		include = load(additional_save_path)
 	
 	dict["shaderinclude"] = include
 	
+	additional_save_path = save_path.get_basename().path_join("generated_shader.gdshader")
+	
+	var shader := Shader.new()
+	if dir.file_exists(additional_save_path):
+		shader = load(additional_save_path)
+	
+	dict["shader"] = shader
+	
 	return dict
 
 func _save_additional(source_file:String, save_path:String, dict:Dictionary) -> void:
 	var include : ShaderInclude = dict["shaderinclude"]
+	var shader : Shader = dict["shader"]
 	
 	var additional_save_path := save_path.get_basename().path_join("generated_inputs.gdshaderinc")
-	#append_import_external_resource(additional_save_path)
 	
 	var dir := DirAccess.open("res://")
 	dir.make_dir(additional_save_path.get_base_dir())
 	
 	ResourceSaver.save(include, additional_save_path)
+	
+	additional_save_path = save_path.get_basename().path_join("generated_shader.gdshader")
+	ResourceSaver.save(shader, additional_save_path)
+	
+	#append_import_external_resource(additional_save_path)
