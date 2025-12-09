@@ -21,6 +21,10 @@ func _get_import_options(path: String, preset_index: int) -> Array[Dictionary]:
 
 func _import(source_file: String, save_path: String, options: Dictionary, platform_variants: Array[String], gen_files: Array[String]) -> Error:
 	var path_to_save : String = save_path + '.' + _get_save_extension()
+	var additional_folder := path_to_save.get_base_dir().path_join( str(save_path.get_file().hash()) )
+	#additional_folder = path_to_save.get_basename()
+	
+	print("Hash: ", str(save_path.get_file().hash()) )
 	
 	#var scene_type : ISFConverter.SceneType = options["scene_type"]
 	
@@ -31,95 +35,83 @@ func _import(source_file: String, save_path: String, options: Dictionary, platfo
 	
 	var scene_root := converter.convert_isf_to_scene(isf_file)
 	
+	var include_path := additional_folder.path_join("generated_inputs.gdshader")
+	var include : ShaderInclude = _load_or_create_resource(include_path, ShaderInclude.new())
+	var shader_path := additional_folder.path_join("generated_shader.gdshaderinc")
+	var shader : Shader = _load_or_create_resource(shader_path, Shader.new())
 	
-	var additional := _import_additional(source_file, save_path)
+	if include == null: return Error.ERR_CANT_ACQUIRE_RESOURCE
 	
-	var include : ShaderInclude = additional["shaderinclude"]
-	var shader : Shader = additional["shader"]
+	var include_code := _generate_include_code(isf_file)
+	include.code = include_code
+	
+	var shader_code : String = _generate_shader_code(isf_file)
+	shader.code = shader_code
+	
+	scene_root.material.shader = shader
+	
+	var file := FileAccess.open(include_path, FileAccess.WRITE)
+	file.store_string(include.code)
+	file.flush()
+	
+	file = FileAccess.open(shader_path, FileAccess.WRITE)
+	file.store_string(shader.code)
+	file.flush()
+	
+	#print("save1 ", ResourceSaver.save(include, "meow.gdshader", ResourceSaver.FLAG_REPLACE_SUBRESOURCE_PATHS))
+	#print("save2 ", ResourceSaver.save(shader, shader_path, ResourceSaver.FLAG_REPLACE_SUBRESOURCE_PATHS))
+	
+	include.emit_changed()
+	shader.emit_changed()
+	
+	var scene := PackedScene.new()
+	scene.pack(scene_root)
+	
+	return ResourceSaver.save(scene, path_to_save, ResourceSaver.FLAG_REPLACE_SUBRESOURCE_PATHS)
+
+func _generate_include_code(isf_file:ISFFile) -> String:
+	var parser := ISFParser.new()
+	parser.parse(isf_file)
 	
 	var include_code := "\n"
-	#shader_code += "shader_type canvas_item;\n"
-	#include_code += "#define EPIC\n"
-	#include_code += "uniform float a;\n"
+	
 	include_code += parser.generate_shader_uniform_declarations() + "\n\n"
 	include_code += '#include "res://addons/godot-isf/include/ISF.gdshaderinc"\n\n'
 	
-	include.code = include_code
-	
-	
+	return include_code
+
+func _generate_shader_code(isf_file:ISFFile) -> String:
 	var shader_code : String = "/*\n" + JSON.stringify(isf_file.json.data, "\t") + "\n*/\n\n"
 	shader_code += "shader_type canvas_item;\n\n"
 	shader_code += '#include "generated_inputs.gdshaderinc"\n\n'
 	#shader_code += '#include "res://addons/godot-isf/include/ISF.gdshaderinc"\n\n'
 	shader_code += isf_file.shader_source
 	
-	
-	
-	shader.code = shader_code
-	
-	_save_additional(source_file, save_path, additional)
-	
-	scene_root.material.shader = shader
-	
-	var scene := PackedScene.new()
-	scene.pack(scene_root)
-	
-	#return OK
-	return ResourceSaver.save(scene, path_to_save)
+	return shader_code
 
-func _import_additional(source_file:String, save_path:String) -> Dictionary:
-	var dict : Dictionary
+func _load_or_create_resource(path:String, instance:Resource) -> Resource:
+	DirAccess.make_dir_absolute(path.get_base_dir())
 	
-	var dir := DirAccess.open("res://")
-	
-	var include := ShaderInclude.new()
-	
-	var folder_name := save_path.get_file().get_basename()
-	folder_name = folder_name.reverse()
-	var folder_path := save_path.get_base_dir().path_join(folder_name)
-	var additional_save_path := folder_path.path_join("generated_inputs.gdshaderinc")
-	
-	print("additional_save_path ", additional_save_path)
-	#EditorInterface.get_resource_filesystem().update_file(additional_save_path)
-	append_import_external_resource(additional_save_path)
 	#EditorInterface.get_resource_filesystem().scan()
 	
-	if dir.file_exists(additional_save_path):
-		include = load(additional_save_path)
+	#var dir := DirAccess.open("res://")
+	print(path)
+	if ResourceLoader.exists(path):
+		print(path, " exists")
+		var res := ResourceLoader.load(path)#, "", ResourceLoader.CACHE_MODE_REPLACE_DEEP)
+		return res
+	#
+	var res : Resource = instance
+	res.resource_path = path
 	
-	dict["shaderinclude"] = include
+	print(res)
+	#if ResourceSaver.save(res, path, ResourceSaver.FLAG_REPLACE_SUBRESOURCE_PATHS) != OK:
+		#return null
 	
-	additional_save_path = folder_path.path_join("generated_shader.gdshader")
+	#
+	#var err := ResourceSaver.save(res, path)
+	#if err != OK:
+		#print(err)
+		#return null
 	
-	var shader := Shader.new()
-	
-	EditorInterface.get_resource_filesystem().update_file(additional_save_path)
-	append_import_external_resource(additional_save_path)
-	
-	if dir.file_exists(additional_save_path):
-		print("file_exists")
-		shader = load(additional_save_path)
-	
-	
-	dict["shader"] = shader
-	
-	return dict
-
-func _save_additional(source_file:String, save_path:String, dict:Dictionary) -> void:
-	var include : ShaderInclude = dict["shaderinclude"]
-	var shader : Shader = dict["shader"]
-	
-	var folder_name := save_path.get_file().get_basename()
-	folder_name = folder_name.reverse()
-	var folder_path := save_path.get_base_dir().path_join(folder_name)
-	var additional_save_path := folder_path.path_join("generated_inputs.gdshaderinc")
-	
-	var dir := DirAccess.open("res://")
-	dir.make_dir(additional_save_path.get_base_dir())
-	
-	ResourceSaver.save(include, additional_save_path)
-	EditorInterface.get_resource_filesystem().update_file(additional_save_path)
-	
-	additional_save_path = folder_path.path_join("generated_shader.gdshader")
-	ResourceSaver.save(shader, additional_save_path)
-	EditorInterface.get_resource_filesystem().update_file(additional_save_path)
+	return res
