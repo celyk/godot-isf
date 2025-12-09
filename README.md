@@ -36,6 +36,7 @@ I did my best to follow the ISF [specification](https://github.com/mrRay/ISF_Spe
 - Imported images will only work if Godot already supports the file type. So .tiff won't work, but .png/.jpg should work
 - Function overloading. You will get an error if the ISF shader overloads a built in function. To fix it you will have to rename the function.
 - Global variables aren't supported at all. Try adding `const` to them instead
+- Buffer precision may not be 32-bit per channel. On compatibility it's 8-bit per channel
 
 If you come across a limitation not listed here, please report it by filing an issue on this repository
 
