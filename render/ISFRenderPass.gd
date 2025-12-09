@@ -20,6 +20,10 @@ class_name ISFRenderPass extends SubViewport
 
 @export var target : String
 
+
+var _width_expression : ISFExpression
+var _height_expression : ISFExpression
+
 var _rect := ColorRect.new()
 func _ready() -> void:
 	add_child(_rect)
@@ -46,7 +50,7 @@ func _validate_state():
 
 func _set_parent_viewport_textures():
 	if is_inside_tree() and (get_parent().has_method("get_material") or get_parent() is ISFRenderPass):
-		print(get_parent().material, " setting vp " , target, " to ", get_parent().name)
+		#print(get_parent().material, " setting vp " , target, " to ", get_parent().name)
 		get_parent().material.set_shader_parameter(target, get_texture())
 		
 		_copy_viewport_textures(material, get_parent().material)
@@ -61,3 +65,12 @@ func _copy_viewport_textures(material_a:ShaderMaterial, material_b:ShaderMateria
 
 func _setup_gpu_ping_pong() -> void:
 	pass
+
+
+func _update_effect(render_size:Vector2i):
+	if _width_expression:
+		render_size.x = _width_expression.execute([render_size.x])
+	if _height_expression:
+		render_size.x = _width_expression.execute([render_size.y])
+	
+	size = render_size.min(Vector2i(4096,4096))
