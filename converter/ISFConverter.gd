@@ -17,28 +17,15 @@ func convert_isf_to_scene(isf_file:ISFFile, scene_type:SceneType=0) -> Node:
 		_:
 			return scene_root
 	
+	var processor_script := ISFProcessorScript.new()
+	scene_root.add_child(processor_script, true)
+	processor_script.owner = scene_root
+	
 	var parser := ISFParser.new()
 	parser.parse(isf_file)
 	
 	var material : ShaderMaterial =  parser.material
 	material.resource_local_to_scene = true
-	
-	# Inititalize multi passes
-	var pass_parent : Node = scene_root
-	for i in range(parser.passes.size()-1, -1, -1):
-		var buffer_info := parser.passes[i]
-		
-		var vp := ISFRenderPass.new()
-		vp.material = material
-		vp.name = buffer_info.target.to_pascal_case()
-		vp.persistent = buffer_info.persistent
-		vp.target = buffer_info.target
-		vp.pass_index = parser.passes.size()-1 - i
-		vp.size = Vector2i(buffer_info.width, buffer_info.height)
-		pass_parent.add_child(vp, true)
-		vp.owner = scene_root
-		
-		pass_parent = vp
 	
 	# Initialize shader parameters
 	for info in parser.inputs:
@@ -46,6 +33,32 @@ func convert_isf_to_scene(isf_file:ISFFile, scene_type:SceneType=0) -> Node:
 	
 	for info in parser.imported_images:
 		material.set_shader_parameter(info.target, info.texture)
+	
+	# Inititalize multi passes
+	var pass_parent : Node = scene_root
+	for i in range(parser.passes.size()-1, -1, -1):
+		var pass_index := i
+		var buffer_info := parser.passes[pass_index]
+		
+		var vp := ISFRenderPass.new()
+		vp.material = material.duplicate()
+		vp.name = buffer_info.target.to_pascal_case()
+		vp.persistent = buffer_info.persistent
+		vp.target = buffer_info.target
+		vp.pass_index = pass_index #parser.passes.size()-1 - i
+		vp.size = Vector2i(buffer_info.width, buffer_info.height)
+		pass_parent.add_child(vp, true)
+		vp.owner = scene_root
+		
+		
+		var vp_texture := ViewportTexture.new()
+		vp_texture.viewport_path = scene_root.get_path_to(vp)
+		pass_parent.material.set_shader_parameter(vp.target, vp_texture)
+		
+		
+		pass_parent = vp
+	
+	scene_root.set_instance_shader_parameter("PASSINDEX", parser.passes.size())
 	
 	var mesh := QuadMesh.new()
 	
@@ -63,10 +76,6 @@ func convert_isf_to_scene(isf_file:ISFFile, scene_type:SceneType=0) -> Node:
 			scene_root.material_override = material
 	
 	scene_root.name = isf_file.path.get_file().get_basename().to_pascal_case()
-	
-	if not scene_root.get_children().is_empty():
-		material.set_shader_parameter(scene_root.get_child(0).target, scene_root.get_child(0).get_texture())
-		scene_root.set_instance_shader_parameter("PASSINDEX", parser.passes.size())
 	
 	return scene_root
 

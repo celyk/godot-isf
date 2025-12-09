@@ -26,7 +26,7 @@ static func _extract_json_from_first_comment(source:String) -> JSON:
 
 	var json := JSON.new()
 	json.parse(json_substr)
-
+	print(json.data)
 	return json
 
 static func _extract_shader_source(source:String) -> String:
