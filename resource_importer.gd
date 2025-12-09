@@ -20,9 +20,6 @@ func _get_import_options(path: String, preset_index: int) -> Array[Dictionary]:
 	return []
 
 func _import(source_file: String, save_path: String, options: Dictionary, platform_variants: Array[String], gen_files: Array[String]) -> Error:
-	print("_import time")
-	
-	
 	var path_to_save : String = save_path + '.' + _get_save_extension()
 	
 	#var scene_type : ISFConverter.SceneType = options["scene_type"]
@@ -82,6 +79,11 @@ func _import_additional(source_file:String, save_path:String) -> Dictionary:
 	var folder_path := save_path.get_base_dir().path_join(folder_name)
 	var additional_save_path := folder_path.path_join("generated_inputs.gdshaderinc")
 	
+	print("additional_save_path ", additional_save_path)
+	#EditorInterface.get_resource_filesystem().update_file(additional_save_path)
+	#append_import_external_resource(additional_save_path)
+	#EditorInterface.get_resource_filesystem().scan()
+	
 	if dir.file_exists(additional_save_path):
 		include = load(additional_save_path)
 	
@@ -90,9 +92,14 @@ func _import_additional(source_file:String, save_path:String) -> Dictionary:
 	additional_save_path = folder_path.path_join("generated_shader.gdshader")
 	
 	var shader := Shader.new()
+	
+	EditorInterface.get_resource_filesystem().update_file(additional_save_path)
+	append_import_external_resource(additional_save_path)
+	
 	if dir.file_exists(additional_save_path):
 		print("file_exists")
 		shader = load(additional_save_path)
+	
 	
 	dict["shader"] = shader
 	
@@ -111,8 +118,8 @@ func _save_additional(source_file:String, save_path:String, dict:Dictionary) -> 
 	dir.make_dir(additional_save_path.get_base_dir())
 	
 	ResourceSaver.save(include, additional_save_path)
+	EditorInterface.get_resource_filesystem().update_file(additional_save_path)
 	
 	additional_save_path = folder_path.path_join("generated_shader.gdshader")
 	ResourceSaver.save(shader, additional_save_path)
-	
-	#append_import_external_resource(additional_save_path)
+	EditorInterface.get_resource_filesystem().update_file(additional_save_path)
