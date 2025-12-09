@@ -6,6 +6,7 @@ enum SceneType {CONTROL, NODE_2D, NODE_3D}
 ## Convert and generates the scene structure
 func convert_isf_to_scene(isf_file:ISFFile, scene_type:SceneType=0) -> Node:
 	var scene_root := Node.new()
+	scene_root.name = isf_file.path.get_file().get_basename().to_pascal_case()
 	
 	match scene_type:
 		SceneType.CONTROL:
