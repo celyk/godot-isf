@@ -35,9 +35,9 @@ func _import(source_file: String, save_path: String, options: Dictionary, platfo
 	
 	var scene_root := converter.convert_isf_to_scene(isf_file)
 	
-	var include_path := additional_folder.path_join("generated_inputs.gdshader")
+	var include_path := additional_folder.path_join("generated_inputs.gdshaderinc")
 	var include : ShaderInclude = _load_or_create_resource(include_path, ShaderInclude.new())
-	var shader_path := additional_folder.path_join("generated_shader.gdshaderinc")
+	var shader_path := additional_folder.path_join("generated_shader.gdshader")
 	var shader : Shader = _load_or_create_resource(shader_path, Shader.new())
 	
 	if include == null: return Error.ERR_CANT_ACQUIRE_RESOURCE
@@ -50,16 +50,20 @@ func _import(source_file: String, save_path: String, options: Dictionary, platfo
 	
 	scene_root.material.shader = shader
 	
-	var file := FileAccess.open(include_path, FileAccess.WRITE)
-	file.store_string(include.code)
-	file.flush()
+	#
+	#var file := FileAccess.open(include_path, FileAccess.WRITE)
+	#file.store_string(include.code)
+	#file.flush()
+	#
+	#file = FileAccess.open(shader_path, FileAccess.WRITE)
+	#file.store_string(shader.code)
+	#file.flush()
 	
-	file = FileAccess.open(shader_path, FileAccess.WRITE)
-	file.store_string(shader.code)
-	file.flush()
+	var err := ResourceSaver.save(include, include_path, ResourceSaver.FLAG_REPLACE_SUBRESOURCE_PATHS)
+	#print(err)
 	
-	#print("save1 ", ResourceSaver.save(include, "meow.gdshader", ResourceSaver.FLAG_REPLACE_SUBRESOURCE_PATHS))
-	#print("save2 ", ResourceSaver.save(shader, shader_path, ResourceSaver.FLAG_REPLACE_SUBRESOURCE_PATHS))
+	err = ResourceSaver.save(shader, shader_path, ResourceSaver.FLAG_REPLACE_SUBRESOURCE_PATHS)
+	print(shader_path)
 	
 	include.emit_changed()
 	shader.emit_changed()
@@ -91,6 +95,9 @@ func _generate_shader_code(isf_file:ISFFile) -> String:
 
 func _load_or_create_resource(path:String, instance:Resource) -> Resource:
 	DirAccess.make_dir_absolute(path.get_base_dir())
+	EditorInterface.get_resource_filesystem().update_file(path.get_base_dir())
+	instance.resource_path = path
+	return instance
 	
 	#EditorInterface.get_resource_filesystem().scan()
 	
