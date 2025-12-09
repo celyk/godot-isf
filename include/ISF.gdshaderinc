@@ -2,7 +2,7 @@
 #define ISF
 
 // Uniform just to get the size of the rectangle on screen
-instance uniform vec4 rect_override = vec4(0,0,0,0);
+instance uniform vec4 rect_override = vec4(0,0,0,1);
 instance uniform vec2 rendersize_override = vec2(0,0);
 
 bool use_rect_override(){ return rect_override.zw != vec2(0,0); }
