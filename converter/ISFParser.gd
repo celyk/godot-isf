@@ -95,14 +95,11 @@ func _parse_buffers(isf_file:ISFFile) -> void:
 		info.target = dict.get("TARGET", "")
 		info.persistent = dict.get("PERSISTENT", false)
 		
-		#var isf_expression := ISFExpression.new()
-		#isf_expression.parse(dict.get("WIDTH", "0"), ["WIDTH"])
-		#info.width = isf_expression.execute([info.width])
-		#isf_expression.parse(dict.get("HEIGHT", "0"), ["HEIGHT"])
-		#info.height = isf_expression.execute([info.height])
-		#
-		info.width = dict.get("WIDTH", "0")
-		info.height = dict.get("HEIGHT", "0")
+		var isf_expression := ISFExpression.new()
+		isf_expression.parse(dict.get("WIDTH", "0"), ["WIDTH"])
+		info.width = isf_expression.execute([info.width])
+		isf_expression.parse(dict.get("HEIGHT", "0"), ["HEIGHT"])
+		info.height = isf_expression.execute([info.height])
 		
 		# Buffer is not valid
 		if info.target == "": continue

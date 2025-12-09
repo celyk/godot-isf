@@ -33,9 +33,9 @@ func _validate_state():
 	render_target_clear_mode = SubViewport.CLEAR_MODE_ALWAYS
 	render_target_update_mode = SubViewport.UPDATE_ALWAYS
 	
-	#_rect.set_anchors_preset(Control.PRESET_FULL_RECT)
+	_rect.set_anchors_preset(Control.PRESET_FULL_RECT)
 	_rect.material = material
-	_rect.size = Vector2(1e9,1e9)
+	#_rect.size = Vector2(1e9,1e9)
 	
 	if persistent:
 		_setup_gpu_ping_pong()

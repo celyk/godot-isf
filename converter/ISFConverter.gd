@@ -58,9 +58,9 @@ func convert_isf_to_scene(isf_file:ISFFile, scene_type:SceneType=0) -> Node:
 		
 		var vp_texture := ViewportTexture.new()
 		vp_texture.viewport_path = scene_root.get_path_to(vp)
+		print(vp_texture.viewport_path)
 		pass_parent.material.set_shader_parameter(vp.target, vp_texture)
 		
-		break
 		pass_parent = vp
 	
 	scene_root.set_instance_shader_parameter("PASSINDEX", parser.passes.size())
