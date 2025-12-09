@@ -11,9 +11,9 @@ bool use_rendersize_override(){ return rendersize_override != vec2(0,0); }
 #define GODOT_RESOLUTION vec2( use_rendersize_override() ? rendersize_override : 1.0 / SCREEN_PIXEL_SIZE )
 //#define GODOT_RESOLUTION VIEWPORT_SIZE
 
-#define GODOT_UV vec2(SCREEN_UV)
+#define GODOT_UV vec2( use_rect_override() ? UV : SCREEN_UV )
 
-#define GODOT_PIXEL_COORD vec4(FRAGCOORD)
+#define GODOT_PIXEL_COORD vec4(GODOT_UV.x * GODOT_RESOLUTION.x, GODOT_UV.y * GODOT_RESOLUTION.x, FRAGCOORD.z, FRAGCOORD.w)
 
 // Get the rect transform from UV space to model space
 /*mat4 getRectTransform(){
