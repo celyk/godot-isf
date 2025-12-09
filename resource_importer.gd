@@ -81,7 +81,7 @@ func _import_additional(source_file:String, save_path:String) -> Dictionary:
 	
 	print("additional_save_path ", additional_save_path)
 	#EditorInterface.get_resource_filesystem().update_file(additional_save_path)
-	#append_import_external_resource(additional_save_path)
+	append_import_external_resource(additional_save_path)
 	#EditorInterface.get_resource_filesystem().scan()
 	
 	if dir.file_exists(additional_save_path):
