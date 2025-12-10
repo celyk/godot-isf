@@ -32,7 +32,7 @@ static func _extract_json_from_first_comment(source:String) -> JSON:
 static func _extract_shader_source(source:String) -> String:
 	var json_start : int = source.find("/*") + 2
 	var json_end : int = source.find("*/", json_start)
-	return source.substr(json_end+2)
+	return source.substr(json_end+3)
 
 func save(path:String) -> Error:
 	var file := FileAccess.open(path, FileAccess.ModeFlags.WRITE)

@@ -19,7 +19,10 @@ func _save(resource: Resource, path: String, flags: int) -> Error:
 	#isf_code = _remove_lines_with(isf_code, "shader_type")
 	#isf_code = _remove_lines_with(isf_code, "#include")
 	
-	isf_code = _remove_lines_between(isf_code,"*/", "#include")
+	var json_start := isf_code.find("/*")
+	isf_code = isf_code.substr(json_start)
+	
+	#isf_code = _remove_lines_between(isf_code,"*/", "#include")
 	
 	#print(isf_code)
 	var file := FileAccess.open(path, FileAccess.WRITE)

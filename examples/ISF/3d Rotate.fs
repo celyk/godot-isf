@@ -48,6 +48,12 @@
 }
 */
 
+shader_type canvas_item;
+
+#include "res://.godot/imported/ISF/2422514035/generated_inputs.gdshaderinc"
+
+
+
 
 
 

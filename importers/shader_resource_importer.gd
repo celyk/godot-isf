@@ -56,9 +56,10 @@ func _generate_include_code(isf_file:ISFFile) -> String:
 	return include_code
 
 func _generate_shader_code(isf_file:ISFFile, hash:String) -> String:
-	var shader_code : String = "/*\n" + JSON.stringify(isf_file.json.data, "\t") + "\n*/\n\n"
+	var shader_code : String = "" 
 	shader_code += "shader_type canvas_item;\n\n"
 	shader_code += '#include "res://.godot/imported/ISF/%s/generated_inputs.gdshaderinc"\n\n' % [hash]
+	shader_code += "/*\n" + JSON.stringify(isf_file.json.data, "\t") + "\n*/\n"
 	#shader_code += '#include "res://addons/godot-isf/include/ISF.gdshaderinc"\n\n'
 	shader_code += isf_file.shader_source
 	
