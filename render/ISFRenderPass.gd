@@ -64,7 +64,14 @@ func _copy_viewport_textures(material_a:ShaderMaterial, material_b:ShaderMateria
 		material_b.set_shader_parameter(parameter.name, value)
 
 func _setup_gpu_ping_pong() -> void:
-	pass
+	if material == null: return
+	
+	var feedback := get_node_or_null("Feedback")
+	if feedback == null:
+		feedback = Feedback.new()
+		add_child(feedback)
+	 
+	material.set_shader_parameter(target, feedback.get_texture())
 
 
 var _e := ISFExpression.new()
