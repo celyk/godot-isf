@@ -37,15 +37,12 @@ func _import(source_file: String, save_path: String, options: Dictionary, platfo
 	parser.parse(isf_file)
 	
 	var include_path := additional_folder.path_join("generated_inputs.gdshaderinc")
-	var include : ShaderInclude = ResourceLoader.get_cached_ref(include_path)
-	
-	if include == null:
-		include = ShaderInclude.new()
-	
+
+	var include : ShaderInclude = ShaderInclude.new()
 	include.code = _generate_include_code(isf_file)
 	
-	#ResourceSaver.save(include, include_path, ResourceSaver.FLAG_REPLACE_SUBRESOURCE_PATHS)
-	ResourceSaver.save(include, include_path)
+	if ResourceSaver.save(include, include_path) == OK:
+		ResourceLoader.load(include_path, "", ResourceLoader.CACHE_MODE_REPLACE)
 	
 	#include.emit_changed()
 	
