@@ -1,139 +1,141 @@
-/*{
-    "CATEGORIES": [
-        "Color Effect"
-    ],
-    "CREDIT": "by VIDVOX",
-    "DESCRIPTION": "Creates variations on a base color using a given algorithm.",
-    "INPUTS": [
-        {
-            "NAME": "inputImage",
-            "TYPE": "image"
-        },
-        {
-            "DEFAULT": 0,
-            "LABEL": "Sample Mode",
-            "LABELS": [
-                "Base Color",
-                "Pixel Follow",
-                "Color Average"
-            ],
-            "NAME": "sampleMode",
-            "TYPE": "long",
-            "VALUES": [
-                0,
-                1,
-                2
-            ]
-        },
-        {
-            "DEFAULT": 1,
-            "LABEL": "Color Mode",
-            "LABELS": [
-                "Basic Complementary",
-                "Split Complementary",
-                "Compound Complementary",
-                "Spectrum",
-                "Shades",
-                "Analogous",
-                "Compound Analogous"
-            ],
-            "NAME": "colorModeOverride",
-            "TYPE": "long",
-            "VALUES": [
-                0,
-                1,
-                2,
-                3,
-                4,
-                5,
-                6
-            ]
-        },
-        {
-            "DEFAULT": 7,
-            "LABEL": "Color Count",
-            "LABELS": [
-                "2",
-                "3",
-                "4",
-                "5",
-                "6",
-                "7",
-                "8",
-                "9",
-                "10",
-                "11",
-                "12",
-                "13",
-                "14",
-                "15",
-                "16"
-            ],
-            "NAME": "colorCount",
-            "TYPE": "long",
-            "VALUES": [
-                2,
-                3,
-                4,
-                5,
-                6,
-                7,
-                8,
-                9,
-                10,
-                11,
-                12,
-                13,
-                14,
-                15,
-                16
-            ]
-        },
-        {
-            "DEFAULT": [
-                0.25,
-                0.59,
-                0.9,
-                1
-            ],
-            "LABEL": "Base Color",
-            "NAME": "baseColor",
-            "TYPE": "color"
-        },
-        {
-            "DEFAULT": [
-                0.5,
-                0.5
-            ],
-            "LABEL": "Pixel Point",
-            "MAX": [
-                1,
-                1
-            ],
-            "MIN": [
-                0,
-                0
-            ],
-            "NAME": "pixelFollowLocation",
-            "TYPE": "point2D"
-        }
-    ],
-    "ISFVSN": "2",
-    "PASSES": [
-        {
-            "HEIGHT": "$HEIGHT / 100.0",
-            "TARGET": "bufferPassA",
-            "WIDTH": "$WIDTH / 100.0"
-        },
-        {
-            "HEIGHT": "1.0",
-            "TARGET": "autoColorBuffer",
-            "WIDTH": "1.0",
-            "persistent": true
-        },
-        {
-        }
-    ]
+/*
+{
+	"CATEGORIES": [
+		"Color Effect"
+	],
+	"CREDIT": "by VIDVOX",
+	"DESCRIPTION": "Creates variations on a base color using a given algorithm.",
+	"INPUTS": [
+		{
+			"NAME": "inputImage",
+			"TYPE": "image"
+		},
+		{
+			"DEFAULT": 0.0,
+			"LABEL": "Sample Mode",
+			"LABELS": [
+				"Base Color",
+				"Pixel Follow",
+				"Color Average"
+			],
+			"NAME": "sampleMode",
+			"TYPE": "long",
+			"VALUES": [
+				0.0,
+				1.0,
+				2.0
+			]
+		},
+		{
+			"DEFAULT": 1.0,
+			"LABEL": "Color Mode",
+			"LABELS": [
+				"Basic Complementary",
+				"Split Complementary",
+				"Compound Complementary",
+				"Spectrum",
+				"Shades",
+				"Analogous",
+				"Compound Analogous"
+			],
+			"NAME": "colorModeOverride",
+			"TYPE": "long",
+			"VALUES": [
+				0.0,
+				1.0,
+				2.0,
+				3.0,
+				4.0,
+				5.0,
+				6.0
+			]
+		},
+		{
+			"DEFAULT": 7.0,
+			"LABEL": "Color Count",
+			"LABELS": [
+				"2",
+				"3",
+				"4",
+				"5",
+				"6",
+				"7",
+				"8",
+				"9",
+				"10",
+				"11",
+				"12",
+				"13",
+				"14",
+				"15",
+				"16"
+			],
+			"NAME": "colorCount",
+			"TYPE": "long",
+			"VALUES": [
+				2.0,
+				3.0,
+				4.0,
+				5.0,
+				6.0,
+				7.0,
+				8.0,
+				9.0,
+				10.0,
+				11.0,
+				12.0,
+				13.0,
+				14.0,
+				15.0,
+				16.0
+			]
+		},
+		{
+			"DEFAULT": [
+				0.25,
+				0.59,
+				0.9,
+				1.0
+			],
+			"LABEL": "Base Color",
+			"NAME": "baseColor",
+			"TYPE": "color"
+		},
+		{
+			"DEFAULT": [
+				0.5,
+				0.5
+			],
+			"LABEL": "Pixel Point",
+			"MAX": [
+				1.0,
+				1.0
+			],
+			"MIN": [
+				0.0,
+				0.0
+			],
+			"NAME": "pixelFollowLocation",
+			"TYPE": "point2D"
+		}
+	],
+	"ISFVSN": "2",
+	"PASSES": [
+		{
+			"HEIGHT": "$HEIGHT / 100.0",
+			"TARGET": "bufferPassA",
+			"WIDTH": "$WIDTH / 100.0"
+		},
+		{
+			"HEIGHT": "1.0",
+			"TARGET": "autoColorBuffer",
+			"WIDTH": "1.0",
+			"persistent": true
+		},
+		{
+
+		}
+	]
 }
 */
 

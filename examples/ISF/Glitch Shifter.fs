@@ -1,78 +1,79 @@
-/*{
-    "CATEGORIES": [
-        "Glitch"
-    ],
-    "CREDIT": "by VIDVOX",
-    "INPUTS": [
-        {
-            "NAME": "inputImage",
-            "TYPE": "image"
-        },
-        {
-            "DEFAULT": 0.1,
-            "LABEL": "Size",
-            "MAX": 0.5,
-            "MIN": 0,
-            "NAME": "glitch_size",
-            "TYPE": "float"
-        },
-        {
-            "DEFAULT": 0.2,
-            "LABEL": "Horizontal Amount",
-            "MAX": 1,
-            "MIN": 0,
-            "NAME": "glitch_horizontal",
-            "TYPE": "float"
-        },
-        {
-            "DEFAULT": 0,
-            "LABEL": "Vertical Amount",
-            "MAX": 1,
-            "MIN": 0,
-            "NAME": "glitch_vertical",
-            "TYPE": "float"
-        },
-        {
-            "DEFAULT": 1,
-            "LABEL": "Randomize Size",
-            "NAME": "randomize_size",
-            "TYPE": "bool"
-        },
-        {
-            "DEFAULT": 0,
-            "LABEL": "Randomize Zoom",
-            "NAME": "randomize_zoom",
-            "TYPE": "bool"
-        },
-        {
-            "DEFAULT": 0,
-            "LABEL": "Use Alt Image",
-            "NAME": "use_alt_image",
-            "TYPE": "bool"
-        },
-        {
-            "NAME": "altImage",
-            "TYPE": "image"
-        },
-        {
-            "DEFAULT": [
-                0,
-                0
-            ],
-            "LABEL": "Offset",
-            "MAX": [
-                1,
-                1
-            ],
-            "MIN": [
-                0,
-                0
-            ],
-            "NAME": "offset",
-            "TYPE": "point2D"
-        }
-    ],
-    "ISFVSN": "2"
+/*
+{
+	"CATEGORIES": [
+		"Glitch"
+	],
+	"CREDIT": "by VIDVOX",
+	"INPUTS": [
+		{
+			"NAME": "inputImage",
+			"TYPE": "image"
+		},
+		{
+			"DEFAULT": 0.1,
+			"LABEL": "Size",
+			"MAX": 0.5,
+			"MIN": 0.0,
+			"NAME": "glitch_size",
+			"TYPE": "float"
+		},
+		{
+			"DEFAULT": 0.2,
+			"LABEL": "Horizontal Amount",
+			"MAX": 1.0,
+			"MIN": 0.0,
+			"NAME": "glitch_horizontal",
+			"TYPE": "float"
+		},
+		{
+			"DEFAULT": 0.0,
+			"LABEL": "Vertical Amount",
+			"MAX": 1.0,
+			"MIN": 0.0,
+			"NAME": "glitch_vertical",
+			"TYPE": "float"
+		},
+		{
+			"DEFAULT": 1.0,
+			"LABEL": "Randomize Size",
+			"NAME": "randomize_size",
+			"TYPE": "bool"
+		},
+		{
+			"DEFAULT": 0.0,
+			"LABEL": "Randomize Zoom",
+			"NAME": "randomize_zoom",
+			"TYPE": "bool"
+		},
+		{
+			"DEFAULT": 0.0,
+			"LABEL": "Use Alt Image",
+			"NAME": "use_alt_image",
+			"TYPE": "bool"
+		},
+		{
+			"NAME": "altImage",
+			"TYPE": "image"
+		},
+		{
+			"DEFAULT": [
+				0.0,
+				0.0
+			],
+			"LABEL": "Offset",
+			"MAX": [
+				1.0,
+				1.0
+			],
+			"MIN": [
+				0.0,
+				0.0
+			],
+			"NAME": "offset",
+			"TYPE": "point2D"
+		}
+	],
+	"ISFVSN": "2"
 }
 */
 

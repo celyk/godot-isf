@@ -33,13 +33,6 @@
 }
 */
 
-shader_type canvas_item;
-
-#include "generated_inputs.gdshaderinc"
-
-
-
-
 
 vec4 getFromColor(vec2 inUV)	{
 	return IMG_NORM_PIXEL(startImage, inUV);

@@ -1,54 +1,56 @@
-/*{
-	"DESCRIPTION": "ASCII Art",
-	"CREDIT": "by VIDVOX (Ported from https://www.shadertoy.com/view/lssGDj)",
-	"ISFVSN": "2",
+/*
+{
 	"CATEGORIES": [
-		"Stylize", "Retro"
+		"Stylize",
+		"Retro"
 	],
+	"CREDIT": "by VIDVOX (Ported from https://www.shadertoy.com/view/lssGDj)",
+	"DESCRIPTION": "ASCII Art",
 	"INPUTS": [
 		{
 			"NAME": "inputImage",
 			"TYPE": "image"
 		},
 		{
+			"DEFAULT": 0.1,
+			"MAX": 1.0,
+			"MIN": 0.0,
 			"NAME": "size",
-			"TYPE": "float",
-			"MIN": 0.0,
-			"MAX": 1.0,
-			"DEFAULT": 0.1
+			"TYPE": "float"
 		},
 		{
-			"NAME": "gamma",
-			"TYPE": "float",
 			"DEFAULT": 1.0,
+			"MAX": 2.0,
 			"MIN": 0.5,
-			"MAX": 2.0
+			"NAME": "gamma",
+			"TYPE": "float"
 		},
 		{
-			"NAME": "tint",
-			"TYPE": "float",
-			"MIN": 0.0,
+			"DEFAULT": 1.0,
 			"MAX": 1.0,
-			"DEFAULT": 1.0
+			"MIN": 0.0,
+			"NAME": "tint",
+			"TYPE": "float"
 		},
 		{
-			"NAME": "tintColor",
-			"TYPE": "color",
 			"DEFAULT": [
 				0.0,
 				1.0,
 				0.0,
 				1.0
-			]
+			],
+			"NAME": "tintColor",
+			"TYPE": "color"
 		},
 		{
+			"DEFAULT": 0.0,
 			"NAME": "alphaMode",
-			"TYPE": "bool",
-			"DEFAULT": 0.0
+			"TYPE": "bool"
 		}
-	]
-	
-}*/
+	],
+	"ISFVSN": "2"
+}
+*/
 
 
 

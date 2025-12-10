@@ -1,174 +1,180 @@
 /*
 {
-  "CATEGORIES" : [
-    "Audio Visualizer"
-  ],
-  "DESCRIPTION" : "Wraps an audio waveform around a shape and does video feedback.",
-  "ISFVSN" : "2",
-  "INPUTS" : [
-    {
-      "NAME" : "audioWave",
-      "TYPE" : "audio"
-    },
-    {
-      "NAME" : "audioGain",
-      "TYPE" : "float",
-      "MAX" : 2,
-      "DEFAULT" : 1.0,
-      "MIN" : 0
-    },
-    {
-      "NAME" : "lineWidth",
-      "TYPE" : "float",
-      "MAX" : 0.1,
-      "DEFAULT" : 0.01,
-      "MIN" : 0
-    },
-    {
-      "NAME" : "shapeRadius",
-      "TYPE" : "float",
-      "MAX" : 1,
-      "DEFAULT" : 0.25,
-      "MIN" : 0
-    },
-    {
-      "NAME" : "feedbackLevel",
-      "TYPE" : "float",
-      "MAX" : 1,
-      "DEFAULT" : 0.25,
-      "MIN" : 0
-    },
-    {
-      "NAME" : "zoomLevel",
-      "TYPE" : "float",
-      "MAX" : 1.1,
-      "DEFAULT" : 1.01,
-      "MIN" : 0.9,
-      "LABEL" : "Feedback Zoom"
-    },
-    {
-      "NAME" : "mixPoint",
-      "TYPE" : "float",
-      "MAX" : 1,
-      "DEFAULT" : 0.0,
-      "MIN" : 0
-    },
-    {
-      "NAME" : "waveColor1",
-      "TYPE" : "color",
-      "DEFAULT" : [
-        0.95969659090042114,
-        0.80407930507175662,
-        0.44830461173716851,
-        1
-      ]
-    },
-    {
-      "NAME" : "waveColor2",
-      "TYPE" : "color",
-      "DEFAULT" : [
-        0.055977690787502407,
-        0.71078224912611609,
-        0.93459457159042358,
-        1
-      ]
-    },
-    {
-      "LABELS" : [
-        "Circle",
-        "Triangle",
-        "Rect",
-        "Pentagram",
-        "Hexagon",
-        "Star1",
-        "Star2",
-        "Heart",
-        "Rays"
-      ],
-      "NAME" : "shape1",
-      "TYPE" : "long",
-      "DEFAULT" : 0,
-      "VALUES" : [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8
-      ]
-    },
-    {
-      "LABELS" : [
-        "Circle",
-        "Triangle",
-        "Rect",
-        "Pentagram",
-        "Hexagon",
-        "Star1",
-        "Star2",
-        "Heart",
-        "Rays"
-      ],
-      "NAME" : "shape2",
-      "TYPE" : "long",
-      "DEFAULT" : 1,
-      "VALUES" : [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8
-      ]
-    },
-    {
-      "NAME" : "shapeCenter",
-      "TYPE" : "point2D",
-      "MAX" : [
-        1,
-        1
-      ],
-      "DEFAULT" : [
-        0.5,
-        0.5
-      ],
-      "MIN" : [
-        0,
-        0
-      ]
-    },
-    {
-      "NAME" : "zoomCenter",
-      "TYPE" : "point2D",
-      "MAX" : [
-        1,
-        1
-      ],
-      "DEFAULT" : [
-        0.5,
-        0.5
-      ],
-      "MIN" : [
-        0,
-        0
-      ]
-    }
-  ],
-  "PASSES" : [
-    {
-      "TARGET" : "feedbackBuffer",
-      "PERSISTENT" : true
-    }
-  ],
-  "CREDIT" : ""
+	"CATEGORIES": [
+		"Audio Visualizer"
+	],
+	"CREDIT": "",
+	"DESCRIPTION": "Wraps an audio waveform around a shape and does video feedback.",
+	"INPUTS": [
+		{
+			"NAME": "audioWave",
+			"TYPE": "audio"
+		},
+		{
+			"DEFAULT": 1.0,
+			"MAX": 2.0,
+			"MIN": 0.0,
+			"NAME": "audioGain",
+			"TYPE": "float"
+		},
+		{
+			"DEFAULT": 0.01,
+			"MAX": 0.1,
+			"MIN": 0.0,
+			"NAME": "lineWidth",
+			"TYPE": "float"
+		},
+		{
+			"DEFAULT": 0.25,
+			"MAX": 1.0,
+			"MIN": 0.0,
+			"NAME": "shapeRadius",
+			"TYPE": "float"
+		},
+		{
+			"DEFAULT": 0.25,
+			"MAX": 1.0,
+			"MIN": 0.0,
+			"NAME": "feedbackLevel",
+			"TYPE": "float"
+		},
+		{
+			"DEFAULT": 1.01,
+			"LABEL": "Feedback Zoom",
+			"MAX": 1.1,
+			"MIN": 0.9,
+			"NAME": "zoomLevel",
+			"TYPE": "float"
+		},
+		{
+			"DEFAULT": 0.0,
+			"MAX": 1.0,
+			"MIN": 0.0,
+			"NAME": "mixPoint",
+			"TYPE": "float"
+		},
+		{
+			"DEFAULT": [
+				0.959696590900421,
+				0.804079305071757,
+				0.448304611737168,
+				1.0
+			],
+			"NAME": "waveColor1",
+			"TYPE": "color"
+		},
+		{
+			"DEFAULT": [
+				0.0559776907875024,
+				0.710782249126116,
+				0.934594571590423,
+				1.0
+			],
+			"NAME": "waveColor2",
+			"TYPE": "color"
+		},
+		{
+			"DEFAULT": 0.0,
+			"LABELS": [
+				"Circle",
+				"Triangle",
+				"Rect",
+				"Pentagram",
+				"Hexagon",
+				"Star1",
+				"Star2",
+				"Heart",
+				"Rays"
+			],
+			"NAME": "shape1",
+			"TYPE": "long",
+			"VALUES": [
+				0.0,
+				1.0,
+				2.0,
+				3.0,
+				4.0,
+				5.0,
+				6.0,
+				7.0,
+				8.0
+			]
+		},
+		{
+			"DEFAULT": 1.0,
+			"LABELS": [
+				"Circle",
+				"Triangle",
+				"Rect",
+				"Pentagram",
+				"Hexagon",
+				"Star1",
+				"Star2",
+				"Heart",
+				"Rays"
+			],
+			"NAME": "shape2",
+			"TYPE": "long",
+			"VALUES": [
+				0.0,
+				1.0,
+				2.0,
+				3.0,
+				4.0,
+				5.0,
+				6.0,
+				7.0,
+				8.0
+			]
+		},
+		{
+			"DEFAULT": [
+				0.5,
+				0.5
+			],
+			"MAX": [
+				1.0,
+				1.0
+			],
+			"MIN": [
+				0.0,
+				0.0
+			],
+			"NAME": "shapeCenter",
+			"TYPE": "point2D"
+		},
+		{
+			"DEFAULT": [
+				0.5,
+				0.5
+			],
+			"MAX": [
+				1.0,
+				1.0
+			],
+			"MIN": [
+				0.0,
+				0.0
+			],
+			"NAME": "zoomCenter",
+			"TYPE": "point2D"
+		}
+	],
+	"ISFVSN": "2",
+	"PASSES": [
+		{
+			"PERSISTENT": true,
+			"TARGET": "feedbackBuffer"
+		}
+	]
 }
 */
+
+shader_type canvas_item;
+
+#include "ISF/2920626490/generated_inputs.gdshaderinc"
+
+
 
 const float pi = 3.1415926535897932384626433832795;
 const float tau =  6.2831853071795864769252867665590;

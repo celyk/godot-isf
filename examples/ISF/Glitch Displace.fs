@@ -1,28 +1,28 @@
 /*
 {
-  "CATEGORIES" : [
-    "Distortion"
-  ],
-  "CREDIT": "Automatically converted from https://www.github.com/gl-transitions/gl-transitions/tree/master/GlitchDisplace.glsl",
-  "DESCRIPTION": "",
-  "ISFVSN" : "2",
-  "INPUTS" : [
-    {
-      "TYPE" : "image",
-      "NAME" : "startImage"
-    },
-    {
-      "TYPE" : "image",
-      "NAME" : "endImage"
-    },
-    {
-      "DEFAULT" : 0,
-      "MAX" : 1,
-      "NAME" : "progress",
-      "MIN" : 0,
-      "TYPE" : "float"
-    }
-  ]
+	"CATEGORIES": [
+		"Distortion"
+	],
+	"CREDIT": "Automatically converted from https://www.github.com/gl-transitions/gl-transitions/tree/master/GlitchDisplace.glsl",
+	"DESCRIPTION": "",
+	"INPUTS": [
+		{
+			"NAME": "startImage",
+			"TYPE": "image"
+		},
+		{
+			"NAME": "endImage",
+			"TYPE": "image"
+		},
+		{
+			"DEFAULT": 0.0,
+			"MAX": 1.0,
+			"MIN": 0.0,
+			"NAME": "progress",
+			"TYPE": "float"
+		}
+	],
+	"ISFVSN": "2"
 }
 */
 

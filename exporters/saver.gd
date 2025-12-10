@@ -14,8 +14,9 @@ func _save(resource: Resource, path: String, flags: int) -> Error:
 	#print("saving not");return OK
 	
 	var shader : Shader = resource
-	
+	print("resource_path ", shader.resource_path)
 	var isf_code := shader.code
+	shader.code = shader.code
 	#isf_code = _remove_lines_with(isf_code, "shader_type")
 	#isf_code = _remove_lines_with(isf_code, "#include")
 	
@@ -27,6 +28,24 @@ func _save(resource: Resource, path: String, flags: int) -> Error:
 	#print(isf_code)
 	var file := FileAccess.open(path, FileAccess.WRITE)
 	file.store_string(isf_code)
+	file.close()
+	
+	return OK
+	
+	EditorInterface.get_resource_filesystem().update_file(path)
+	EditorInterface.get_resource_filesystem().reimport_files([path])
+	
+	#shader.notify_property_list_changed()
+	#shader.emit_changed()
+	
+	
+	
+	shader = ResourceLoader.load(path)
+	
+	print(isf_code)
+	shader.emit_changed.call_deferred()
+	
+	#shader.take_over_path(shader.resource_path)
 	
 	return OK
 
