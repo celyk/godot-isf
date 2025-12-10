@@ -36,12 +36,25 @@ func _import(source_file: String, save_path: String, options: Dictionary, platfo
 	var parser := ISFParser.new()
 	parser.parse(isf_file)
 	
-	var include := ShaderInclude.new()
-	include.code = _generate_include_code(isf_file)
-	print(additional_folder.path_join("generated_inputs.gdshaderinc"))
-	ResourceSaver.save(include, additional_folder.path_join("generated_inputs.gdshaderinc"))
+	var include_path := additional_folder.path_join("generated_inputs.gdshaderinc")
+	var include : ShaderInclude = ResourceLoader.get_cached_ref(include_path)
 	
-	append_import_external_resource(additional_folder.path_join("generated_inputs.gdshaderinc"))
+	if include == null:
+		include = ShaderInclude.new()
+	
+	include.code = _generate_include_code(isf_file)
+	
+	#ResourceSaver.save(include, include_path, ResourceSaver.FLAG_REPLACE_SUBRESOURCE_PATHS)
+	ResourceSaver.save(include, include_path)
+	
+	#include.emit_changed()
+	
+	#print(additional_folder.path_join("generated_inputs.gdshaderinc"))
+	
+	#EditorInterface.get_resource_filesystem().update_file(additional_folder.path_join("generated_inputs.gdshaderinc"))
+	#print("append: ", append_import_external_resource(additional_folder.path_join("generated_inputs.gdshaderinc")) )
+	
+	#EditorInterface.get_resource_filesystem().reimport_files.call_deferred([additional_folder.path_join("generated_inputs.gdshaderinc")])
 	
 	var shader := Shader.new()
 	shader.code = _generate_shader_code(isf_file, hash)
