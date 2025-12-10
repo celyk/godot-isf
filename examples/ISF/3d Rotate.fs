@@ -1,49 +1,54 @@
-/*{
-	"DESCRIPTION": "performs a 3d rotation",
-	"CREDIT": "by zoidberg",
-	"ISFVSN": "2",
+/*
+{
 	"CATEGORIES": [
-		"Geometry Adjustment", "Utility"
+		"Geometry Adjustment",
+		"Utility"
 	],
+	"CREDIT": "by zoidberg",
+	"DESCRIPTION": "performs a 3d rotation",
 	"INPUTS": [
 		{
 			"NAME": "inputImage",
 			"TYPE": "image"
 		},
 		{
-			"NAME": "xrot",
+			"DEFAULT": 1.0,
 			"LABEL": "X rotate",
-			"TYPE": "float",
-			"MIN": 0.0,
 			"MAX": 2.0,
-			"DEFAULT": 1.0
+			"MIN": 0.0,
+			"NAME": "xrot",
+			"TYPE": "float"
 		},
 		{
-			"NAME": "yrot",
+			"DEFAULT": 1.0,
 			"LABEL": "Y rotate",
-			"TYPE": "float",
-			"MIN": 0.0,
 			"MAX": 2.0,
-			"DEFAULT": 1.0
+			"MIN": 0.0,
+			"NAME": "yrot",
+			"TYPE": "float"
 		},
 		{
-			"NAME": "zrot",
+			"DEFAULT": 1.0,
 			"LABEL": "Z rotate",
-			"TYPE": "float",
-			"MIN": 0.0,
 			"MAX": 2.0,
-			"DEFAULT": 1.0
+			"MIN": 0.0,
+			"NAME": "zrot",
+			"TYPE": "float"
 		},
 		{
-			"NAME": "zoom",
+			"DEFAULT": 1.0,
 			"LABEL": "Zoom Level",
-			"TYPE": "float",
-			"MIN": 0.0,
 			"MAX": 1.0,
-			"DEFAULT": 1.0
+			"MIN": 0.0,
+			"NAME": "zoom",
+			"TYPE": "float"
 		}
-	]
-}*/
+	],
+	"ISFVSN": "2"
+}
+*/
+
+
 
 
 void main()

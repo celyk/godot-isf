@@ -1,19 +1,30 @@
 @tool
 class_name ISFEffectPlayerControl extends Control
 
-@export var shader : Shader
+@export var effect : ShaderMaterial
 
 func _init() -> void:
 	_initialize.call_deferred()
 
-var _rect := MeshInstance2D.new()
+var _rect : MeshInstance2D
 func _initialize() -> void:
-	if shader == null:
-		shader = Shader.new()
-		shader.code = _default_shader_code
+	if effect == null:
+		effect = ShaderMaterial.new()
+		effect.shader = Shader.new()
+		effect.shader.code = _default_shader_code
 	
-	_rect.material = ShaderMaterial.new()
-	_rect.material.shader = shader
+	_init_rect()
+
+func _process(delta: float) -> void:
+	#var shader_material := ShaderMaterial.new()
+	#shader_material.shader = shader
+	#print(shader_material.get_property_list())
+	pass
+
+func _init_rect() -> void:
+	_rect = MeshInstance2D.new()
+	
+	_rect.material = effect
 	
 	_rect.mesh = QuadMesh.new()
 	_rect.mesh.size = Vector2i(2, 2)

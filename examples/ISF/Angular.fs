@@ -1,36 +1,43 @@
-/*{
-    "CATEGORIES": [
-        "Wipe"
-    ],
-    "CREDIT": "Automatically converted from https://www.github.com/gl-transitions/gl-transitions/tree/master/angular.glsl",
-    "DESCRIPTION": "",
-    "INPUTS": [
-        {
-            "NAME": "startImage",
-            "TYPE": "image"
-        },
-        {
-            "NAME": "endImage",
-            "TYPE": "image"
-        },
-        {
-            "DEFAULT": 0,
-            "MAX": 1,
-            "MIN": 0,
-            "NAME": "progress",
-            "TYPE": "float"
-        },
-        {
-            "DEFAULT": 90,
-            "MAX": 360,
-            "MIN": 0,
-            "NAME": "startingAngle",
-            "TYPE": "float"
-        }
-    ],
-    "ISFVSN": "2"
+/*
+{
+	"CATEGORIES": [
+		"Wipe"
+	],
+	"CREDIT": "Automatically converted from https://www.github.com/gl-transitions/gl-transitions/tree/master/angular.glsl",
+	"DESCRIPTION": "",
+	"INPUTS": [
+		{
+			"NAME": "startImage",
+			"TYPE": "image"
+		},
+		{
+			"NAME": "endImage",
+			"TYPE": "image"
+		},
+		{
+			"DEFAULT": 0.0,
+			"MAX": 1.0,
+			"MIN": 0.0,
+			"NAME": "progress",
+			"TYPE": "float"
+		},
+		{
+			"DEFAULT": 90.0,
+			"MAX": 360.0,
+			"MIN": 0.0,
+			"NAME": "startingAngle",
+			"TYPE": "float"
+		}
+	],
+	"ISFVSN": "2"
 }
 */
+
+shader_type canvas_item;
+
+#include "generated_inputs.gdshaderinc"
+
+
 
 
 
