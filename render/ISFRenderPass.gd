@@ -21,8 +21,8 @@ class_name ISFRenderPass extends SubViewport
 @export var target : String
 
 
-var _width_expression : ISFExpression
-var _height_expression : ISFExpression
+@export var _width_expression : String
+@export var _height_expression : String
 
 var _rect := ColorRect.new()
 func _ready() -> void:
@@ -67,10 +67,18 @@ func _setup_gpu_ping_pong() -> void:
 	pass
 
 
+var _e := ISFExpression.new()
 func _update_effect(render_size:Vector2i):
+	#print(render_size)
+	#print(_width_expression)
 	if _width_expression:
-		render_size.x = _width_expression.execute([render_size.x])
+		#print("parsing ", _width_expression.remove_chars("$"))
+		_e.parse(_width_expression, ["WIDTH"])
+		var width : int = _e.execute([float(render_size.x)])
+		render_size.x = render_size.x if width == 0 else width
 	if _height_expression:
-		render_size.x = _width_expression.execute([render_size.y])
+		_e.parse(_height_expression, ["HEIGHT"])
+		var height : int = _e.execute([float(render_size.y)])
+		render_size.y = render_size.y if height == 0 else height
 	
 	size = render_size.min(Vector2i(4096,4096))

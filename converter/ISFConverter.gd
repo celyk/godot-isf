@@ -53,8 +53,13 @@ func convert_isf_to_scene(isf_file:ISFFile, scene_type:SceneType=0) -> Node:
 		vp.target = buffer_info.target
 		vp.pass_index = pass_index #parser.passes.size()-1 - i
 		vp.size = Vector2i(buffer_info.width, buffer_info.height)
+		vp._width_expression = buffer_info.width_expression.expression_code
+		vp._height_expression = buffer_info.height_expression.expression_code
 		pass_parent.add_child(vp, true)
 		vp.owner = scene_root
+		
+		
+		#print("expression ", buffer_info.width_expression)
 		
 		var vp_texture := ViewportTexture.new()
 		#vp_texture.viewport_path = scene_root.get_path_to(vp)

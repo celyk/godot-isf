@@ -48,12 +48,15 @@ class BufferInfo extends RefCounted:
 	var persistent : bool = false
 	var width : int = 512
 	var height : int = 512
+	
+	var width_expression : ISFExpression
+	var height_expression : ISFExpression
 
 
 func parse(isf_file:ISFFile) -> void:
 	_isf_file = isf_file
 	
-	version = isf_file.json.data.get("ISFVSN", "2.0")
+	version = str(isf_file.json.data.get("ISFVSN", "2.0"))
 	credit = isf_file.json.data.get("CREDIT", "")
 	categories = isf_file.json.data.get("CATEGORIES", [])
 	
@@ -95,11 +98,12 @@ func _parse_buffers(isf_file:ISFFile) -> void:
 		info.target = dict.get("TARGET", "")
 		info.persistent = dict.get("PERSISTENT", false)
 		
-		var isf_expression := ISFExpression.new()
-		isf_expression.parse(dict.get("WIDTH", "0"), ["WIDTH"])
-		info.width = isf_expression.execute([info.width])
-		isf_expression.parse(dict.get("HEIGHT", "0"), ["HEIGHT"])
-		info.height = isf_expression.execute([info.height])
+		info.width_expression = ISFExpression.new()
+		info.width_expression.parse(dict.get("WIDTH", "0"), ["WIDTH"])
+		info.width = info.width_expression.execute([info.width])
+		info.height_expression = ISFExpression.new()
+		info.height_expression.parse(dict.get("HEIGHT", "0"), ["HEIGHT"])
+		info.height = info.height_expression.execute([info.height])
 		
 		# Buffer is not valid
 		if info.target == "": continue
