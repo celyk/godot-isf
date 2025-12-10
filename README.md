@@ -24,8 +24,8 @@ For audio reactive effects, audio input settings have to be enabled in your proj
 
 - [x] Basic ISF support
 - [ ] Vertex Shaders
-- [ ] Multi-passes
-- [ ] Persistent buffers
+- [ x ] Multi-passes
+- [ x ] Persistent buffers
 - [ ] Audio reactivity (FFT)
 - [ ] Import from standard ISF directory
 - [ ] Ability to use the effects in 3D
