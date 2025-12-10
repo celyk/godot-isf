@@ -54,6 +54,11 @@ func _set_parent_viewport_textures():
 		get_parent().material.set_shader_parameter(target, get_texture())
 		
 		_copy_viewport_textures(material, get_parent().material)
+		
+		if persistent and get_parent() is Control:
+			var feedback := get_node_or_null("Feedback")
+			if feedback:
+				get_parent().material.set_shader_parameter(target, feedback.get_texture())
 
 func _copy_viewport_textures(material_a:ShaderMaterial, material_b:ShaderMaterial) -> void:
 	var parameters := material_a.shader.get_shader_uniform_list()

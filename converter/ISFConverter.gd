@@ -4,7 +4,7 @@ class_name ISFConverter extends RefCounted
 enum SceneType {CONTROL, NODE_2D, NODE_3D}
 
 ## Convert and generates the scene structure
-func convert_isf_to_scene(isf_file:ISFFile, scene_type:SceneType=0) -> Node:
+func convert_isf_to_scene(isf_file:ISFFile, scene_type:SceneType=0, shader_override:Shader=null) -> Node:
 	var scene_root := Node.new()
 	
 	var parser := ISFParser.new()
@@ -22,6 +22,9 @@ func convert_isf_to_scene(isf_file:ISFFile, scene_type:SceneType=0) -> Node:
 	
 	var material : ShaderMaterial =  parser.material
 	material.resource_local_to_scene = true
+	
+	if shader_override:
+		material.shader = shader_override
 	
 	scene_root.material = material
 	
@@ -70,7 +73,8 @@ func convert_isf_to_scene(isf_file:ISFFile, scene_type:SceneType=0) -> Node:
 		
 		pass_parent = vp
 	
-	scene_root.set_instance_shader_parameter("PASSINDEX", parser.passes.size())
+	# Set the scene root pass index to the same as the last pass
+	scene_root.set_instance_shader_parameter("PASSINDEX", max(parser.passes.size()-1,0))
 	print("aaa")
 	var mesh := QuadMesh.new()
 	

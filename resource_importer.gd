@@ -33,7 +33,6 @@ func _import(source_file: String, save_path: String, options: Dictionary, platfo
 	var parser := ISFParser.new()
 	parser.parse(isf_file)
 	
-	var scene_root := converter.convert_isf_to_scene(isf_file)
 	
 	var include_path := additional_folder.path_join("generated_inputs.gdshaderinc")
 	var include : ShaderInclude = _load_or_create_resource(include_path, ShaderInclude.new())
@@ -48,7 +47,8 @@ func _import(source_file: String, save_path: String, options: Dictionary, platfo
 	var shader_code : String = _generate_shader_code(isf_file)
 	shader.code = shader_code
 	
-	scene_root.material.shader = shader
+	var scene_root := converter.convert_isf_to_scene(isf_file, 0, shader)
+	#scene_root.material.shader = shader
 	
 	#
 	#var file := FileAccess.open(include_path, FileAccess.WRITE)
