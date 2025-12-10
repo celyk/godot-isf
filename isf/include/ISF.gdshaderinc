@@ -1,6 +1,9 @@
 #ifndef ISF
 #define ISF
 
+// Set to 1 if we should use OpenGL screen coordinates
+#define GODOT_FLIP_Y 1
+
 // Uniform just to get the size of the rectangle on screen
 instance uniform vec4 rect_override = vec4(0,0,0,1);
 instance uniform vec2 rendersize_override = vec2(0,0);
@@ -11,7 +14,13 @@ bool use_rendersize_override(){ return rendersize_override != vec2(0,0); }
 #define GODOT_RESOLUTION vec2( use_rendersize_override() ? rendersize_override : 1.0 / SCREEN_PIXEL_SIZE )
 //#define GODOT_RESOLUTION VIEWPORT_SIZE
 
+vec2 __flip_y(vec2 v){return vec2(v.x, 1.0-v.y);}
+
+#if GODOT_FLIP_Y == 1
+#define GODOT_UV __flip_y(vec2( use_rect_override() ? UV : SCREEN_UV ))
+#else
 #define GODOT_UV vec2( use_rect_override() ? UV : SCREEN_UV )
+#endif
 
 #define GODOT_PIXEL_COORD vec4(GODOT_UV.x * GODOT_RESOLUTION.x, GODOT_UV.y * GODOT_RESOLUTION.x, FRAGCOORD.z, FRAGCOORD.w)
 
