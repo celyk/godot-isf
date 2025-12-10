@@ -1,5 +1,5 @@
+@tool
 extends EditorFileDialog
-
 
 func export() -> void:
 	popup_file_dialog()
