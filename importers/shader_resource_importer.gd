@@ -19,10 +19,13 @@ func _get_resource_type() -> String:
 func _get_import_options(path: String, preset_index: int) -> Array[Dictionary]:
 	return []
 
+static func _get_folder_hash(path:String) -> String:
+	return str(path.get_file().get_basename().hash())
+
 func _import(source_file: String, save_path: String, options: Dictionary, platform_variants: Array[String], gen_files: Array[String]) -> Error:
 	var path_to_save : String = save_path + '.' + _get_save_extension()
 	
-	var hash := str(path_to_save.get_file().hash())
+	var hash := _get_folder_hash(path_to_save)
 	var additional_folder := path_to_save.get_base_dir().path_join("ISF").path_join(hash)
 	print(additional_folder)
 	print(DirAccess.make_dir_absolute(additional_folder.get_base_dir()))
@@ -37,6 +40,8 @@ func _import(source_file: String, save_path: String, options: Dictionary, platfo
 	include.code = _generate_include_code(isf_file)
 	print(additional_folder.path_join("generated_inputs.gdshaderinc"))
 	ResourceSaver.save(include, additional_folder.path_join("generated_inputs.gdshaderinc"))
+	
+	append_import_external_resource(additional_folder.path_join("generated_inputs.gdshaderinc"))
 	
 	var shader := Shader.new()
 	shader.code = _generate_shader_code(isf_file, hash)

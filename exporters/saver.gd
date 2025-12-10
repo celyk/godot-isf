@@ -30,10 +30,21 @@ func _save(resource: Resource, path: String, flags: int) -> Error:
 	file.store_string(isf_code)
 	file.close()
 	
+	#var dependencies := ResourceLoader.get_dependencies(path)
+	#print("depend: ", dependencies)
+	#
+	#dependencies = _get_dependencies(path, false)
+	##dependencies.append(path)
+	#
+	#for d in dependencies:
+		#EditorInterface.get_resource_filesystem().update_file(d)
+	#
+	
+	#EditorInterface.get_resource_filesystem().reimport_files(dependencies)
+	EditorInterface.get_resource_filesystem().reimport_files([path])
+	
 	return OK
 	
-	EditorInterface.get_resource_filesystem().update_file(path)
-	EditorInterface.get_resource_filesystem().reimport_files([path])
 	
 	#shader.notify_property_list_changed()
 	#shader.emit_changed()
@@ -79,3 +90,14 @@ func _get_line_start(source:String, index:int) -> int:
 
 func _get_line_end(source:String, index:int) -> int:
 	return source.find("\n", index)-1
+
+static func _get_folder_hash(path:String) -> String:
+	return str(path.get_file().get_basename().hash())
+
+func _get_dependencies(path: String, add_types: bool) -> PackedStringArray:
+	var hash := _get_folder_hash(path)
+	var additional_folder := path.get_base_dir().path_join("ISF").path_join(hash)
+	
+	var include_path := additional_folder.path_join("generated_inputs.gdshaderinc")
+	print(include_path)
+	return [include_path]
