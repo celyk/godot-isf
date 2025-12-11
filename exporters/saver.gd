@@ -11,8 +11,6 @@ func _recognize(resource: Resource) -> bool:
 	return false
 
 func _save(resource: Resource, path: String, flags: int) -> Error:
-	#print("saving not");return OK
-	
 	var shader : Shader = resource
 	print("resource_path ", shader.resource_path)
 	var isf_code := shader.code
@@ -20,45 +18,18 @@ func _save(resource: Resource, path: String, flags: int) -> Error:
 	#isf_code = _remove_lines_with(isf_code, "shader_type")
 	#isf_code = _remove_lines_with(isf_code, "#include")
 	
+	# Remove the header #include before saving the ISF file
 	var json_start := isf_code.find("/*")
 	isf_code = isf_code.substr(json_start)
 	
-	#isf_code = _remove_lines_between(isf_code,"*/", "#include")
-	
-	#print(isf_code)
 	var file := FileAccess.open(path, FileAccess.WRITE)
 	file.store_string(isf_code)
 	file.close()
 	
-	#var dependencies := ResourceLoader.get_dependencies(path)
-	#print("depend: ", dependencies)
-	#
-	#dependencies = _get_dependencies(path, false)
-	##dependencies.append(path)
-	#
-	#for d in dependencies:
-		#EditorInterface.get_resource_filesystem().update_file(d)
-	#
-	
-	#EditorInterface.get_resource_filesystem().reimport_files(dependencies)
 	EditorInterface.get_resource_filesystem().reimport_files([path])
 	
 	return OK
-	
-	
-	#shader.notify_property_list_changed()
-	#shader.emit_changed()
-	
-	
-	
-	shader = ResourceLoader.load(path)
-	
-	print(isf_code)
-	shader.emit_changed.call_deferred()
-	
-	#shader.take_over_path(shader.resource_path)
-	
-	return OK
+
 
 func _remove_lines_between(source:String, start_key:String, end_key:String) -> String:
 	var start := _get_line_start(source, source.find(start_key))

@@ -1,52 +1,53 @@
-/*{
-    "CATEGORIES": [
-        "Wipe"
-    ],
-    "CREDIT": "Automatically converted from https://www.github.com/gl-transitions/gl-transitions/tree/master/Bounce.glsl",
-    "DESCRIPTION": "",
-    "INPUTS": [
-        {
-            "NAME": "startImage",
-            "TYPE": "image"
-        },
-        {
-            "NAME": "endImage",
-            "TYPE": "image"
-        },
-        {
-            "DEFAULT": 0,
-            "MAX": 1,
-            "MIN": 0,
-            "NAME": "progress",
-            "TYPE": "float"
-        },
-        {
-            "DEFAULT": 2,
-            "MAX": 10,
-            "MIN": 0,
-            "NAME": "bounces",
-            "TYPE": "float"
-        },
-        {
-            "DEFAULT": 0.1,
-            "MAX": 1,
-            "MIN": 0,
-            "NAME": "shadow_height",
-            "TYPE": "float"
-        },
-        {
-            "DEFAULT": [
-                0,
-                0,
-                0,
-                1
-            ],
-            "NAME": "shadow_colour",
-            "TYPE": "color"
-        }
-    ],
-    "ISFVSN": "2",
-    "VSN": ""
+/*
+{
+	"CATEGORIES": [
+		"Wipe"
+	],
+	"CREDIT": "Automatically converted from https://www.github.com/gl-transitions/gl-transitions/tree/master/Bounce.glsl",
+	"DESCRIPTION": "",
+	"INPUTS": [
+		{
+			"NAME": "startImage",
+			"TYPE": "image"
+		},
+		{
+			"NAME": "endImage",
+			"TYPE": "image"
+		},
+		{
+			"DEFAULT": 0.0,
+			"MAX": 1.0,
+			"MIN": 0.0,
+			"NAME": "progress",
+			"TYPE": "float"
+		},
+		{
+			"DEFAULT": 2.0,
+			"MAX": 10.0,
+			"MIN": 0.0,
+			"NAME": "bounces",
+			"TYPE": "float"
+		},
+		{
+			"DEFAULT": 0.1,
+			"MAX": 1.0,
+			"MIN": 0.0,
+			"NAME": "shadow_height",
+			"TYPE": "float"
+		},
+		{
+			"DEFAULT": [
+				0.0,
+				0.0,
+				0.0,
+				1.0
+			],
+			"NAME": "shadow_colour",
+			"TYPE": "color"
+		}
+	],
+	"ISFVSN": "2",
+	"VSN": ""
 }
 */
 

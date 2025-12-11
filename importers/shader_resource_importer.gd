@@ -27,9 +27,6 @@ func _import(source_file: String, save_path: String, options: Dictionary, platfo
 	
 	var hash := _get_folder_hash(path_to_save)
 	var additional_folder := path_to_save.get_base_dir().path_join("ISF").path_join(hash)
-	print(additional_folder)
-	print(DirAccess.make_dir_absolute(additional_folder.get_base_dir()))
-	print(DirAccess.make_dir_absolute(additional_folder))
 	
 	var converter := ISFConverter.new()
 	var isf_file := ISFFile.open(source_file)
@@ -43,15 +40,6 @@ func _import(source_file: String, save_path: String, options: Dictionary, platfo
 	
 	if ResourceSaver.save(include, include_path) == OK:
 		ResourceLoader.load(include_path, "", ResourceLoader.CACHE_MODE_REPLACE)
-	
-	#include.emit_changed()
-	
-	#print(additional_folder.path_join("generated_inputs.gdshaderinc"))
-	
-	#EditorInterface.get_resource_filesystem().update_file(additional_folder.path_join("generated_inputs.gdshaderinc"))
-	#print("append: ", append_import_external_resource(additional_folder.path_join("generated_inputs.gdshaderinc")) )
-	
-	#EditorInterface.get_resource_filesystem().reimport_files.call_deferred([additional_folder.path_join("generated_inputs.gdshaderinc")])
 	
 	var shader := Shader.new()
 	shader.code = _generate_shader_code(isf_file, hash)
@@ -75,7 +63,6 @@ func _generate_shader_code(isf_file:ISFFile, hash:String) -> String:
 	shader_code += "shader_type canvas_item;\n\n"
 	shader_code += '#include "res://.godot/imported/ISF/%s/generated_inputs.gdshaderinc"\n\n' % [hash]
 	shader_code += "/*\n" + JSON.stringify(isf_file.json.data, "\t") + "\n*/\n"
-	#shader_code += '#include "res://addons/godot-isf/include/ISF.gdshaderinc"\n\n'
 	shader_code += isf_file.shader_source
 	
 	return shader_code

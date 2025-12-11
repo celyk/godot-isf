@@ -1,33 +1,34 @@
-/*{
-    "CATEGORIES": [
-        "Stylize",
-        "Blur"
-    ],
-    "CREDIT": "geeks3d",
-    "DESCRIPTION": "",
-    "INPUTS": [
-        {
-            "NAME": "inputImage",
-            "TYPE": "image"
-        },
-        {
-            "DEFAULT": 0.01,
-            "LABEL": "Magnitude",
-            "MAX": 0.1,
-            "MIN": 0,
-            "NAME": "magnitude",
-            "TYPE": "float"
-        },
-        {
-            "DEFAULT": 0.345,
-            "LABEL": "Seed",
-            "MAX": 1,
-            "MIN": 0,
-            "NAME": "seed",
-            "TYPE": "float"
-        }
-    ],
-    "ISFVSN": "2"
+/*
+{
+	"CATEGORIES": [
+		"Stylize",
+		"Blur"
+	],
+	"CREDIT": "geeks3d",
+	"DESCRIPTION": "",
+	"INPUTS": [
+		{
+			"NAME": "inputImage",
+			"TYPE": "image"
+		},
+		{
+			"DEFAULT": 0.01,
+			"LABEL": "Magnitude",
+			"MAX": 0.1,
+			"MIN": 0.0,
+			"NAME": "magnitude",
+			"TYPE": "float"
+		},
+		{
+			"DEFAULT": 0.345,
+			"LABEL": "Seed",
+			"MAX": 1.0,
+			"MIN": 0.0,
+			"NAME": "seed",
+			"TYPE": "float"
+		}
+	],
+	"ISFVSN": "2"
 }
 */
 

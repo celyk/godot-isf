@@ -9,12 +9,10 @@ class_name ISFEffectPlayerControl extends Control
 		
 		_on_effect_changed()
 
-var isf_file : ISFFile
-
 func _init() -> void:
 	_initialize.call_deferred()
 
-var _rect : Node
+var _rect : ISFEffectPlayer2D
 func _initialize() -> void:
 	if effect == null:
 		effect = ShaderMaterial.new()
@@ -22,9 +20,6 @@ func _initialize() -> void:
 		effect.shader.code = _default_shader_code
 	
 	_init_rect()
-	
-	
-	#var scene := 
 
 func _process(delta: float) -> void:
 	#var shader_material := ShaderMaterial.new()
@@ -33,45 +28,22 @@ func _process(delta: float) -> void:
 	pass
 
 func _init_rect() -> void:
-	_rect = MeshInstance2D.new()
-	
-	_rect.material = effect
-	
-	_rect.mesh = QuadMesh.new()
-	_rect.mesh.size = Vector2i(2, 2)
-	
+	_rect = ISFEffectPlayer2D.new()
 	add_child(_rect)
+	
+	_on_effect_changed()
 	
 	_on_size_changed()
 	resized.connect(_on_size_changed)
 
 func _on_size_changed() -> void:
-	if _rect is Control:
-		_rect.size = size
-	else:
+	if _rect:
 		_rect.scale = size / 2
+		_rect.scale.y = -_rect.scale.y
 		_rect.position = size / 2
 
 func _on_effect_changed() -> void:
-	if not (effect and effect.shader): return
-	
-	isf_file = ISFFile.open(effect.shader.resource_path)
-	
-	var parser := ISFParser.new()
-	parser.parse(isf_file)
-	
-	var converter := ISFConverter.new()
-	var scene_root := converter.convert_isf_to_scene(isf_file, 0, effect.shader)
-	#scene_root.mesh = _rect.mesh
-	scene_root.material = effect
-	
-	for child in get_children():
-		child.queue_free()
-	
-	_rect = scene_root
-	add_child(scene_root)
-	
-	_on_size_changed()
+	_rect.effect = effect
 
 
 #func _get_effect_file() -> ISFFile:

@@ -1,7 +1,7 @@
 #ifndef ISF
 #define ISF
 
-// Set to 1 if we should use OpenGL screen coordinates
+// Godot screen origin is in the upper left. Set to 1 if we should use OpenGL style screen coordinates (bottom left origin)
 #define GODOT_FLIP_Y 1
 
 // Uniform just to get the size of the rectangle on screen
