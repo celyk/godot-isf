@@ -46,7 +46,7 @@ instance uniform float TIMEDELTA = 0.016666; //#define TIMEDELTA float(1.0 / 60.
 
 
 // ISF 2.0 -> Godot shader renames
-#define IMG_PIXEL(TEX,B) texture(TEX, __ISF_TO_GODOT_UV(__TEXEL_COORD_TO_UV(TEX,ivec2(B))) )
+#define IMG_PIXEL(TEX,B) texture(TEX, __ISF_TO_GODOT_UV(__TEXEL_COORD_TO_UV(TEX,B)) )
 #define IMG_NORM_PIXEL(A,B) texture(A, __ISF_TO_GODOT_UV(B))
 
 #define IMG_THIS_PIXEL(TEX) texture(TEX, GODOT_UV)
@@ -63,7 +63,7 @@ instance uniform float TIMEDELTA = 0.016666; //#define TIMEDELTA float(1.0 / 60.
 #include "GLSL_to_GDSL.gdshaderinc"
 
 #undef gl_FragCoord
-#define gl_FragCoord vec4(vec2(__GODOT_TO_ISF_PIXEL_COORD(ivec2(GODOT_PIXEL_COORD.xy))), GODOT_PIXEL_COORD.z, GODOT_PIXEL_COORD.w)
+#define gl_FragCoord vec4(__GODOT_TO_ISF_PIXEL_COORD(GODOT_PIXEL_COORD.xy), GODOT_PIXEL_COORD.z, GODOT_PIXEL_COORD.w)
 
 
 #endif /*ISF*/
