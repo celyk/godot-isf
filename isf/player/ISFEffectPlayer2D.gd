@@ -25,25 +25,15 @@ func _initialize() -> void:
 	_init_rect()
 
 func _init_rect() -> void:
-	var _rect : MeshInstance2D = self
-	_rect.material = ShaderMaterial.new()
-	_rect.material.shader = effect.shader
-	
-	_rect.mesh = QuadMesh.new()
-	_rect.mesh.size = Vector2i(2, 2)
-	
-	add_child(_rect)
-
-#
-#func _on_size_changed() -> void:
-	#var _rect : MeshInstance2D = self
-	##print(_rect)
-	#if _rect:
-		#_rect.scale = size / 2
-		#_rect.scale.y = -_rect.scale.y
-		#_rect.position = size / 2
+	material = effect
+	mesh = QuadMesh.new()
+	mesh.size = Vector2i(2, -2)
 
 func _on_effect_changed() -> void:
+	if not (effect and effect.shader): return
+	material = effect
+
+func _on_effect_changed0() -> void:
 	if not (effect and effect.shader): return
 	
 	isf_file = ISFFile.open(effect.shader.resource_path)
@@ -62,8 +52,11 @@ func _on_effect_changed() -> void:
 	for child in get_children():
 		child.queue_free()
 	
+	material = effect
+	
+	#_rect.material = 
 	#_rect = scene_root
-	add_child(scene_root)
+	#add_child(scene_root)
 	
 	#_on_size_changed()
 
