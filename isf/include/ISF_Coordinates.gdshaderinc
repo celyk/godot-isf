@@ -24,4 +24,12 @@ ivec2 __y_flip_unnorm(ivec2 v, ivec2 size){return ivec2(v.x, size.y - v.y);}
 #define __GODOT_TO_ISF_TEXEL_COORD(TEX, A) __y_flip_unnorm(A, __GET_TEXTURE_SIZE(TEX))
 #define __ISF_TO_GODOT_TEXEL_COORD(TEX, A) __y_flip_unnorm(A, __GET_TEXTURE_SIZE(TEX))
 
+// A is an ivec2
+#define __PIXEL_COORD_TO_SCREEN_UV(A) vec2( (vec2(A) + 0.5) / vec2(__VIEWPORT_SIZE) )
+#define __TEXEL_COORD_TO_UV(TEX, A) vec2( (vec2(A) + 0.5) / vec2(__GET_TEXTURE_SIZE(TEX)) )
+
+// A is an vec2
+#define __SCREEN_UV_TO_PIXEL_COORD(A) ivec2( A * vec2(__VIEWPORT_SIZE) )
+#define __UV_TO_TEXEL_COORD(TEX, A) ivec2( A * vec2(__GET_TEXTURE_SIZE(TEX)) )
+
 #endif /*ISF_COORDS*/
