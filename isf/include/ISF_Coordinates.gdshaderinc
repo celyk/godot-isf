@@ -28,8 +28,8 @@ vec2 __y_flip_unnorm(vec2 v, ivec2 size){return vec2(v.x, float(size.y) - v.y);}
 #define __PIXEL_COORD_TO_SCREEN_UV(A) vec2( A / vec2(__VIEWPORT_SIZE) )
 #define __TEXEL_COORD_TO_UV(TEX, A) vec2( A / vec2(__GET_TEXTURE_SIZE(TEX)) )
 
-// A is an vec2. Output is an ivec2
-#define __SCREEN_UV_TO_PIXEL_COORD(A) ivec2( A * vec2(__VIEWPORT_SIZE) )
-#define __UV_TO_TEXEL_COORD(TEX, A) ivec2( A * vec2(__GET_TEXTURE_SIZE(TEX)) )
+// A is an vec2. Output is a vec2
+#define __SCREEN_UV_TO_PIXEL_COORD(A) A * vec2(__VIEWPORT_SIZE)
+#define __UV_TO_TEXEL_COORD(TEX, A) A * vec2(__GET_TEXTURE_SIZE(TEX))
 
 #endif /*ISF_COORDS*/
