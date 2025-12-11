@@ -27,6 +27,7 @@ func _import(source_file: String, save_path: String, options: Dictionary, platfo
 	
 	var hash := _get_folder_hash(path_to_save)
 	var additional_folder := path_to_save.get_base_dir().path_join("ISF").path_join(hash)
+	DirAccess.make_dir_absolute(additional_folder)
 	
 	var converter := ISFConverter.new()
 	var isf_file := ISFFile.open(source_file)
