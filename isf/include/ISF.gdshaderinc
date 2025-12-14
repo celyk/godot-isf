@@ -27,7 +27,7 @@ bool use_rendersize_override(){ return rendersize_override != vec2(0,0); }
 
 #undef __VIEWPORT_SIZE
 #define __VIEWPORT_SIZE GODOT_RESOLUTION
-//vec2(300)
+
 
 #define RENDERSIZE GODOT_RESOLUTION
 
